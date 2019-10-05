@@ -8,7 +8,7 @@ onready var weapon_sprite = $WeaponSprite
 var screen_size
 var bodySize  = Vector2()
 
-export var SPEED = 400 #(pixels/sec)
+export var SPEED = 450 #(pixels/sec)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,11 +36,3 @@ func _process(delta):
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
-	
-	#Handling weapon sprite's position
-	var weaponPos  = Vector2() 
-	weaponPos = body_sprite.get_position()
-	weaponPos.x = $BodySprite/RightCornerBody.position.x
-	weapon_sprite.frames.get_frame("default", weapon_sprite.frame).get_size()
-
-
