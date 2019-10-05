@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -8,6 +8,8 @@ onready var weapon_sprite = $WeaponSprite
 var screen_size
 var bodySize  = Vector2()
 
+var projectile = preload("res://RPG/Projectile.tscn")
+
 export var SPEED = 450 #(pixels/sec)
 
 # Called when the node enters the scene tree for the first time.
@@ -16,7 +18,7 @@ func _ready():
 	screen_size = get_viewport_rect().size
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 		#Handling inputs
 	var velocity = Vector2()  # The player's movement vector.
 	if Input.is_action_pressed("ui_right"):
@@ -33,6 +35,13 @@ func _process(delta):
 	else:
 		pass #$AnimatedSprite.stop()
 	
-	position += velocity * delta
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		fire()
+	
+	move_and_collide(velocity * delta)
+
+func fire():
+	var bullet = projectile.instance()
+	bullet.init(self)
+	bullet.position = global_position
+	get_parent().add_child(bullet)
