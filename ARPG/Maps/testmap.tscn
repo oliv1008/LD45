@@ -43,6 +43,7 @@ shape = SubResource( 3 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+visible = false
 position = Vector2( -2.38948, 29.5834 )
 current = true
 
@@ -50,4 +51,11 @@ current = true
 wait_time = 15.0
 one_shot = true
 autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_left = -1207.0
+margin_top = -531.0
+margin_right = 1703.0
+margin_bottom = 1056.0
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

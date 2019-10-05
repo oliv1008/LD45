@@ -14,5 +14,4 @@ func _ready():
 
 
 func _on_Timer_timeout():
-	var path = "res://main/main.tscn"
-	SceneLoader.setScene(path)
+	pass

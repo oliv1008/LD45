@@ -10,7 +10,8 @@ func _ready():
 # create a function to switch between scenes 
 func setScene(scene):
 	#clean up the current scene
-	currentScene.queue_free()
+	if(currentScene != $main):
+		currentScene.queue_free()
 	#load the file passed in as the param "scene"
 	var s = ResourceLoader.load(scene)
 	#create an instance of our scene
@@ -19,3 +20,5 @@ func setScene(scene):
 	get_tree().get_root().add_child(currentScene)
 	
 	print("launching scene : " + scene)
+
+
