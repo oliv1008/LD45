@@ -4,8 +4,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://assets/72267645_397230914283131_1073197892161765376_n.png" type="Texture" id=3]
 
-
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -13,7 +12,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
@@ -21,32 +20,27 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 17.8401
 height = 50.5649
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 168.592, 69.7064 )
 script = ExtResource( 1 )
+SPEED = 500
 
 [node name="WeaponSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 91.6139, 24.269 )
+position = Vector2( -7.22341, -31.5367 )
+rotation = 1.5708
 scale = Vector2( 0.25, 0.75 )
-frames = SubResource( 2 )
-
-[node name="TopRight" type="Position2D" parent="WeaponSprite"]
-position = Vector2( 29.5878, -32.0584 )
-scale = Vector2( 61.96, 11.56 )
+frames = SubResource( 1 )
 
 [node name="BodySprite" type="AnimatedSprite" parent="."]
-position = Vector2( 41.9512, 21.873 )
+position = Vector2( -6.84692, 16.1432 )
+rotation = -1.5708
 scale = Vector2( 0.15, 0.15 )
-frames = SubResource( 3 )
-
-[node name="BottomLeft" type="Position2D" parent="BodySprite"]
-position = Vector2( -278.224, 144.342 )
-scale = Vector2( -1367.49, -349.116 )
+frames = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 49.6518, 21.8468 )
-rotation = 1.5708
-shape = SubResource( 4 )
+position = Vector2( -6.10645, 15.9514 )
+shape = SubResource( 3 )

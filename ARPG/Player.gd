@@ -8,7 +8,7 @@ onready var weapon_sprite = $WeaponSprite
 var screen_size
 var bodySize  = Vector2()
 
-var projectile = preload("res://RPG/Projectile.tscn")
+var projectile = preload("res://ARPG/Projectile.tscn")
 
 export var SPEED = 450 #(pixels/sec)
 
@@ -19,8 +19,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-		#Handling inputs
+	#Handling inputs
+	look_at(get_global_mouse_position())
 	var velocity = Vector2()  # The player's movement vector.
+	#position += velocity * delta
+	#position.x = clamp(position.x, 0, screen_size.x)
+	#position.y = clamp(position.y, 0, screen_size.y)
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
 	if Input.is_action_pressed("ui_left"):
