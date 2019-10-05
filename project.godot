@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 nc="*res://singleton/notification_center.gd"
+PersoGlobal="*res://PersoGlobal.gd"
 
 [display]
 
