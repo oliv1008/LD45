@@ -1,7 +1,14 @@
 extends Control
 
+
+onready var CenterIntroduction = $CenterIntroduction
+
 onready var totalAntimatter = $CenterAntimatter/VerticalAntimatter/TotalAntimatter
 onready var antimatterPerSeconds = $CenterAntimatter/VerticalAntimatter/AntimatterPerSeconds
+
+onready var TurnScreenOn = $CenterAntimatter/VerticalAntimatter/TurnOnScreen
+
+var firstTime = true
 
 onready var NumberBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container2/NumberBuilding1
 onready var RevenueBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container2/RevenueBuilding1
@@ -48,24 +55,29 @@ var improveDistancePrice = 40
 var ammoPrice = 1
 
 func _ready():
+	#totalAntimatter.text = str("You have ", antimatter, " antimatter")
+	#antimatterPerSeconds.text = str("You earn ", antimatterPerSec, " antimatter per seconds")
+	#NumberBuilding1.text = str("Quantity : ", quantityBuilding1)
+	#RevenueBuilding1.text = str("Revenue : ", totalRevenueBuilding1)
+	#PriceBuilding1.text = str(priceBuilding1, " AM")
+	#PriceBuilding2.text = str(priceBuilding2, " AM")
+	#NumberBuilding2.text = str("Quantity : ", quantityBuilding2)
+	#RevenueBuilding2.text = str("Revenue : ", totalRevenueBuilding2)
+	#PriceBuilding3.text = str(priceBuilding3, " AM")
+	#NumberBuilding3.text = str("Quantity : ", quantityBuilding3)
+	#RevenueBuilding3.text = str("Revenue : ", totalRevenueBuilding3)
+	#MeleeValue.text = str(PersoGlobal.meleeDamage , " dmg")
+	#DistanceValue.text = str(PersoGlobal.distanceDamage , " dmg")
+	#NumberOfAmmo.text = str(PersoGlobal.numberOfAmmo, " Ammo")
+	#PriceImproveMelee.text = str(improveMeleePrice, " AM")
+	#PriceImproveDistance.text = str(improveDistancePrice, " AM")
+	#PriceAmmo.text = str(ammoPrice, " AM")
+	#PriceHeart.text = str(heartPrice, " AM")
+	pass
+
+func _letsGoAntimatter():
 	totalAntimatter.text = str("You have ", antimatter, " antimatter")
 	antimatterPerSeconds.text = str("You earn ", antimatterPerSec, " antimatter per seconds")
-	NumberBuilding1.text = str("Quantity : ", quantityBuilding1)
-	RevenueBuilding1.text = str("Revenue : ", totalRevenueBuilding1)
-	PriceBuilding1.text = str(priceBuilding1, " AM")
-	PriceBuilding2.text = str(priceBuilding2, " AM")
-	NumberBuilding2.text = str("Quantity : ", quantityBuilding2)
-	RevenueBuilding2.text = str("Revenue : ", totalRevenueBuilding2)
-	PriceBuilding3.text = str(priceBuilding3, " AM")
-	NumberBuilding3.text = str("Quantity : ", quantityBuilding3)
-	RevenueBuilding3.text = str("Revenue : ", totalRevenueBuilding3)
-	MeleeValue.text = str(PersoGlobal.meleeDamage , " dmg")
-	DistanceValue.text = str(PersoGlobal.distanceDamage , " dmg")
-	NumberOfAmmo.text = str(PersoGlobal.numberOfAmmo, " Ammo")
-	PriceImproveMelee.text = str(improveMeleePrice, " AM")
-	PriceImproveDistance.text = str(improveDistancePrice, " AM")
-	PriceAmmo.text = str(ammoPrice, " AM")
-	PriceHeart.text = str(heartPrice, " AM")
 
 func _physics_process(delta):
 	pass
@@ -73,6 +85,9 @@ func _physics_process(delta):
 func _on_CurrencyTimer_timeout():
 	antimatter += antimatterPerSec
 	totalAntimatter.text = str("You have ", antimatter, " antimatter")
+	if (antimatter == 3 && firstTime == true):
+		TurnScreenOn.visible = true
+		firstTime = false;
 
 func _on_BuyBuilding1_pressed():
 	if (antimatter >= priceBuilding1):
@@ -152,3 +167,16 @@ func _on_ImprovePVButton_pressed():
 			PersoGlobal.pv += 1
 			Heart5.visible = true
 			PriceHeart.visible = false
+
+
+func _on_TurnOnScreen_pressed():
+	var notificationData = "allumetoi"
+	nc.post_notification("DEMO_NOTIFICATION", notificationData)
+	TurnScreenOn.visible = false
+	antimatter -= 3
+
+func _on_StartTheGame_pressed():
+	CenterIntroduction.visible = false
+	$ColorRect.visible = false
+	antimatter = 0
+	_letsGoAntimatter()

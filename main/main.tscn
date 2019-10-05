@@ -12,17 +12,14 @@ margin_bottom = 1080.0
 [node name="IncrementalScreen" parent="HBoxContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 958.0
-margin_bottom = 1080.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Node2D" parent="HBoxContainer" instance=ExtResource( 2 )]
-editor/display_folded = true
-margin_left = 962.0
 margin_right = 1920.0
 margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[editable path="HBoxContainer/Node2D"]
+[node name="RPGScreen" parent="HBoxContainer" instance=ExtResource( 2 )]
+margin_left = 962.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
