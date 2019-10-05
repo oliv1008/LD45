@@ -54,9 +54,9 @@ size_flags_vertical = 3
 
 [node name="VerticalAntimatter" type="VBoxContainer" parent="CenterAntimatter"]
 margin_left = 218.0
-margin_top = 149.0
+margin_top = 101.0
 margin_right = 742.0
-margin_bottom = 300.0
+margin_bottom = 252.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 21
@@ -229,10 +229,8 @@ margin_right = 965.0
 margin_bottom = 1085.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CenterBuildings"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 485.0
-margin_bottom = 735.0
+margin_right = 475.0
+margin_bottom = 725.0
 rect_min_size = Vector2( 475, 725 )
 
 [node name="VerticalBuildings" type="VBoxContainer" parent="CenterBuildings/ScrollContainer"]
