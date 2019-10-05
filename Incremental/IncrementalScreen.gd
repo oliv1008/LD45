@@ -1,8 +1,8 @@
 extends Control
 
-
 onready var totalAntimatter = $CenterAntimatter/VerticalAntimatter/TotalAntimatter
 onready var antimatterPerSeconds = $CenterAntimatter/VerticalAntimatter/AntimatterPerSeconds
+
 onready var NumberBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container2/NumberBuilding1
 onready var RevenueBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container2/RevenueBuilding1
 onready var NumberBuilding2 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container2/NumberBuilding2
@@ -12,6 +12,11 @@ onready var RevenueBuilding3 = $CenterBuildings/ScrollContainer/VerticalBuilding
 onready var PriceBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container/BuyBuilding1
 onready var PriceBuilding2 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container/BuyBuilding2
 onready var PriceBuilding3 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container/BuyBuilding3
+
+onready var MeleeValue = $CenterRobot/ScrollContainer/VerticalRobot/HCacContainer/MeleeValue
+onready var DistanceValue = $CenterRobot/ScrollContainer/VerticalRobot/HDistanceContainer/DistanceValue
+onready var PriceImproveMelee = $CenterRobot/ScrollContainer/VerticalRobot/HCacContainer/ImproveMeleeButton
+onready var PriceImproveDistance = $CenterRobot/ScrollContainer/VerticalRobot/HDistanceContainer/ImproveDistanceButton
 
 var antimatter = 0
 var antimatterPerSec = 1
@@ -31,9 +36,25 @@ var revenueBuilding3 = 400
 var quantityBuilding3 = 0
 var totalRevenueBuilding3 = 0
 
+var improveMeleePrice = 20
+var improveDistancePrice = 40
+
 func _ready():
 	totalAntimatter.text = str("You have ", antimatter, " antimatter")
 	antimatterPerSeconds.text = str("You win ", antimatterPerSec, " antimatter per seconds")
+	NumberBuilding1.text = str("Quantity : ", quantityBuilding1)
+	RevenueBuilding1.text = str("Revenue : ", totalRevenueBuilding1)
+	PriceBuilding1.text = str(priceBuilding1, " AM")
+	PriceBuilding2.text = str(priceBuilding2, " AM")
+	NumberBuilding2.text = str("Quantity : ", quantityBuilding2)
+	RevenueBuilding2.text = str("Revenue : ", totalRevenueBuilding2)
+	PriceBuilding3.text = str(priceBuilding3, " AM")
+	NumberBuilding3.text = str("Quantity : ", quantityBuilding3)
+	RevenueBuilding3.text = str("Revenue : ", totalRevenueBuilding3)
+	MeleeValue.text = str(PersoGlobal.meleeDamage , " dmg")
+	DistanceValue.text = str(PersoGlobal.distanceDamage , " dmg")
+	PriceImproveMelee.text = str(improveMeleePrice, " AM")
+	PriceImproveDistance.text = str(improveDistancePrice, " AM")
 
 func _physics_process(delta):
 	pass
@@ -81,6 +102,19 @@ func _on_BuyBuilding3_pressed():
 		RevenueBuilding3.text = str("Revenue : ", totalRevenueBuilding3)
 		antimatterPerSeconds.text = str("You win ", antimatterPerSec, " antimatter per seconds")
 
+func _on_ImproveMeleeButton_pressed():
+	if (antimatter >= improveMeleePrice):
+		antimatter -= improveMeleePrice
+		PersoGlobal.meleeDamage += 10
+		improveMeleePrice *= 2
+		MeleeValue.text = str(PersoGlobal.meleeDamage , " dmg")
+		PriceImproveMelee.text = str(improveMeleePrice, " AM")
+		
 
-func _on_VScrollBar_scrolling():
-	pass # Replace with function body.
+func _on_ImproveDistanceButton_pressed():
+	if (antimatter >= improveDistancePrice):
+		antimatter -= improveDistancePrice
+		PersoGlobal.distanceDamage += 10
+		improveDistancePrice *= 2
+		DistanceValue.text = str(PersoGlobal.distanceDamage , " dmg")
+		PriceImproveDistance.text = str(improveDistancePrice, " AM")

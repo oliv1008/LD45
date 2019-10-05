@@ -29,7 +29,6 @@ margin_bottom = 1080.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="HorizontalLimit" type="ColorRect" parent="."]
-margin_left = -200.0
 margin_top = 350.0
 margin_right = 960.0
 margin_bottom = 355.0
@@ -54,9 +53,9 @@ size_flags_vertical = 3
 
 [node name="VerticalAntimatter" type="VBoxContainer" parent="CenterAntimatter"]
 margin_left = 218.0
-margin_top = 149.0
+margin_top = 101.0
 margin_right = 742.0
-margin_bottom = 300.0
+margin_bottom = 252.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 21
@@ -100,19 +99,19 @@ margin_bottom = 727.0
 rect_min_size = Vector2( 482, 727 )
 
 [node name="VerticalRobot" type="VBoxContainer" parent="CenterRobot/ScrollContainer"]
-margin_right = 409.0
+margin_right = 502.0
 margin_bottom = 277.0
 custom_constants/separation = 50
 
 [node name="ImproveRobots" type="Label" parent="CenterRobot/ScrollContainer/VerticalRobot"]
-margin_right = 409.0
+margin_right = 502.0
 margin_bottom = 25.0
 custom_fonts/font = ExtResource( 3 )
 text = "Improve your Robot"
 
 [node name="HPVContainer" type="HBoxContainer" parent="CenterRobot/ScrollContainer/VerticalRobot"]
 margin_top = 75.0
-margin_right = 409.0
+margin_right = 502.0
 margin_bottom = 115.0
 custom_constants/separation = 10
 
@@ -156,7 +155,7 @@ text = "XX AM"
 
 [node name="HCacContainer" type="HBoxContainer" parent="CenterRobot/ScrollContainer/VerticalRobot"]
 margin_top = 165.0
-margin_right = 409.0
+margin_right = 502.0
 margin_bottom = 196.0
 custom_constants/separation = 10
 
@@ -181,43 +180,69 @@ margin_bottom = 28.0
 custom_fonts/font = ExtResource( 3 )
 text = "XX damage"
 
-[node name="ImproveMeleeButton" type="Button" parent="CenterRobot/ScrollContainer/VerticalRobot/HCacContainer"]
+[node name="VSeparator2" type="VSeparator" parent="CenterRobot/ScrollContainer/VerticalRobot/HCacContainer"]
 margin_left = 264.0
-margin_right = 363.0
+margin_right = 268.0
+margin_bottom = 31.0
+
+[node name="+10 damage" type="Label" parent="CenterRobot/ScrollContainer/VerticalRobot/HCacContainer"]
+margin_left = 278.0
+margin_top = 3.0
+margin_right = 393.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 3 )
+text = "+10 dmg"
+
+[node name="ImproveMeleeButton" type="Button" parent="CenterRobot/ScrollContainer/VerticalRobot/HCacContainer"]
+margin_left = 403.0
+margin_right = 502.0
 margin_bottom = 31.0
 custom_fonts/font = ExtResource( 3 )
 text = "XX AM"
 
 [node name="HDistanceContainer" type="HBoxContainer" parent="CenterRobot/ScrollContainer/VerticalRobot"]
 margin_top = 246.0
-margin_right = 409.0
+margin_right = 502.0
 margin_bottom = 277.0
 custom_constants/separation = 10
 
 [node name="Distance" type="Label" parent="CenterRobot/ScrollContainer/VerticalRobot/HDistanceContainer"]
 margin_top = 3.0
-margin_right = 124.0
+margin_right = 52.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 3 )
-text = "Distance"
+text = "Gun"
 align = 1
 
 [node name="VSeparator" type="VSeparator" parent="CenterRobot/ScrollContainer/VerticalRobot/HDistanceContainer"]
-margin_left = 134.0
-margin_right = 138.0
+margin_left = 62.0
+margin_right = 66.0
 margin_bottom = 31.0
 
 [node name="DistanceValue" type="Label" parent="CenterRobot/ScrollContainer/VerticalRobot/HDistanceContainer"]
-margin_left = 148.0
+margin_left = 76.0
 margin_top = 3.0
-margin_right = 300.0
+margin_right = 228.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 3 )
 text = "XX damage"
 
+[node name="VSeparator2" type="VSeparator" parent="CenterRobot/ScrollContainer/VerticalRobot/HDistanceContainer"]
+margin_left = 238.0
+margin_right = 242.0
+margin_bottom = 31.0
+
+[node name="+10 dmg" type="Label" parent="CenterRobot/ScrollContainer/VerticalRobot/HDistanceContainer"]
+margin_left = 252.0
+margin_top = 3.0
+margin_right = 367.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 3 )
+text = "+10 dmg"
+
 [node name="ImproveDistanceButton" type="Button" parent="CenterRobot/ScrollContainer/VerticalRobot/HDistanceContainer"]
-margin_left = 310.0
-margin_right = 409.0
+margin_left = 377.0
+margin_right = 476.0
 margin_bottom = 31.0
 custom_fonts/font = ExtResource( 3 )
 text = "XX AM"
@@ -229,10 +254,8 @@ margin_right = 965.0
 margin_bottom = 1085.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CenterBuildings"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 485.0
-margin_bottom = 735.0
+margin_right = 475.0
+margin_bottom = 725.0
 rect_min_size = Vector2( 475, 725 )
 
 [node name="VerticalBuildings" type="VBoxContainer" parent="CenterBuildings/ScrollContainer"]
@@ -417,6 +440,8 @@ margin_bottom = 25.0
 custom_fonts/font = ExtResource( 3 )
 text = "Revenue : 0/sec"
 [connection signal="timeout" from="CenterAntimatter/VerticalAntimatter/TotalAntimatter/CurrencyTimer" to="." method="_on_CurrencyTimer_timeout"]
+[connection signal="pressed" from="CenterRobot/ScrollContainer/VerticalRobot/HCacContainer/ImproveMeleeButton" to="." method="_on_ImproveMeleeButton_pressed"]
+[connection signal="pressed" from="CenterRobot/ScrollContainer/VerticalRobot/HDistanceContainer/ImproveDistanceButton" to="." method="_on_ImproveDistanceButton_pressed"]
 [connection signal="pressed" from="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container/BuyBuilding1" to="." method="_on_BuyBuilding1_pressed"]
 [connection signal="pressed" from="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container/BuyBuilding2" to="." method="_on_BuyBuilding2_pressed"]
 [connection signal="pressed" from="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container/BuyBuilding3" to="." method="_on_BuyBuilding3_pressed"]
