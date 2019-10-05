@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://ARPG/Ennemies/BaseEnnemy/EnnemyBase.gd" type="Script" id=1]
-[ext_resource path="res://assets/72267645_397230914283131_1073197892161765376_n.png" type="Texture" id=2]
+[ext_resource path="res://ARPG/Ennemies/TrashForest1.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/TrashForest1Iddle.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -27,7 +27,7 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
