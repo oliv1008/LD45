@@ -16,14 +16,14 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.188235, 0.188235, 0.188235, 1 )
 corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.188235, 0.188235, 0.188235, 1 )
 corner_radius_top_left = 100
 corner_radius_top_right = 100
@@ -37,35 +37,35 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0.733333, 0.721569, 0, 1 )
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.733333, 0.721569, 0, 1 )
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
-
 [sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.8125, 0, 0, 1 )
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
-
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0.623529, 0, 0, 1 )
+bg_color = Color( 0.733333, 0.721569, 0, 1 )
 corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
 [sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.733333, 0.721569, 0, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.8125, 0, 0, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.623529, 0, 0, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.623529, 0, 0, 1 )
 corner_radius_top_left = 100
 corner_radius_top_right = 100
@@ -123,8 +123,8 @@ margin_top = 324.0
 margin_right = 502.75
 margin_bottom = 397.0
 custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Level 2" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet G/Background1"]
@@ -133,8 +133,8 @@ margin_top = 207.0
 margin_right = 649.0
 margin_bottom = 280.0
 custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Level 3" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet G/Background1"]
@@ -143,8 +143,8 @@ margin_top = 450.0
 margin_right = 768.25
 margin_bottom = 523.0
 custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Level 4" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet G/Background1"]
@@ -153,8 +153,8 @@ margin_top = 558.0
 margin_right = 354.25
 margin_bottom = 631.0
 custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Farm" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet G/Background1"]
@@ -163,8 +163,8 @@ margin_top = 351.0
 margin_right = 219.25
 margin_bottom = 424.0
 custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 8 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 script = ExtResource( 6 )
 
 [node name="Boss" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet G/Background1"]
@@ -172,19 +172,19 @@ margin_left = 249.0
 margin_top = 171.0
 margin_right = 325.0
 margin_bottom = 244.0
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 script = ExtResource( 6 )
 
 [node name="Planet C" type="Tabs" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 40.0
-margin_right = -5.0
-margin_bottom = -5.0
+margin_left = 4.0
+margin_top = 43.0
+margin_right = -4.0
+margin_bottom = -4.0
 script = ExtResource( 7 )
 
 [node name="Background2" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/Planet C"]
@@ -205,8 +205,8 @@ margin_top = 327.0
 margin_right = 501.75
 margin_bottom = 400.0
 custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Level 6" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
@@ -215,8 +215,8 @@ margin_top = 210.0
 margin_right = 648.0
 margin_bottom = 283.0
 custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Level 7" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
@@ -225,8 +225,8 @@ margin_top = 453.0
 margin_right = 767.25
 margin_bottom = 526.0
 custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Level 8" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
@@ -235,8 +235,8 @@ margin_top = 561.0
 margin_right = 353.25
 margin_bottom = 634.0
 custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Farm2" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
@@ -245,8 +245,8 @@ margin_top = 354.0
 margin_right = 218.25
 margin_bottom = 427.0
 custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 8 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 script = ExtResource( 6 )
 
 [node name="Boss2" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
@@ -254,19 +254,19 @@ margin_left = 248.0
 margin_top = 174.0
 margin_right = 324.0
 margin_bottom = 247.0
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 script = ExtResource( 6 )
 
 [node name="Planet D" type="Tabs" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 40.0
-margin_right = -5.0
-margin_bottom = -5.0
+margin_left = 4.0
+margin_top = 43.0
+margin_right = -4.0
+margin_bottom = -4.0
 script = ExtResource( 8 )
 
 [node name="Background3" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/Planet D"]
@@ -287,8 +287,8 @@ margin_top = 327.0
 margin_right = 501.75
 margin_bottom = 400.0
 custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Level 9" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet D/Background3"]
@@ -297,8 +297,8 @@ margin_top = 210.0
 margin_right = 648.0
 margin_bottom = 283.0
 custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Level 11" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet D/Background3"]
@@ -307,8 +307,8 @@ margin_top = 453.0
 margin_right = 767.25
 margin_bottom = 526.0
 custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Level 12" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet D/Background3"]
@@ -317,8 +317,8 @@ margin_top = 561.0
 margin_right = 353.25
 margin_bottom = 634.0
 custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Farm3" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet D/Background3"]
@@ -327,8 +327,8 @@ margin_top = 354.0
 margin_right = 218.25
 margin_bottom = 427.0
 custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 8 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 script = ExtResource( 6 )
 
 [node name="Boss3" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet D/Background3"]
@@ -336,7 +336,7 @@ margin_left = 248.0
 margin_top = 174.0
 margin_right = 324.0
 margin_bottom = 247.0
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 script = ExtResource( 6 )

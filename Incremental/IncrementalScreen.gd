@@ -26,7 +26,7 @@ var totalRevenueBuilding2 = 0
 var priceBuilding3 = 1000
 var revenueBuilding3 = 400
 var quantityBuilding3 = 0
-var totalRevenueBuilding3 = 1111111111111110
+var totalRevenueBuilding3 = 0
 
 func _ready():
 	totalAntimatter.text = str("You have ", antimatter, " antimatter")
