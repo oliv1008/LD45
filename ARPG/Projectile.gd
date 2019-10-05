@@ -17,7 +17,8 @@ func init(shooterParam):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	move_and_collide(velocity * delta)
+	var collision = move_and_collide(velocity * delta)
+	
 
 func _on_Visibility_sreen_exited():
 	queue_free()
