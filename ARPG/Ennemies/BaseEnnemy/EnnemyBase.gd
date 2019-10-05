@@ -50,15 +50,19 @@ func attack():
 	animationPlayer.play("attack")
 	
 func die():
+#	TODO Jouer animations de mort
 	queue_free()
 
+#Quand l'animation d'attaque se fini on autorise l'enemie à bouger à nouveau
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "attack":
 		isAttacking = false
 
-
+#Quand la hitbox d'attaque de l'enemie touche un autre corps
 func _on_Area2D_body_entered(body):
 	if body == self:
 		print("Je suis l'enemie")
 	else:
 		print("Je suis une cible")
+#		if body.has_method("get_attack"):
+#			body.get_attack(valeurDeDegat)
