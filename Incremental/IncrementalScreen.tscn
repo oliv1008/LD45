@@ -67,6 +67,9 @@ custom_fonts/font = SubResource( 1 )
 text = "You have XXXX antimatter"
 align = 1
 
+[node name="CurrencyTimer" type="Timer" parent="CenterAntimatter/VerticalAntimatter/TotalAntimatter"]
+autostart = true
+
 [node name="AntimatterPerSeconds" type="Label" parent="CenterAntimatter/VerticalAntimatter"]
 margin_top = 46.0
 margin_right = 524.0
@@ -89,22 +92,27 @@ margin_right = 483.0
 margin_bottom = 1080.0
 
 [node name="VerticalRobot" type="VBoxContainer" parent="CenterRobot"]
-margin_left = 46.0
+margin_left = 37.0
 margin_top = 225.0
-margin_right = 437.0
+margin_right = 446.0
 margin_bottom = 502.0
 custom_constants/separation = 50
 
 [node name="ImproveRobots" type="Label" parent="CenterRobot/VerticalRobot"]
-margin_right = 391.0
+margin_right = 409.0
 margin_bottom = 25.0
 custom_fonts/font = ExtResource( 3 )
 text = "Improve your Robot"
 
 [node name="HPVContainer" type="HBoxContainer" parent="CenterRobot/VerticalRobot"]
 margin_top = 75.0
-margin_right = 391.0
+margin_right = 409.0
 margin_bottom = 115.0
+custom_constants/separation = 10
+
+[node name="Panel" type="Panel" parent="CenterRobot/VerticalRobot/HPVContainer"]
+visible = false
+margin_bottom = 40.0
 
 [node name="PV" type="Label" parent="CenterRobot/VerticalRobot/HPVContainer"]
 margin_top = 7.0
@@ -115,39 +123,40 @@ text = "PV"
 align = 1
 
 [node name="VSeparator" type="VSeparator" parent="CenterRobot/VerticalRobot/HPVContainer"]
-margin_left = 42.0
-margin_right = 46.0
+margin_left = 48.0
+margin_right = 52.0
 margin_bottom = 40.0
 
 [node name="Heart1" type="TextureRect" parent="CenterRobot/VerticalRobot/HPVContainer"]
-margin_left = 50.0
-margin_right = 90.0
+margin_left = 62.0
+margin_right = 102.0
 margin_bottom = 40.0
 texture = ExtResource( 4 )
 
 [node name="Heart2" type="TextureRect" parent="CenterRobot/VerticalRobot/HPVContainer"]
-margin_left = 94.0
-margin_right = 134.0
+margin_left = 112.0
+margin_right = 152.0
 margin_bottom = 40.0
 texture = ExtResource( 4 )
 
 [node name="Heart3" type="TextureRect" parent="CenterRobot/VerticalRobot/HPVContainer"]
-margin_left = 138.0
-margin_right = 178.0
+margin_left = 162.0
+margin_right = 202.0
 margin_bottom = 40.0
 texture = ExtResource( 4 )
 
 [node name="ImprovePVButton" type="Button" parent="CenterRobot/VerticalRobot/HPVContainer"]
-margin_left = 182.0
-margin_right = 281.0
+margin_left = 212.0
+margin_right = 311.0
 margin_bottom = 40.0
 custom_fonts/font = ExtResource( 3 )
 text = "XX AM"
 
 [node name="HCacContainer" type="HBoxContainer" parent="CenterRobot/VerticalRobot"]
 margin_top = 165.0
-margin_right = 391.0
+margin_right = 409.0
 margin_bottom = 196.0
+custom_constants/separation = 10
 
 [node name="Cac" type="Label" parent="CenterRobot/VerticalRobot/HCacContainer"]
 margin_top = 3.0
@@ -158,29 +167,30 @@ text = "Melee"
 align = 1
 
 [node name="VSeparator" type="VSeparator" parent="CenterRobot/VerticalRobot/HCacContainer"]
-margin_left = 82.0
-margin_right = 86.0
+margin_left = 88.0
+margin_right = 92.0
 margin_bottom = 31.0
 
 [node name="MeleeValue" type="Label" parent="CenterRobot/VerticalRobot/HCacContainer"]
-margin_left = 90.0
+margin_left = 102.0
 margin_top = 3.0
-margin_right = 242.0
+margin_right = 254.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 3 )
 text = "XX damage"
 
 [node name="ImproveMeleeButton" type="Button" parent="CenterRobot/VerticalRobot/HCacContainer"]
-margin_left = 246.0
-margin_right = 345.0
+margin_left = 264.0
+margin_right = 363.0
 margin_bottom = 31.0
 custom_fonts/font = ExtResource( 3 )
 text = "XX AM"
 
 [node name="HDistanceContainer" type="HBoxContainer" parent="CenterRobot/VerticalRobot"]
 margin_top = 246.0
-margin_right = 391.0
+margin_right = 409.0
 margin_bottom = 277.0
+custom_constants/separation = 10
 
 [node name="Distance" type="Label" parent="CenterRobot/VerticalRobot/HDistanceContainer"]
 margin_top = 3.0
@@ -191,21 +201,21 @@ text = "Distance"
 align = 1
 
 [node name="VSeparator" type="VSeparator" parent="CenterRobot/VerticalRobot/HDistanceContainer"]
-margin_left = 128.0
-margin_right = 132.0
+margin_left = 134.0
+margin_right = 138.0
 margin_bottom = 31.0
 
 [node name="DistanceValue" type="Label" parent="CenterRobot/VerticalRobot/HDistanceContainer"]
-margin_left = 136.0
+margin_left = 148.0
 margin_top = 3.0
-margin_right = 288.0
+margin_right = 300.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 3 )
 text = "XX damage"
 
 [node name="ImproveDistanceButton" type="Button" parent="CenterRobot/VerticalRobot/HDistanceContainer"]
-margin_left = 292.0
-margin_right = 391.0
+margin_left = 310.0
+margin_right = 409.0
 margin_bottom = 31.0
 custom_fonts/font = ExtResource( 3 )
 text = "XX AM"
@@ -217,24 +227,29 @@ margin_right = 959.0
 margin_bottom = 1077.0
 
 [node name="VerticalBuildings" type="VBoxContainer" parent="CenterBuildings"]
-margin_left = 34.0
-margin_top = 228.0
-margin_right = 442.0
-margin_bottom = 496.0
+margin_left = 21.0
+margin_top = 184.0
+margin_right = 455.0
+margin_bottom = 539.0
 custom_constants/separation = 50
 
 [node name="BuyBuildings" type="Label" parent="CenterBuildings/VerticalBuildings"]
-margin_right = 408.0
+margin_right = 434.0
 margin_bottom = 25.0
 custom_fonts/font = ExtResource( 3 )
 text = "Buy buildings"
 
-[node name="HBuilding1Container" type="HBoxContainer" parent="CenterBuildings/VerticalBuildings"]
+[node name="VBuilding1Container" type="VBoxContainer" parent="CenterBuildings/VerticalBuildings"]
 margin_top = 75.0
-margin_right = 408.0
-margin_bottom = 106.0
+margin_right = 434.0
+margin_bottom = 135.0
 
-[node name="Building1" type="Label" parent="CenterBuildings/VerticalBuildings/HBuilding1Container"]
+[node name="HBuilding1Container" type="HBoxContainer" parent="CenterBuildings/VerticalBuildings/VBuilding1Container"]
+margin_right = 434.0
+margin_bottom = 31.0
+custom_constants/separation = 10
+
+[node name="Building1" type="Label" parent="CenterBuildings/VerticalBuildings/VBuilding1Container/HBuilding1Container"]
 margin_top = 3.0
 margin_right = 126.0
 margin_bottom = 28.0
@@ -242,32 +257,56 @@ custom_fonts/font = ExtResource( 3 )
 text = "Building1"
 align = 1
 
-[node name="VSeparator" type="VSeparator" parent="CenterBuildings/VerticalBuildings/HBuilding1Container"]
-margin_left = 130.0
-margin_right = 134.0
+[node name="VSeparator" type="VSeparator" parent="CenterBuildings/VerticalBuildings/VBuilding1Container/HBuilding1Container"]
+margin_left = 136.0
+margin_right = 140.0
 margin_bottom = 31.0
 
-[node name="AMValuePerSec" type="Label" parent="CenterBuildings/VerticalBuildings/HBuilding1Container"]
-margin_left = 138.0
+[node name="AMValuePerSec" type="Label" parent="CenterBuildings/VerticalBuildings/VBuilding1Container/HBuilding1Container"]
+margin_left = 150.0
 margin_top = 3.0
-margin_right = 302.0
+margin_right = 247.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 3 )
-text = "XX AM / sec"
+text = "2 / sec"
 
-[node name="ImproveDistanceButton" type="Button" parent="CenterBuildings/VerticalBuildings/HBuilding1Container"]
-margin_left = 306.0
-margin_right = 405.0
+[node name="BuyBuilding1" type="Button" parent="CenterBuildings/VerticalBuildings/VBuilding1Container/HBuilding1Container"]
+margin_left = 257.0
+margin_right = 353.0
 margin_bottom = 31.0
 custom_fonts/font = ExtResource( 3 )
-text = "XX AM"
+text = "10 AM"
 
-[node name="HBuilding2Container2" type="HBoxContainer" parent="CenterBuildings/VerticalBuildings"]
-margin_top = 156.0
-margin_right = 408.0
-margin_bottom = 187.0
+[node name="HBuilding1Container2" type="HBoxContainer" parent="CenterBuildings/VerticalBuildings/VBuilding1Container"]
+margin_top = 35.0
+margin_right = 434.0
+margin_bottom = 60.0
+custom_constants/separation = 15
 
-[node name="Building2" type="Label" parent="CenterBuildings/VerticalBuildings/HBuilding2Container2"]
+[node name="NumberBuilding1" type="Label" parent="CenterBuildings/VerticalBuildings/VBuilding1Container/HBuilding1Container2"]
+margin_right = 160.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 3 )
+text = "Quantity : 0"
+
+[node name="RevenueBuilding1" type="Label" parent="CenterBuildings/VerticalBuildings/VBuilding1Container/HBuilding1Container2"]
+margin_left = 175.0
+margin_right = 399.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 3 )
+text = "Revenue : 0/sec"
+
+[node name="VBuilding2Container" type="VBoxContainer" parent="CenterBuildings/VerticalBuildings"]
+margin_top = 185.0
+margin_right = 434.0
+margin_bottom = 245.0
+
+[node name="HBuilding2Container" type="HBoxContainer" parent="CenterBuildings/VerticalBuildings/VBuilding2Container"]
+margin_right = 434.0
+margin_bottom = 31.0
+custom_constants/separation = 10
+
+[node name="Building2" type="Label" parent="CenterBuildings/VerticalBuildings/VBuilding2Container/HBuilding2Container"]
 margin_top = 3.0
 margin_right = 129.0
 margin_bottom = 28.0
@@ -275,32 +314,56 @@ custom_fonts/font = ExtResource( 3 )
 text = "Building2"
 align = 1
 
-[node name="VSeparator" type="VSeparator" parent="CenterBuildings/VerticalBuildings/HBuilding2Container2"]
-margin_left = 133.0
-margin_right = 137.0
+[node name="VSeparator" type="VSeparator" parent="CenterBuildings/VerticalBuildings/VBuilding2Container/HBuilding2Container"]
+margin_left = 139.0
+margin_right = 143.0
 margin_bottom = 31.0
 
-[node name="AMValuePerSec" type="Label" parent="CenterBuildings/VerticalBuildings/HBuilding2Container2"]
-margin_left = 141.0
+[node name="AMValuePerSec" type="Label" parent="CenterBuildings/VerticalBuildings/VBuilding2Container/HBuilding2Container"]
+margin_left = 153.0
 margin_top = 3.0
-margin_right = 305.0
+margin_right = 269.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 3 )
-text = "XX AM / sec"
+text = "30 / sec"
 
-[node name="ImproveDistanceButton" type="Button" parent="CenterBuildings/VerticalBuildings/HBuilding2Container2"]
-margin_left = 309.0
-margin_right = 408.0
+[node name="BuyBuilding2" type="Button" parent="CenterBuildings/VerticalBuildings/VBuilding2Container/HBuilding2Container"]
+margin_left = 279.0
+margin_right = 395.0
 margin_bottom = 31.0
 custom_fonts/font = ExtResource( 3 )
-text = "XX AM"
+text = "100 AM"
 
-[node name="HBuilding3Container3" type="HBoxContainer" parent="CenterBuildings/VerticalBuildings"]
-margin_top = 237.0
-margin_right = 408.0
-margin_bottom = 268.0
+[node name="HBuilding2Container2" type="HBoxContainer" parent="CenterBuildings/VerticalBuildings/VBuilding2Container"]
+margin_top = 35.0
+margin_right = 434.0
+margin_bottom = 60.0
+custom_constants/separation = 15
 
-[node name="Building3" type="Label" parent="CenterBuildings/VerticalBuildings/HBuilding3Container3"]
+[node name="NumberBuilding2" type="Label" parent="CenterBuildings/VerticalBuildings/VBuilding2Container/HBuilding2Container2"]
+margin_right = 160.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 3 )
+text = "Quantity : 0"
+
+[node name="RevenueBuilding2" type="Label" parent="CenterBuildings/VerticalBuildings/VBuilding2Container/HBuilding2Container2"]
+margin_left = 175.0
+margin_right = 399.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 3 )
+text = "Revenue : 0/sec"
+
+[node name="VBuilding3Container" type="VBoxContainer" parent="CenterBuildings/VerticalBuildings"]
+margin_top = 295.0
+margin_right = 434.0
+margin_bottom = 355.0
+
+[node name="HBuilding3Container" type="HBoxContainer" parent="CenterBuildings/VerticalBuildings/VBuilding3Container"]
+margin_right = 434.0
+margin_bottom = 31.0
+custom_constants/separation = 10
+
+[node name="Building3" type="Label" parent="CenterBuildings/VerticalBuildings/VBuilding3Container/HBuilding3Container"]
 margin_top = 3.0
 margin_right = 128.0
 margin_bottom = 28.0
@@ -308,22 +371,45 @@ custom_fonts/font = ExtResource( 3 )
 text = "Building3"
 align = 1
 
-[node name="VSeparator" type="VSeparator" parent="CenterBuildings/VerticalBuildings/HBuilding3Container3"]
-margin_left = 132.0
-margin_right = 136.0
+[node name="VSeparator" type="VSeparator" parent="CenterBuildings/VerticalBuildings/VBuilding3Container/HBuilding3Container"]
+margin_left = 138.0
+margin_right = 142.0
 margin_bottom = 31.0
 
-[node name="AMValuePerSec" type="Label" parent="CenterBuildings/VerticalBuildings/HBuilding3Container3"]
-margin_left = 140.0
+[node name="AMValuePerSec" type="Label" parent="CenterBuildings/VerticalBuildings/VBuilding3Container/HBuilding3Container"]
+margin_left = 152.0
 margin_top = 3.0
-margin_right = 304.0
+margin_right = 288.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 3 )
-text = "XX AM / sec"
+text = "400 / sec"
 
-[node name="ImproveDistanceButton" type="Button" parent="CenterBuildings/VerticalBuildings/HBuilding3Container3"]
-margin_left = 308.0
-margin_right = 407.0
+[node name="BuyBuilding3" type="Button" parent="CenterBuildings/VerticalBuildings/VBuilding3Container/HBuilding3Container"]
+margin_left = 298.0
+margin_right = 434.0
 margin_bottom = 31.0
 custom_fonts/font = ExtResource( 3 )
-text = "XX AM"
+text = "1000 AM"
+
+[node name="HBuilding3Container2" type="HBoxContainer" parent="CenterBuildings/VerticalBuildings/VBuilding3Container"]
+margin_top = 35.0
+margin_right = 434.0
+margin_bottom = 60.0
+custom_constants/separation = 15
+
+[node name="NumberBuilding3" type="Label" parent="CenterBuildings/VerticalBuildings/VBuilding3Container/HBuilding3Container2"]
+margin_right = 160.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 3 )
+text = "Quantity : 0"
+
+[node name="RevenueBuilding3" type="Label" parent="CenterBuildings/VerticalBuildings/VBuilding3Container/HBuilding3Container2"]
+margin_left = 175.0
+margin_right = 399.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 3 )
+text = "Revenue : 0/sec"
+[connection signal="timeout" from="CenterAntimatter/VerticalAntimatter/TotalAntimatter/CurrencyTimer" to="." method="_on_CurrencyTimer_timeout"]
+[connection signal="pressed" from="CenterBuildings/VerticalBuildings/VBuilding1Container/HBuilding1Container/BuyBuilding1" to="." method="_on_BuyBuilding1_pressed"]
+[connection signal="pressed" from="CenterBuildings/VerticalBuildings/VBuilding2Container/HBuilding2Container/BuyBuilding2" to="." method="_on_BuyBuilding2_pressed"]
+[connection signal="pressed" from="CenterBuildings/VerticalBuildings/VBuilding3Container/HBuilding3Container/BuyBuilding3" to="." method="_on_BuyBuilding3_pressed"]
