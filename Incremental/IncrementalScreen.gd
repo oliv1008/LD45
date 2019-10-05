@@ -9,6 +9,10 @@ onready var antimatterPerSeconds = $CenterAntimatter/VerticalAntimatter/Antimatt
 onready var TurnScreenOn = $CenterAntimatter/VerticalAntimatter/TurnOnScreen
 
 var firstTime = true
+var secondTime = true
+
+onready var CreateRobot = $CenterAntimatter/VerticalAntimatter/CreateRobot
+onready var CenterRobot = $CenterRobot
 
 onready var NumberBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container2/NumberBuilding1
 onready var RevenueBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container2/RevenueBuilding1
@@ -55,8 +59,6 @@ var improveDistancePrice = 40
 var ammoPrice = 1
 
 func _ready():
-	#totalAntimatter.text = str("You have ", antimatter, " antimatter")
-	#antimatterPerSeconds.text = str("You earn ", antimatterPerSec, " antimatter per seconds")
 	#NumberBuilding1.text = str("Quantity : ", quantityBuilding1)
 	#RevenueBuilding1.text = str("Revenue : ", totalRevenueBuilding1)
 	#PriceBuilding1.text = str(priceBuilding1, " AM")
@@ -66,14 +68,13 @@ func _ready():
 	#PriceBuilding3.text = str(priceBuilding3, " AM")
 	#NumberBuilding3.text = str("Quantity : ", quantityBuilding3)
 	#RevenueBuilding3.text = str("Revenue : ", totalRevenueBuilding3)
-	#MeleeValue.text = str(PersoGlobal.meleeDamage , " dmg")
-	#DistanceValue.text = str(PersoGlobal.distanceDamage , " dmg")
-	#NumberOfAmmo.text = str(PersoGlobal.numberOfAmmo, " Ammo")
-	#PriceImproveMelee.text = str(improveMeleePrice, " AM")
-	#PriceImproveDistance.text = str(improveDistancePrice, " AM")
-	#PriceAmmo.text = str(ammoPrice, " AM")
-	#PriceHeart.text = str(heartPrice, " AM")
-	pass
+	MeleeValue.text = str(PersoGlobal.meleeDamage , " dmg")
+	DistanceValue.text = str(PersoGlobal.distanceDamage , " dmg")
+	NumberOfAmmo.text = str(PersoGlobal.numberOfAmmo, " Ammo")
+	PriceImproveMelee.text = str(improveMeleePrice, " AM")
+	PriceImproveDistance.text = str(improveDistancePrice, " AM")
+	PriceAmmo.text = str(ammoPrice, " AM")
+	PriceHeart.text = str(heartPrice, " AM")
 
 func _letsGoAntimatter():
 	totalAntimatter.text = str("You have ", antimatter, " antimatter")
@@ -87,7 +88,8 @@ func _on_CurrencyTimer_timeout():
 	totalAntimatter.text = str("You have ", antimatter, " antimatter")
 	if (antimatter == 3 && firstTime == true):
 		TurnScreenOn.visible = true
-		firstTime = false;
+	if (antimatter == 5 && firstTime == false && secondTime == true):
+		CreateRobot.visible = true;
 
 func _on_BuyBuilding1_pressed():
 	if (antimatter >= priceBuilding1):
@@ -172,6 +174,8 @@ func _on_ImprovePVButton_pressed():
 func _on_TurnOnScreen_pressed():
 	var notificationData = "allumetoi"
 	nc.post_notification("DEMO_NOTIFICATION", notificationData)
+	firstTime = false;
+	$HorizontalLimit.visible = true;
 	TurnScreenOn.visible = false
 	antimatter -= 3
 
@@ -180,3 +184,12 @@ func _on_StartTheGame_pressed():
 	$ColorRect.visible = false
 	antimatter = 0
 	_letsGoAntimatter()
+
+func _on_CreateRobot_pressed():
+	var notificationData = "Create robot"
+	nc.post_notification("DEMO_NOTIFICATION", notificationData)
+	secondTime = false
+	CreateRobot.visible = false
+	$VerticalLimit.visible = true
+	antimatter -= 5
+	CenterRobot.visible = true

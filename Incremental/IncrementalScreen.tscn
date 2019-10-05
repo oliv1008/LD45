@@ -99,6 +99,14 @@ margin_bottom = 151.0
 custom_fonts/font = SubResource( 3 )
 text = "Turn the screen on ! (3 AM)"
 
+[node name="CreateRobot" type="Button" parent="CenterAntimatter/VerticalAntimatter"]
+visible = false
+margin_top = 120.0
+margin_right = 524.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 3 )
+text = "Create robot (5 AM)"
+
 [node name="CenterRobot" type="CenterContainer" parent="."]
 visible = false
 margin_left = 5.0
@@ -642,6 +650,7 @@ custom_fonts/font = SubResource( 5 )
 text = "Start the game"
 [connection signal="timeout" from="CenterAntimatter/VerticalAntimatter/TotalAntimatter/CurrencyTimer" to="." method="_on_CurrencyTimer_timeout"]
 [connection signal="pressed" from="CenterAntimatter/VerticalAntimatter/TurnOnScreen" to="." method="_on_TurnOnScreen_pressed"]
+[connection signal="pressed" from="CenterAntimatter/VerticalAntimatter/CreateRobot" to="." method="_on_CreateRobot_pressed"]
 [connection signal="pressed" from="CenterRobot/ScrollContainer/VerticalRobot/HPVContainer/ImprovePVButton" to="." method="_on_ImprovePVButton_pressed"]
 [connection signal="pressed" from="CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer/ImproveMeleeButton" to="." method="_on_ImproveMeleeButton_pressed"]
 [connection signal="pressed" from="CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer/ImproveDistanceButton" to="." method="_on_ImproveDistanceButton_pressed"]
