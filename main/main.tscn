@@ -42,3 +42,4 @@ debug_draw = 1
 render_target_update_mode = 3
 
 [node name="RPGScreen" parent="HBoxContainer/ViewportContainer2/ViewportARPG" instance=ExtResource( 3 )]
+visible = false
