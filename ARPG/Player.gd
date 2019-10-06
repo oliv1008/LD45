@@ -4,7 +4,7 @@ onready var body_sprite = $BodySprite
 
 var screen_size
 var bodySize  = Vector2()
-onready var weapon = $Handgun
+onready var weapon = $Shotgun
 onready var cqcWeapon = $Spear
 var player = true
 export var SPEED = 450 #(pixels/sec)
