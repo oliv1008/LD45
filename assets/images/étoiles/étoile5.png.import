@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/antimatter.png-9c37ab4d1ea706a8adb3948943258291.stex"
+path="res://.import/étoile5.png-6b5a77f09eb5865ad31698237268494c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/antimatter.png"
-dest_files=[ "res://.import/antimatter.png-9c37ab4d1ea706a8adb3948943258291.stex" ]
+source_file="res://assets/images/étoiles/étoile5.png"
+dest_files=[ "res://.import/étoile5.png-6b5a77f09eb5865ad31698237268494c.stex" ]
 
 [params]
 
