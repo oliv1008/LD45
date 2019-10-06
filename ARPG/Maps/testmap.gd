@@ -16,4 +16,9 @@ func _on_Timer_timeout():
 		"amEarned" : 100,
 		"blueprint" : 1
 	}
+  
+	nc.post_notification("LEVEL_END",notificationData)
+	
+	notificationData = "res://ARPG/ARPG_UI/rpgUI.tscn"
+	nc.post_notification("LOAD_LEVEL",notificationData)
 	nc.post_notification("LEVEL_END",notificationData)
