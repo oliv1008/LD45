@@ -6,7 +6,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.26818, 6.38485 )
 
-[node name="GodotBullet" index="0" instance=ExtResource( 1 )]
+[node name="GodotBullet" instance=ExtResource( 1 )]
+collision_mask = 12
+speed = 500
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )

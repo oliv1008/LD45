@@ -1,7 +1,7 @@
 extends Node2D
 
 export (String) var nameOfWeapon
-export (int) var damageMultiplier
+export (float) var damageMultiplier
 export (float) var rateOfFire
 var canShot = true
 export (float) var ammoPerShot
@@ -21,11 +21,16 @@ func _process(delta):
 
 func shot(targetPos):
 	if canShot:
-		projectile.instance()
-		projectile.shooter = holder
-		projectile.position = $EndBarrel.position
-		holder.get_parent().add_child()
+		var projectileInstance = projectile.instance()
+		projectileInstance.damage = PersoGlobal.distanceDamage * damageMultiplier
+		projectileInstance.shooter = holder
+		print("self = ", self)
+		print("holder = ", holder)
+		projectileInstance.position = $EndBarrel.position + position
+		holder.get_parent().add_child(projectileInstance)
 		canShot = false
+		$Timer.start()
 
 func _on_Timer_timeout():
 	canShot = true
+	$Timer.stop()
