@@ -20,13 +20,14 @@ func _process(delta):
 		shot(get_global_mouse_position())
 
 func shot(targetPos):
+	print("$EndBarrel.global_position = ", $EndBarrel.global_position)
 	if canShot:
 		var projectileInstance = projectile.instance()
 		projectileInstance.damage = PersoGlobal.distanceDamage * damageMultiplier
 		projectileInstance.shooter = holder
 		print("self = ", self)
 		print("holder = ", holder)
-		projectileInstance.position = $EndBarrel.position + position
+		projectileInstance.position = $EndBarrel.global_position
 		holder.get_parent().add_child(projectileInstance)
 		canShot = false
 		$Timer.start()

@@ -4,9 +4,10 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 onready var body_sprite = $BodySprite
-onready var weapon_sprite = $WeaponSprite
+#onready var weapon_sprite = $WeaponSprite
 var screen_size
 var bodySize  = Vector2()
+onready var weapon = $Handgun
 
 var projectile = preload("res://ARPG/Projectile.tscn")
 
@@ -16,6 +17,7 @@ export var SPEED = 450 #(pixels/sec)
 func _ready():
 	bodySize = body_sprite.frames.get_frame("default", 0).get_size()
 	screen_size = get_viewport_rect().size
+	weapon.position = $Position2D.position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -40,7 +42,8 @@ func _physics_process(delta):
 		pass #$AnimatedSprite.stop()
 	
 	if Input.is_mouse_button_pressed(BUTTON_LEFT):
-		fire()
+		print("rotation = ", rotation)
+		weapon.shot(get_viewport().get_mouse_position())
 	
 	move_and_collide(velocity * delta)
 

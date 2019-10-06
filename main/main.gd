@@ -18,6 +18,6 @@ func loadLevel(scene):
 	var s = ResourceLoader.load(scene)
 	var scene_loaded = s.instance()
 	# add scene to root
-	$HBoxContainer/ARPGUI/ViewportARPG.add_child(scene_loaded)
+	#$HBoxContainer/ARPGUI/ViewportARPG.add_child(scene_loaded)
 	
 	print("launching scene : " + scene)
