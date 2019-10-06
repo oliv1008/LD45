@@ -6,7 +6,7 @@ var pv = 3
 var pvMax = 3
 var numberOfAmmoMax = 10
 var ammoLeft = numberOfAmmoMax
-var ennemiesLeft = 10
+var ennemiesLeft = 8
 var currentWeaponCacName = "Fist"
 var currentWeaponDistanceName = "Handgun"
 var viewportARPG

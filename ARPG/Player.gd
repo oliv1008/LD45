@@ -39,8 +39,7 @@ func _physics_process(delta):
 		pass #$AnimatedSprite.stop()
 	
 	if Input.is_mouse_button_pressed(BUTTON_LEFT):
-		weapon.shot(get_local_mouse_position())
-		print(PersoGlobal.viewportARPG.get_mouse_position())
+		weapon.shot(get_viewport().get_mouse_position())
 	
 	move_and_collide(velocity * delta)
 
