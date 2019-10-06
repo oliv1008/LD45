@@ -14,18 +14,20 @@ func _ready():
 		print("Arme fille d'un kinematicBody, on initialise le porteur")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_mouse_button_pressed(BUTTON_RIGHT) && canAttack:
-		visible = true
-		canAttack = false
-		$Timer.start()
-		$AnimationPlayer.play("BaseAttack")
+#func _process(delta):
+#	pass
+		
 
 func _on_BaseCQCWeapon_body_entered(body):
 	if body.get_class() == "KinematicBody2D":
 		if body.has_method("get_hit"):
 			body.get_hit(PersoGlobal.meleeDamage * damageMultiplier)
 
+func attack():
+	visible = true
+	canAttack = false
+	$Timer.start()
+	$AnimationPlayer.play("BaseAttack")
 
 func _on_Timer_timeout():
 	canAttack = true
@@ -33,4 +35,3 @@ func _on_Timer_timeout():
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	visible = false
-	rotation = 0

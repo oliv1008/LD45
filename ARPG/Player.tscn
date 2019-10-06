@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ARPG/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/72267645_397230914283131_1073197892161765376_n.png" type="Texture" id=2]
 [ext_resource path="res://ARPG/Weapons/Handgun/Handgun.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ARPG/Weapons/CQCSpear/Spear.tscn" type="PackedScene" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -35,5 +36,11 @@ shape = SubResource( 2 )
 position = Vector2( 50.6531, -13.6502 )
 damageMultiplier = 1.0
 
-[node name="Position2D" type="Position2D" parent="."]
+[node name="Position2DDistanceWeapon" type="Position2D" parent="."]
 position = Vector2( -6.93275, -20.168 )
+
+[node name="Position2DCQCWeapon" type="Position2D" parent="."]
+position = Vector2( -6.49263, 54.2133 )
+
+[node name="Spear" parent="." instance=ExtResource( 4 )]
+position = Vector2( 52.375, 73.9412 )
