@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TrashForest1Iddle.png-a950a2a3bb3564ae5c17fb90e66567a0.stex"
+path="res://.import/MiniBossForestWalking.png-c1c54c2cb5638dd43dec2804dfdfd358.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/TrashForest1Iddle.png"
-dest_files=[ "res://.import/TrashForest1Iddle.png-a950a2a3bb3564ae5c17fb90e66567a0.stex" ]
+source_file="res://assets/images/Ennemis/Forest/MiniBossForestWalking.png"
+dest_files=[ "res://.import/MiniBossForestWalking.png-c1c54c2cb5638dd43dec2804dfdfd358.stex" ]
 
 [params]
 
