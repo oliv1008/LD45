@@ -6,7 +6,7 @@ var pv = 3
 var pvMax = 3
 var numberOfAmmoMax = 100
 var ammoLeft = numberOfAmmoMax
-var ennemiesLeft = 8
+var ennemiesLeft = 0
 var currentWeaponCacName = "Spear"
 var currentWeaponDistanceName = "Laser Gun"
 var viewportARPG

@@ -26,11 +26,11 @@ onready var PriceBuilding3 = $CenterBuildings/ScrollContainer/VerticalBuildings/
 
 onready var MeleeValue = $CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer/MeleeValue
 onready var DistanceValue = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer/DistanceValue
-onready var NumberOfAmmo = $CenterRobot/ScrollContainer/VerticalRobot/HAmmoContainer/NumberOfAmmo
+onready var NumberOfAmmo = $CenterRobot/ScrollContainer/VerticalRobot/VAmmoContainer/HAmmoContainer1/NumberOfAmmo
 onready var PriceHeart = $CenterRobot/ScrollContainer/VerticalRobot/HPVContainer/ImprovePVButton
-onready var PriceImproveMelee = $CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer/ImproveMeleeButton
-onready var PriceImproveDistance = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer/ImproveDistanceButton
-onready var PriceAmmo = $CenterRobot/ScrollContainer/VerticalRobot/HAmmoContainer/AmmoButton
+onready var PriceImproveMelee = $CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer4/ImproveMeleeButton
+onready var PriceImproveDistance = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer4/ImproveDistanceButton
+onready var PriceAmmo = $CenterRobot/ScrollContainer/VerticalRobot/VAmmoContainer/HAmmoContainer2/AmmoButton
 
 onready var Heart4 = $CenterRobot/ScrollContainer/VerticalRobot/HPVContainer/Heart4
 onready var Heart5 = $CenterRobot/ScrollContainer/VerticalRobot/HPVContainer/Heart5
