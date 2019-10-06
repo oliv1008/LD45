@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ARPG/Player.gd" type="Script" id=1]
 [ext_resource path="res://ARPG/Weapons/LaserHandgun/LaserHandgun.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/72267645_397230914283131_1073197892161765376_n.png" type="Texture" id=3]
+[ext_resource path="res://ARPG/Weapons/CQCSpear/Spear.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ARPG/Weapons/Handgun/Handgun.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/72267645_397230914283131_1073197892161765376_n.png" type="Texture" id=4]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -17,27 +21,40 @@ radius = 17.8401
 height = 50.5649
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 195.192, 104.856 )
+position = Vector2( 137.914, 128.632 )
 script = ExtResource( 1 )
 SPEED = 500
 
-[node name="LaserHandgun" parent="." instance=ExtResource( 2 )]
-position = Vector2( 634.815, 650.728 )
+[node name="Spear" parent="." instance=ExtResource( 2 )]
+rotation = 1.5708
+[node name="Handgun" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+rotation = 1.5708
+damageMultiplier = 1.0
+
 
 [node name="BodySprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.196899, -3.80688 )
 rotation = -1.5708
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.35646, -4.94862 )
 shape = SubResource( 2 )
-
-[node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 0.827931, -44.7018 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 current = true
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 0.287567, -45.7825 )
+
+[node name="Position2D2" type="Position2D" parent="."]
+position = Vector2( -0.447525, 35.0774 )
 

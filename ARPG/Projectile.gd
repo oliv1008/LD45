@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-var screen_size = get_viewport_rect().size
 var velocity
 var shooter
 export var speed = 600
