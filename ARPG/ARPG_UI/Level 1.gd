@@ -6,5 +6,6 @@ func _ready():
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _pressed():
+	var notificationData = "res://ARPG/Maps/testmap.tscn"
+	nc.post_notification("LOAD_LEVEL",notificationData)
