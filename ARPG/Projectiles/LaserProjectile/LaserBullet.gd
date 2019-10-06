@@ -3,14 +3,14 @@ extends KinematicBody2D
 var velocity
 var shooter
 var damage
+var mousePos
 export (int) var speed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var mouse_position = get_viewport().get_mouse_position()
 	print("shooter = ", shooter)
 	var shooterPos = shooter.position
-	var targetPos = (mouse_position - shooterPos).normalized()
+	var targetPos = (mousePos - shooterPos).normalized()
 	velocity = targetPos * speed
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

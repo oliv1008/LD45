@@ -6,6 +6,7 @@
 
 [node name="Handgun" type="Node2D"]
 position = Vector2( 634.815, 650.728 )
+rotation = 1.5708
 script = ExtResource( 1 )
 nameOfWeapon = "Handgun"
 damageMultiplier = 1.0
@@ -25,5 +26,4 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
