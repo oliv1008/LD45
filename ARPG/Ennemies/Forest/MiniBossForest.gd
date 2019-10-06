@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
-export (int) var pv = 5
-var mouvementSpeed = 200
+export (int) var pv = 50
+var mouvementSpeed = 100
+var valueAM = 100
 onready var raycast = $RayCast2D
 onready var tweenNode = $Tween
 var isAttacking = false
@@ -23,6 +24,8 @@ func _physics_process(delta):
 	playerPos = get_parent().get_node("Player").position
 	posToMove = playerPos - currentPos
 	if not isAttacking && not abs(posToMove.x) < 2 && not abs(posToMove.y) < 2:
+		var animationPlayer = $AnimationPlayer
+		animationPlayer.play("move")
 		look_at(playerPos)
 		velocity = posToMove.normalized() * mouvementSpeed
 		move_and_collide(velocity*delta)
@@ -56,6 +59,10 @@ func attack():
 func die():
 	var notificationData = "ennemies"
 	nc.post_notification("CHANGE_HUD",notificationData)
+	var notificationAM = valueAM
+	nc.post_notification("Antimatter",notificationAM)
+	var notificationPopUp = [global_position, valueAM]
+	nc.post_notification("POPUP",notificationPopUp)
 	PersoGlobal.ennemiesLeft -= 1
 	queue_free()
 

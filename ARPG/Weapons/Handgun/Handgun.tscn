@@ -6,10 +6,12 @@
 
 [node name="Handgun" type="Node2D"]
 position = Vector2( 634.815, 650.728 )
+rotation = 1.5708
 script = ExtResource( 1 )
 nameOfWeapon = "Handgun"
+damageMultiplier = 1.0
 rateOfFire = 0.5
-ammoPerShot = 1.0
+shotsPerAmmo = 1.0
 projectile = ExtResource( 2 )
 
 [node name="EndBarrel" type="Position2D" parent="."]

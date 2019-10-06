@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://ARPG/Player.gd" type="Script" id=1]
 [ext_resource path="res://ARPG/Weapons/CQCSpear/Spear.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ARPG/Weapons/Handgun/Handgun.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/72267645_397230914283131_1073197892161765376_n.png" type="Texture" id=4]
+[ext_resource path="res://ARPG/Weapons/LaserHandgun/LaserHandgun.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/72267645_397230914283131_1073197892161765376_n.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -23,21 +24,22 @@ script = ExtResource( 1 )
 SPEED = 500
 
 [node name="Spear" parent="." instance=ExtResource( 2 )]
+visible = false
 rotation = 1.5708
 
 [node name="Handgun" parent="." instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 0, 0 )
+
+[node name="LaserHandgun" parent="." instance=ExtResource( 4 )]
+visible = false
 rotation = 1.5708
-damageMultiplier = 1.0
 
 [node name="BodySprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.196899, -3.80688 )
 rotation = -1.5708
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.35646, -4.94862 )
