@@ -2,6 +2,7 @@
 
 [ext_resource path="res://ARPG/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/72267645_397230914283131_1073197892161765376_n.png" type="Texture" id=2]
+[ext_resource path="res://ARPG/Weapons/Handgun/Handgun.tscn" type="PackedScene" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -11,15 +12,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 17.8401
 height = 50.5649
 
@@ -28,18 +21,19 @@ position = Vector2( 168.592, 69.7064 )
 script = ExtResource( 1 )
 SPEED = 500
 
-[node name="WeaponSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -7.22341, -31.5367 )
-rotation = 1.5708
-scale = Vector2( 0.25, 0.75 )
-frames = SubResource( 1 )
-
 [node name="BodySprite" type="AnimatedSprite" parent="."]
 position = Vector2( -6.84692, 16.1432 )
 rotation = -1.5708
 scale = Vector2( 0.15, 0.15 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -6.10645, 15.9514 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
+
+[node name="Handgun" parent="." instance=ExtResource( 3 )]
+position = Vector2( 50.6531, -13.6502 )
+damageMultiplier = 1.0
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( -6.93275, -20.168 )
