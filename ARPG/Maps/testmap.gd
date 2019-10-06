@@ -19,6 +19,9 @@ func _on_Timer_timeout():
   
 	nc.post_notification("LEVEL_END",notificationData)
 	
-	notificationData = "res://ARPG/ARPG_UI/rpgUI.tscn"
+	notificationData = {
+		"scene" : "res://ARPG/ARPG_UI/rpgUI.tscn",
+		"mainUI" : true
+	}
 	nc.post_notification("LOAD_LEVEL",notificationData)
 	nc.post_notification("LEVEL_END",notificationData)
