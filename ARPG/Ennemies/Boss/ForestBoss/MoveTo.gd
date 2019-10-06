@@ -6,10 +6,10 @@ var velocity = Vector2()
 export (int) var speed = 20000
 
 func enter():
+	owner.get_node('AnimationPlayer').play('Walk')
 	print("On entre dans l'etat MoveTo")
 	start_position = owner.position
 	target_position = calculate_new_random_target_position()
-	owner.look_at(target_position)
 
 func update(delta):
 	velocity = (target_position - start_position).normalized()
@@ -22,7 +22,8 @@ func update(delta):
 func calculate_new_random_target_position():
 	var x = randi() % 1921
 	var y = randi() % 1081
-	return Vector2(x, y)
+	return Vector2(x, owner.position.y)
 	
 func exit():
+	owner.get_node('AnimationPlayer').play('Idle')
 	print("On sort de l'etat MoveTo")

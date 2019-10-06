@@ -108,7 +108,7 @@ tracks/0/keys = {
 "values": [ 4, 5 ]
 }
 
-[node name="MiniBostForest" type="KinematicBody2D"]
+[node name="MiniBostIce" type="KinematicBody2D"]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource( 1 )

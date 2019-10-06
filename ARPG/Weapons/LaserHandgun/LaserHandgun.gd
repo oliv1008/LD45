@@ -20,7 +20,6 @@ func _process(delta):
 	pass
 
 func shot(targetPos):
-	print("$EndBarrel.global_position = ", $EndBarrel.global_position)
 	if (canShot && PersoGlobal.ammoLeft >= 1):
 		var projectileInstance = projectile.instance()
 		projectileInstance.mousePos = targetPos

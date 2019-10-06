@@ -63,8 +63,9 @@ var improveDistancePrice = 40
 var ammoPrice = 1
 
 var spriteHandgun = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
-
+	
 func _ready():
+	nc.add_observer(self, "Antimatter","handleNotification")
 	NumberBuilding1.text = str("Quantity : ", quantityBuilding1)
 	RevenueBuilding1.text = str("Revenue : ", totalRevenueBuilding1)
 	PriceBuilding1.text = str(priceBuilding1)
@@ -84,8 +85,14 @@ func _ready():
 	CacWeaponName.text = PersoGlobal.currentWeaponCacName
 	DistanceWeaponName.text = PersoGlobal.currentWeaponDistanceName
 	DistanceWeaponSprite.texture = spriteHandgun
-	#DistanceWeaponSprite.rotation = 90
 	
+
+func _exit_tree():
+	nc.remove_observer(self,"Antimatter")
+
+func handleNotification(observer,notificationName,notificationData):
+	if (notificationName == "Antimatter"):
+		antimatter += notificationData
 
 func _letsGoAntimatter():
 	totalAntimatter.text = str("You have ", antimatter)
