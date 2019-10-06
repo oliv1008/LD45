@@ -16,8 +16,7 @@ func _ready():
 	bodySize = body_sprite.frames.get_frame("default", 0).get_size()
 	screen_size = get_viewport_rect().size
 	weapon.position = $Position2D.position
-
-
+	
 func _physics_process(delta):
 
 	look_at(get_global_mouse_position())
@@ -40,7 +39,8 @@ func _physics_process(delta):
 		pass #$AnimatedSprite.stop()
 	
 	if Input.is_mouse_button_pressed(BUTTON_LEFT):
-		weapon.shot(get_viewport().get_mouse_position())
+		weapon.shot(get_local_mouse_position())
+		print(PersoGlobal.viewportARPG.get_mouse_position())
 	
 	move_and_collide(velocity * delta)
 

@@ -76,6 +76,7 @@ position = Vector2( 150, 80 )
 position = Vector2( 650, 60 )
 
 [node name="HorizontalLimit" type="ColorRect" parent="."]
+visible = false
 margin_top = 350.0
 margin_right = 960.0
 margin_bottom = 355.0
@@ -84,6 +85,7 @@ size_flags_vertical = 3
 color = Color( 1, 0, 0, 1 )
 
 [node name="VerticalLimit" type="ColorRect" parent="."]
+visible = false
 margin_left = 480.0
 margin_top = 350.0
 margin_right = 485.0
@@ -99,9 +101,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VerticalAntimatter" type="VBoxContainer" parent="CenterAntimatter"]
-margin_left = 272.0
+margin_left = 271.0
 margin_top = 134.0
-margin_right = 688.0
+margin_right = 687.0
 margin_bottom = 219.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -172,6 +174,7 @@ custom_fonts/font = ExtResource( 5 )
 text = "Create robot (5 AM)"
 
 [node name="CenterRobot" type="CenterContainer" parent="."]
+visible = false
 margin_left = 5.0
 margin_top = 362.0
 margin_right = 487.0
@@ -514,6 +517,7 @@ margin_bottom = 32.0
 texture = ExtResource( 4 )
 
 [node name="CenterBuildings" type="CenterContainer" parent="."]
+visible = false
 margin_left = 490.0
 margin_top = 360.0
 margin_right = 965.0

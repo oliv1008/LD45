@@ -352,7 +352,6 @@ custom_styles/normal = SubResource( 9 )
 script = ExtResource( 7 )
 
 [node name="Frontground" type="ColorRect" parent="."]
-visible = false
 margin_right = 949.0
 margin_bottom = 1080.0
 

@@ -9,7 +9,7 @@ var ammoLeft = numberOfAmmoMax
 var ennemiesLeft = 10
 var currentWeaponCacName = "Fist"
 var currentWeaponDistanceName = "Handgun"
-
+var viewportARPG
 
 func _ready():
 	pass 

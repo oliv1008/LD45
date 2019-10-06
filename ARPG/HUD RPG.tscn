@@ -19,7 +19,7 @@ margin_right = 269.0
 margin_bottom = 104.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 0.670588, 0.670588, 0.670588, 0.317647 )
+color = Color( 0.0509804, 0.0313726, 0.0313726, 0.317647 )
 
 [node name="VUDHContainer" type="VBoxContainer" parent="Control"]
 margin_right = 708.0
