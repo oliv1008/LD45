@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export (int) var pv = 5
 var mouvementSpeed = 200
+var valueAM = 5
 onready var raycast = $RayCast2D
 onready var tweenNode = $Tween
 var isAttacking = false
@@ -56,6 +57,10 @@ func attack():
 func die():
 	var notificationData = "ennemies"
 	nc.post_notification("CHANGE_HUD",notificationData)
+	var notificationAM = valueAM
+	nc.post_notification("Antimatter",notificationAM)
+	var notificationPopUp = [global_position, valueAM]
+	nc.post_notification("POPUP",notificationPopUp)
 	PersoGlobal.ennemiesLeft -= 1
 	queue_free()
 

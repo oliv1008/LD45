@@ -4,7 +4,7 @@
 [ext_resource path="res://ARPG/Projectiles/LaserProjectile/LaserBullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/images/Armes/Distance/gun1.png" type="Texture" id=3]
 
-[node name="Handgun" type="Node2D"]
+[node name="LaserHandgun" type="Node2D"]
 position = Vector2( 634.815, 650.728 )
 script = ExtResource( 1 )
 nameOfWeapon = "Laser Gun"
@@ -25,5 +25,4 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
