@@ -6,21 +6,22 @@ onready var raycast = $RayCast2D
 onready var tweenNode = $Tween
 var isAttacking = false
 var currentPos = Vector2()
-var mousePos = Vector2()
+var playerPos = Vector2()
 var velocity = Vector2()
 var posToMove = Vector2()
 
+onready var Hurtbox = $Area2D
+onready var Hitbox = $CollisionShape2D
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
 	currentPos = position
-	mousePos = get_viewport().get_mouse_position()
-	posToMove = mousePos - currentPos
+	playerPos = get_parent().get_node("Player").position
+	posToMove = playerPos - currentPos
 	if not isAttacking && not abs(posToMove.x) < 2 && not abs(posToMove.y) < 2:
-		look_at(mousePos)
+		look_at(playerPos)
 		velocity = posToMove.normalized() * mouvementSpeed
 		move_and_collide(velocity*delta)
 
@@ -29,10 +30,12 @@ func _physics_process(delta):
 		attack()
 
 	if pv == 0:
-		die()
+		var animationPlayer = $AnimationPlayer
+		animationPlayer.play("die")
+		isAttacking = true
+		Hurtbox.visible = false
+		Hitbox.visible = false
 
-#	if Input.is_mouse_button_pressed(BUTTON_LEFT):
-#		dash_to(get_viewport().get_mouse_position())
 	if Input.is_mouse_button_pressed(BUTTON_RIGHT):
 		isAttacking = true
 		attack()
@@ -45,12 +48,14 @@ func dash_to(targetPos):
 	# Always start the animation, otherwise nothing happens. The method above merely initializes the tween
 	tweenNode.start()
 	
+func _on_hit(degats):
+	pv -= degats
+
 func attack():
 	var animationPlayer = $AnimationPlayer
 	animationPlayer.play("attack")
 	
 func die():
-#	TODO Jouer animations de mort
 	queue_free()
 
 #Quand l'animation d'attaque se fini on autorise l'enemie à bouger à nouveau

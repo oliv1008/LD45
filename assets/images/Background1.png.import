@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TrashForest1Iddle.png-a950a2a3bb3564ae5c17fb90e66567a0.stex"
+path="res://.import/Background1.png-39727f2df80d2fba7f91f67d382d5dde.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/TrashForest1Iddle.png"
-dest_files=[ "res://.import/TrashForest1Iddle.png-a950a2a3bb3564ae5c17fb90e66567a0.stex" ]
+source_file="res://assets/images/Background1.png"
+dest_files=[ "res://.import/Background1.png-39727f2df80d2fba7f91f67d382d5dde.stex" ]
 
 [params]
 
