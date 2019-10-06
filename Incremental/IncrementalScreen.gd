@@ -3,8 +3,8 @@ extends Control
 
 onready var CenterIntroduction = $CenterIntroduction
 
-onready var totalAntimatter = $CenterAntimatter/VerticalAntimatter/TotalAntimatter
-onready var antimatterPerSeconds = $CenterAntimatter/VerticalAntimatter/AntimatterPerSeconds
+onready var totalAntimatter = $CenterAntimatter/VerticalAntimatter/HBoxContainer/TotalAntimatter
+onready var antimatterPerSeconds = $CenterAntimatter/VerticalAntimatter/HBoxContainer2/AntimatterPerSeconds
 
 onready var TurnScreenOn = $CenterAntimatter/VerticalAntimatter/TurnOnScreen
 
@@ -15,14 +15,14 @@ onready var CreateRobot = $CenterAntimatter/VerticalAntimatter/CreateRobot
 onready var CenterRobot = $CenterRobot
 
 onready var NumberBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container2/NumberBuilding1
-onready var RevenueBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container2/RevenueBuilding1
+onready var RevenueBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container3/RevenueBuilding1
 onready var NumberBuilding2 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container2/NumberBuilding2
-onready var RevenueBuilding2 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container2/RevenueBuilding2
+onready var RevenueBuilding2 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container3/RevenueBuilding2
 onready var NumberBuilding3 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container2/NumberBuilding3
-onready var RevenueBuilding3 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container2/RevenueBuilding3
-onready var PriceBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container/BuyBuilding1
-onready var PriceBuilding2 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container/BuyBuilding2
-onready var PriceBuilding3 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container/BuyBuilding3
+onready var RevenueBuilding3 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container3/RevenueBuilding3
+onready var PriceBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container4/BuyBuilding1
+onready var PriceBuilding2 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container4/BuyBuilding2
+onready var PriceBuilding3 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container4/BuyBuilding3
 
 onready var MeleeValue = $CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer/MeleeValue
 onready var DistanceValue = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer/DistanceValue
@@ -34,6 +34,10 @@ onready var PriceAmmo = $CenterRobot/ScrollContainer/VerticalRobot/HAmmoContaine
 
 onready var Heart4 = $CenterRobot/ScrollContainer/VerticalRobot/HPVContainer/Heart4
 onready var Heart5 = $CenterRobot/ScrollContainer/VerticalRobot/HPVContainer/Heart5
+
+onready var CacWeaponName = $CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer2/WeaponName
+onready var DistanceWeaponName = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer2/WeaponName
+onready var DistanceWeaponSprite = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer2/TextureRect
 
 var antimatter = 0
 var antimatterPerSec = 1
@@ -58,37 +62,44 @@ var improveMeleePrice = 20
 var improveDistancePrice = 40
 var ammoPrice = 1
 
+var spriteHandgun = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
+
 func _ready():
-	#NumberBuilding1.text = str("Quantity : ", quantityBuilding1)
-	#RevenueBuilding1.text = str("Revenue : ", totalRevenueBuilding1)
-	#PriceBuilding1.text = str(priceBuilding1, " AM")
-	#PriceBuilding2.text = str(priceBuilding2, " AM")
-	#NumberBuilding2.text = str("Quantity : ", quantityBuilding2)
-	#RevenueBuilding2.text = str("Revenue : ", totalRevenueBuilding2)
-	#PriceBuilding3.text = str(priceBuilding3, " AM")
-	#NumberBuilding3.text = str("Quantity : ", quantityBuilding3)
-	#RevenueBuilding3.text = str("Revenue : ", totalRevenueBuilding3)
+	NumberBuilding1.text = str("Quantity : ", quantityBuilding1)
+	RevenueBuilding1.text = str("Revenue : ", totalRevenueBuilding1)
+	PriceBuilding1.text = str(priceBuilding1)
+	PriceBuilding2.text = str(priceBuilding2)
+	NumberBuilding2.text = str("Quantity : ", quantityBuilding2)
+	RevenueBuilding2.text = str("Revenue : ", totalRevenueBuilding2)
+	PriceBuilding3.text = str(priceBuilding3)
+	NumberBuilding3.text = str("Quantity : ", quantityBuilding3)
+	RevenueBuilding3.text = str("Revenue : ", totalRevenueBuilding3)
 	MeleeValue.text = str(PersoGlobal.meleeDamage , " dmg")
 	DistanceValue.text = str(PersoGlobal.distanceDamage , " dmg")
-	NumberOfAmmo.text = str(PersoGlobal.numberOfAmmo, " Ammo")
-	PriceImproveMelee.text = str(improveMeleePrice, " AM")
-	PriceImproveDistance.text = str(improveDistancePrice, " AM")
-	PriceAmmo.text = str(ammoPrice, " AM")
-	PriceHeart.text = str(heartPrice, " AM")
+	NumberOfAmmo.text = str(PersoGlobal.numberOfAmmoMax, " Ammo")
+	PriceImproveMelee.text = str(improveMeleePrice)
+	PriceImproveDistance.text = str(improveDistancePrice)
+	PriceAmmo.text = str(ammoPrice)
+	PriceHeart.text = str(heartPrice)
+	CacWeaponName.text = PersoGlobal.currentWeaponCacName
+	DistanceWeaponName.text = PersoGlobal.currentWeaponDistanceName
+	DistanceWeaponSprite.texture = spriteHandgun
+	#DistanceWeaponSprite.rotation = 90
+	
 
 func _letsGoAntimatter():
-	totalAntimatter.text = str("You have ", antimatter, " antimatter")
-	antimatterPerSeconds.text = str("You earn ", antimatterPerSec, " antimatter per seconds")
+	totalAntimatter.text = str("You have ", antimatter)
+	antimatterPerSeconds.text = str("You earn ", antimatterPerSec)
 
 func _physics_process(delta):
 	pass
 	
 func _on_CurrencyTimer_timeout():
 	antimatter += antimatterPerSec
-	totalAntimatter.text = str("You have ", antimatter, " antimatter")
+	totalAntimatter.text = str("You have ", antimatter)
 	if (antimatter == 3 && firstTime == true):
 		TurnScreenOn.visible = true
-	if (antimatter == 5 && firstTime == false && secondTime == true):
+	if (antimatter >= 5 && firstTime == false && secondTime == true):
 		CreateRobot.visible = true;
 
 func _on_BuyBuilding1_pressed():
@@ -98,11 +109,11 @@ func _on_BuyBuilding1_pressed():
 		totalRevenueBuilding1 += revenueBuilding1
 		quantityBuilding1 += 1
 		priceBuilding1 *= 2
-		PriceBuilding1.text = str(priceBuilding1, " AM")
-		totalAntimatter.text = str("You have ", antimatter, " antimatter")
+		PriceBuilding1.text = str(priceBuilding1)
+		totalAntimatter.text = str("You have ", antimatter)
 		NumberBuilding1.text = str("Quantity : ", quantityBuilding1)
 		RevenueBuilding1.text = str("Revenue : ", totalRevenueBuilding1)
-		antimatterPerSeconds.text = str("You earn ", antimatterPerSec, " antimatter per seconds")
+		antimatterPerSeconds.text = str("You earn ", antimatterPerSec)
 
 func _on_BuyBuilding2_pressed():
 	if (antimatter >= priceBuilding2):
@@ -111,11 +122,11 @@ func _on_BuyBuilding2_pressed():
 		totalRevenueBuilding2 += revenueBuilding2
 		quantityBuilding2 += 1
 		priceBuilding2 *= 2
-		PriceBuilding2.text = str(priceBuilding2, " AM")
-		totalAntimatter.text = str("You have ", antimatter, " antimatter")
+		PriceBuilding2.text = str(priceBuilding2)
+		totalAntimatter.text = str("You have ", antimatter)
 		NumberBuilding2.text = str("Quantity : ", quantityBuilding2)
 		RevenueBuilding2.text = str("Revenue : ", totalRevenueBuilding2)
-		antimatterPerSeconds.text = str("You earn ", antimatterPerSec, " antimatter per seconds")
+		antimatterPerSeconds.text = str("You earn ", antimatterPerSec)
 
 func _on_BuyBuilding3_pressed():
 	if (antimatter >= priceBuilding3):
@@ -124,11 +135,11 @@ func _on_BuyBuilding3_pressed():
 		totalRevenueBuilding3 += revenueBuilding3
 		quantityBuilding3 += 1
 		priceBuilding3 *= 2
-		PriceBuilding3.text = str(priceBuilding3, " AM")
-		totalAntimatter.text = str("You have ", antimatter, " antimatter")
+		PriceBuilding3.text = str(priceBuilding3)
+		totalAntimatter.text = str("You have ", antimatter)
 		NumberBuilding3.text = str("Quantity : ", quantityBuilding3)
 		RevenueBuilding3.text = str("Revenue : ", totalRevenueBuilding3)
-		antimatterPerSeconds.text = str("You earn ", antimatterPerSec, " antimatter per seconds")
+		antimatterPerSeconds.text = str("You earn ", antimatterPerSec)
 
 func _on_ImproveMeleeButton_pressed():
 	if (antimatter >= improveMeleePrice):
@@ -136,7 +147,7 @@ func _on_ImproveMeleeButton_pressed():
 		PersoGlobal.meleeDamage += 10
 		improveMeleePrice *= 2
 		MeleeValue.text = str(PersoGlobal.meleeDamage , " dmg")
-		PriceImproveMelee.text = str(improveMeleePrice, " AM")
+		PriceImproveMelee.text = str(improveMeleePrice)
 		
 
 func _on_ImproveDistanceButton_pressed():
@@ -145,28 +156,28 @@ func _on_ImproveDistanceButton_pressed():
 		PersoGlobal.distanceDamage += 10
 		improveDistancePrice *= 2
 		DistanceValue.text = str(PersoGlobal.distanceDamage , " dmg")
-		PriceImproveDistance.text = str(improveDistancePrice, " AM")
+		PriceImproveDistance.text = str(improveDistancePrice)
 
 func _on_1AmmoButton_pressed():
 	if (antimatter >= ammoPrice):
 		antimatter -= ammoPrice
-		PersoGlobal.numberOfAmmo += 1
+		PersoGlobal.numberOfAmmoMax += 1
 		ammoPrice *= 2
-		NumberOfAmmo.text = str(PersoGlobal.numberOfAmmo, " Ammo")
-		PriceAmmo.text = str(ammoPrice, " AM")
+		NumberOfAmmo.text = str(PersoGlobal.numberOfAmmoMax, " Ammo")
+		PriceAmmo.text = str(ammoPrice)
 
 func _on_ImprovePVButton_pressed():
-	if (PersoGlobal.pv == 3):
+	if (PersoGlobal.pvMax == 3):
 		if (antimatter >= heartPrice):
 			antimatter -= heartPrice
-			PersoGlobal.pv += 1
+			PersoGlobal.pvMax += 1
 			heartPrice *= 1000
 			Heart4.visible = true
-			PriceHeart.text = str(heartPrice, " AM")
-	if (PersoGlobal.pv == 4):
+			PriceHeart.text = str(heartPrice)
+	if (PersoGlobal.pvMax == 4):
 		if (antimatter >= heartPrice):
 			antimatter -= heartPrice
-			PersoGlobal.pv += 1
+			PersoGlobal.pvMax += 1
 			Heart5.visible = true
 			PriceHeart.visible = false
 
