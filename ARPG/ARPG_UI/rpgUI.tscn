@@ -350,7 +350,6 @@ margin_right = 949.0
 margin_bottom = 1080.0
 
 [node name="CenterContainerIddle" type="CenterContainer" parent="."]
-visible = false
 margin_right = 948.0
 margin_bottom = 1082.0
 
