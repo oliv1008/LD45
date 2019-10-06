@@ -4,7 +4,7 @@ onready var body_sprite = $BodySprite
 
 var screen_size
 var bodySize  = Vector2()
-onready var weapon = $Handgun
+onready var weapon = $LaserHandgun
 var player = true
 
 var projectile = preload("res://ARPG/Projectile.tscn")
