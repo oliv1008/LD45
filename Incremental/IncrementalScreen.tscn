@@ -3,7 +3,7 @@
 [ext_resource path="res://Incremental/IncrementalScreen.gd" type="Script" id=1]
 [ext_resource path="res://Cave-Story.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/polices/CaveStory40.tres" type="DynamicFont" id=3]
-[ext_resource path="res://assets/images/HUD/coeur plus petit.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/HUD/coeur final plus petits.png" type="Texture" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
@@ -621,11 +621,13 @@ custom_fonts/font = ExtResource( 3 )
 text = "Revenue : 0/sec"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_right = 964.0
 margin_bottom = 1085.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="CenterIntroduction" type="CenterContainer" parent="."]
+visible = false
 margin_right = 961.0
 margin_bottom = 1085.0
 

@@ -10,10 +10,6 @@ func _ready():
 	#$HBoxContainer/ARPGUI.visible = false
 	loadLevel("res://ARPG/Maps/testmap.tscn")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 func loadLevel(scene):
 	var s = ResourceLoader.load(scene)
 	var scene_loaded = s.instance()

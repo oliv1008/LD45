@@ -150,23 +150,23 @@ func _on_ImproveDistanceButton_pressed():
 func _on_1AmmoButton_pressed():
 	if (antimatter >= ammoPrice):
 		antimatter -= ammoPrice
-		PersoGlobal.numberOfAmmo += 1
+		PersoGlobal.numberOfAmmoMax += 1
 		ammoPrice *= 2
-		NumberOfAmmo.text = str(PersoGlobal.numberOfAmmo, " Ammo")
+		NumberOfAmmo.text = str(PersoGlobal.numberOfAmmoMax, " Ammo")
 		PriceAmmo.text = str(ammoPrice, " AM")
 
 func _on_ImprovePVButton_pressed():
-	if (PersoGlobal.pv == 3):
+	if (PersoGlobal.pvMax == 3):
 		if (antimatter >= heartPrice):
 			antimatter -= heartPrice
-			PersoGlobal.pv += 1
+			PersoGlobal.pvMax += 1
 			heartPrice *= 1000
 			Heart4.visible = true
 			PriceHeart.text = str(heartPrice, " AM")
-	if (PersoGlobal.pv == 4):
+	if (PersoGlobal.pvMax == 4):
 		if (antimatter >= heartPrice):
 			antimatter -= heartPrice
-			PersoGlobal.pv += 1
+			PersoGlobal.pvMax += 1
 			Heart5.visible = true
 			PriceHeart.visible = false
 
