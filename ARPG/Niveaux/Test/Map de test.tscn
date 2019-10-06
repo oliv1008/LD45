@@ -10,6 +10,7 @@
 script = ExtResource( 1 )
 
 [node name="TrashForest1" parent="." instance=ExtResource( 2 )]
+editor/display_folded = true
 position = Vector2( 499.176, 179.116 )
 
 [node name="CollisionShape2D" parent="TrashForest1/Area2D" index="0"]

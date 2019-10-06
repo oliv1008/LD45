@@ -33,3 +33,18 @@ func _on_Health_health_changed(new_health):
 		2:
 			if new_health < 25:
 				state_machine.phase = 3
+				
+func tween_dash_in():
+	tween_node.interpolate_property(self, 'position', position, Vector2(position.x, position.y + 125), 0.2, Tween.TRANS_QUINT, Tween.EASE_OUT)
+	tween_node.start()
+	
+func tween_move_back():
+		tween_node.interpolate_property(self, "position", position, Vector2(position.x, position.y - 125), 0.3, Tween.TRANS_SINE, Tween.EASE_IN)
+		tween_node.start()
+
+func _on_Area2D_body_entered(body):
+	if body == self:
+		pass
+	else:
+		if (body.has_method("get_hit") && body.player == true):
+			body.get_hit()

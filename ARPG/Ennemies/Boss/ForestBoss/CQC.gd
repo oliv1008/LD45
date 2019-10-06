@@ -1,10 +1,10 @@
 extends "res://state/State.gd"
 
 func enter():
-	print("Attaque 1!")
-	owner.get_node('AnimationPlayer').play('Attack1Test')
+	print("CQC!")
+	owner.get_node('AnimationPlayer').play('CQC')
 
 func _on_animation_finished(anim_name):
-	print("On sort de l'attaque 1")
-	assert anim_name == 'Attack1Test'
+	print("On sort de CQC")
+	assert anim_name == 'CQC'
 	emit_signal('finished')
