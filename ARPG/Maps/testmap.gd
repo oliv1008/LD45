@@ -6,18 +6,17 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+	var notificationData = {
+		"mobs" : 0
+	}
+	nc.post_notification("LEVEL_INIT",notificationData)
 
 func _on_Timer_timeout():
 	var notificationData = {
 		"amEarned" : 100,
 		"blueprint" : 1
 	}
+  
 	nc.post_notification("LEVEL_END",notificationData)
 	
 	notificationData = {
@@ -25,3 +24,4 @@ func _on_Timer_timeout():
 		"mainUI" : true
 	}
 	nc.post_notification("LOAD_LEVEL",notificationData)
+	nc.post_notification("LEVEL_END",notificationData)
