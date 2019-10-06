@@ -55,13 +55,13 @@ func attack():
 	animationPlayer.play("attack")
 	
 func die():
+	PersoGlobal.ennemiesLeft -= 1
 	var notificationData = "ennemies"
 	nc.post_notification("CHANGE_HUD",notificationData)
 	var notificationAM = valueAM
 	nc.post_notification("Antimatter",notificationAM)
 	var notificationPopUp = [global_position, valueAM]
 	nc.post_notification("POPUP",notificationPopUp)
-	PersoGlobal.ennemiesLeft -= 1
 	queue_free()
 
 #Quand l'animation d'attaque se fini on autorise l'enemie à bouger à nouveau
