@@ -8,7 +8,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	nc.add_observer(self, "LOAD_LEVEL","handleLoad")
+	$HBoxContainer/ViewportContainer2/ViewportARPG/RPGScreen.visible = false
 
 func handleLoad(observer,notificationName,notificationData):
-	var text = notificationName
 	SceneLoader.setScene($HBoxContainer/ViewportContainer2/ViewportARPG, notificationData)

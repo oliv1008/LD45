@@ -14,4 +14,11 @@ func _ready():
 
 
 func _on_Timer_timeout():
-	pass
+	var notificationData = {
+		"amEarned" : 100,
+		"blueprint" : 1
+	}
+	nc.post_notification("LEVEL_END",notificationData)
+	
+	notificationData = "res://ARPG/ARPG_UI/rpgUI.tscn"
+	nc.post_notification("LOAD_LEVEL",notificationData)

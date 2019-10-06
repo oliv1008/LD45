@@ -17,18 +17,18 @@ radius = 17.8401
 height = 50.5649
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 168.592, 69.7064 )
+position = Vector2( 195.192, 104.856 )
 script = ExtResource( 1 )
 SPEED = 500
 
 [node name="BodySprite" type="AnimatedSprite" parent="."]
-position = Vector2( -6.84692, 16.1432 )
+position = Vector2( -0.196899, -3.80688 )
 rotation = -1.5708
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -6.10645, 15.9514 )
+position = Vector2( -1.35646, -4.94862 )
 shape = SubResource( 2 )
 
 [node name="Handgun" parent="." instance=ExtResource( 3 )]
