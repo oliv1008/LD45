@@ -21,7 +21,7 @@ func _process(delta):
 
 func shot(targetPos):
 	print("$EndBarrel.global_position = ", $EndBarrel.global_position)
-	if canShot:
+	if (canShot && PersoGlobal.ammoLeft >= 1):
 		var projectileInstance = projectile.instance()
 		projectileInstance.damage = PersoGlobal.distanceDamage * damageMultiplier
 		projectileInstance.shooter = holder
@@ -29,6 +29,9 @@ func shot(targetPos):
 		print("holder = ", holder)
 		projectileInstance.position = $EndBarrel.global_position
 		holder.get_parent().add_child(projectileInstance)
+		PersoGlobal.ammoLeft -= 1
+		var notificationData = "ammo"
+		nc.post_notification("CHANGE_HUD",notificationData)
 		canShot = false
 		$Timer.start()
 

@@ -3,7 +3,7 @@
 [ext_resource path="res://ARPG/Weapons/CQCSpear/Spear.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "BaseAttack"
 length = 0.3
 tracks/0/type = "value"
@@ -19,7 +19,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 35 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="SegmentShape2D" id=1]
+[sub_resource type="SegmentShape2D" id=2]
 a = Vector2( -0.0945206, -30.9013 )
 b = Vector2( -0.0945206, 31.5115 )
 
@@ -34,12 +34,12 @@ scale = Vector2( 0.1, 1 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/BaseAttack = SubResource( 2 )
+anims/BaseAttack = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_BaseCQCWeapon_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

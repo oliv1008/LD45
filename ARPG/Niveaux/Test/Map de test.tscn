@@ -1,15 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ARPG/Ennemies/TrashForest1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ARPG/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ARPG/Ennemies/MiniBossForest.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ARPG/HUD RPG.tscn" type="PackedScene" id=4]
 
 [node name="Map de test" type="Node2D"]
 
 [node name="TrashForest1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 499.176, 179.116 )
 
 [node name="CollisionShape2D" parent="TrashForest1/Area2D" index="0"]
-position = Vector2( 0.663422, -5.84406 )
+position = Vector2( -5.20926, -2.90766 )
 
 [node name="TrashForest3" parent="." instance=ExtResource( 1 )]
 editor/display_folded = true
@@ -24,11 +26,14 @@ editor/display_folded = true
 position = Vector2( 847.486, 479.083 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1488.75, 526.54 )
 
 [node name="MiniBostForest" parent="." instance=ExtResource( 3 )]
 position = Vector2( 228.798, 593.58 )
 
 [node name="MiniBostForest2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 498.607, 641.067 )
+
+[node name="HUD RPG" parent="." instance=ExtResource( 4 )]
 
 [editable path="TrashForest1"]

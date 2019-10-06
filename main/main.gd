@@ -12,3 +12,4 @@ func _ready():
 
 func handleLoad(observer,notificationName,notificationData):
 	SceneLoader.setScene($HBoxContainer/ViewportContainer2/ViewportARPG, notificationData)
+

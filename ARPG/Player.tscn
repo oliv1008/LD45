@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ARPG/Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/72267645_397230914283131_1073197892161765376_n.png" type="Texture" id=2]
-[ext_resource path="res://ARPG/Weapons/Handgun/Handgun.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ARPG/Weapons/Handgun/Handgun.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/72267645_397230914283131_1073197892161765376_n.png" type="Texture" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -21,6 +21,11 @@ position = Vector2( 195.192, 104.856 )
 script = ExtResource( 1 )
 SPEED = 500
 
+[node name="Handgun" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 0 )
+rotation = 1.5708
+damageMultiplier = 1.0
+
 [node name="BodySprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.196899, -3.80688 )
 rotation = -1.5708
@@ -30,10 +35,6 @@ frames = SubResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.35646, -4.94862 )
 shape = SubResource( 2 )
-
-[node name="Handgun" parent="." instance=ExtResource( 3 )]
-position = Vector2( 50.6531, -13.6502 )
-damageMultiplier = 1.0
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( -6.93275, -20.168 )
