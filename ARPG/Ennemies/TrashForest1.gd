@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-export (int) var pv = 1
-var mouvementSpeed = 500
+export (int) var pv = 5
+var mouvementSpeed = 200
 onready var raycast = $RayCast2D
 onready var tweenNode = $Tween
 var isAttacking = false

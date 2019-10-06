@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Incremental/IncrementalScreen.gd" type="Script" id=1]
 [ext_resource path="res://Cave-Story.ttf" type="DynamicFontData" id=2]
@@ -18,6 +18,14 @@ font_data = ExtResource( 2 )
 size = 40
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=4]
+size = 150
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 120
+font_data = ExtResource( 2 )
+
 [node name="IncrementalScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,6 +38,7 @@ margin_bottom = 1080.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="HorizontalLimit" type="ColorRect" parent="."]
+visible = false
 margin_top = 350.0
 margin_right = 960.0
 margin_bottom = 355.0
@@ -38,6 +47,7 @@ size_flags_vertical = 3
 color = Color( 1, 0, 0, 1 )
 
 [node name="VerticalLimit" type="ColorRect" parent="."]
+visible = false
 margin_left = 480.0
 margin_top = 350.0
 margin_right = 485.0
@@ -54,9 +64,9 @@ size_flags_vertical = 3
 
 [node name="VerticalAntimatter" type="VBoxContainer" parent="CenterAntimatter"]
 margin_left = 218.0
-margin_top = 101.0
+margin_top = 127.0
 margin_right = 742.0
-margin_bottom = 252.0
+margin_bottom = 226.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 21
@@ -81,14 +91,24 @@ custom_fonts/font = SubResource( 2 )
 text = "You win XXXX antimatter per seconds
 "
 
-[node name="Temporaire" type="Button" parent="CenterAntimatter/VerticalAntimatter"]
+[node name="TurnOnScreen" type="Button" parent="CenterAntimatter/VerticalAntimatter"]
+visible = false
 margin_top = 120.0
 margin_right = 524.0
 margin_bottom = 151.0
 custom_fonts/font = SubResource( 3 )
-text = "Temporaire"
+text = "Turn the screen on ! (3 AM)"
+
+[node name="CreateRobot" type="Button" parent="CenterAntimatter/VerticalAntimatter"]
+visible = false
+margin_top = 120.0
+margin_right = 524.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 3 )
+text = "Create robot (5 AM)"
 
 [node name="CenterRobot" type="CenterContainer" parent="."]
+visible = false
 margin_left = 5.0
 margin_top = 362.0
 margin_right = 487.0
@@ -407,6 +427,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "XX AM"
 
 [node name="CenterBuildings" type="CenterContainer" parent="."]
+visible = false
 margin_left = 490.0
 margin_top = 360.0
 margin_right = 965.0
@@ -598,7 +619,38 @@ margin_right = 399.0
 margin_bottom = 25.0
 custom_fonts/font = ExtResource( 3 )
 text = "Revenue : 0/sec"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 964.0
+margin_bottom = 1085.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CenterIntroduction" type="CenterContainer" parent="."]
+margin_right = 961.0
+margin_bottom = 1085.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterIntroduction"]
+margin_left = 32.0
+margin_top = 205.0
+margin_right = 928.0
+margin_bottom = 880.0
+custom_constants/separation = 500
+
+[node name="YouHaveNothing" type="Label" parent="CenterIntroduction/VBoxContainer"]
+margin_right = 896.0
+margin_bottom = 94.0
+custom_fonts/font = SubResource( 4 )
+text = "You have nothing."
+
+[node name="StartTheGame" type="Button" parent="CenterIntroduction/VBoxContainer"]
+margin_top = 594.0
+margin_right = 896.0
+margin_bottom = 675.0
+custom_fonts/font = SubResource( 5 )
+text = "Start the game"
 [connection signal="timeout" from="CenterAntimatter/VerticalAntimatter/TotalAntimatter/CurrencyTimer" to="." method="_on_CurrencyTimer_timeout"]
+[connection signal="pressed" from="CenterAntimatter/VerticalAntimatter/TurnOnScreen" to="." method="_on_TurnOnScreen_pressed"]
+[connection signal="pressed" from="CenterAntimatter/VerticalAntimatter/CreateRobot" to="." method="_on_CreateRobot_pressed"]
 [connection signal="pressed" from="CenterRobot/ScrollContainer/VerticalRobot/HPVContainer/ImprovePVButton" to="." method="_on_ImprovePVButton_pressed"]
 [connection signal="pressed" from="CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer/ImproveMeleeButton" to="." method="_on_ImproveMeleeButton_pressed"]
 [connection signal="pressed" from="CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer/ImproveDistanceButton" to="." method="_on_ImproveDistanceButton_pressed"]
@@ -606,3 +658,4 @@ text = "Revenue : 0/sec"
 [connection signal="pressed" from="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container/BuyBuilding1" to="." method="_on_BuyBuilding1_pressed"]
 [connection signal="pressed" from="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container/BuyBuilding2" to="." method="_on_BuyBuilding2_pressed"]
 [connection signal="pressed" from="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container/BuyBuilding3" to="." method="_on_BuyBuilding3_pressed"]
+[connection signal="pressed" from="CenterIntroduction/VBoxContainer/StartTheGame" to="." method="_on_StartTheGame_pressed"]
