@@ -8,7 +8,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _pressed():
 	var notificationData = {
-		"scene" : "res://ARPG/Maps/testmap.tscn",
+		"scene" : "res://ARPG/Niveaux/Test/Map de test.tscn",
 		"mainUI" : false
 		}
 	nc.post_notification("LOAD_LEVEL",notificationData)

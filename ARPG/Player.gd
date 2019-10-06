@@ -1,27 +1,24 @@
 extends KinematicBody2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 onready var body_sprite = $BodySprite
-#onready var weapon_sprite = $WeaponSprite
+
 var screen_size
 var bodySize  = Vector2()
 onready var weapon = $Handgun
+var player = true
 
 var projectile = preload("res://ARPG/Projectile.tscn")
 
 export var SPEED = 450 #(pixels/sec)
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	bodySize = body_sprite.frames.get_frame("default", 0).get_size()
 	screen_size = get_viewport_rect().size
 	weapon.position = $Position2D.position
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	
 func _physics_process(delta):
-	#Handling inputs
+
 	look_at(get_global_mouse_position())
 	var velocity = Vector2()  # The player's movement vector.
 	#position += velocity * delta
@@ -42,10 +39,16 @@ func _physics_process(delta):
 		pass #$AnimatedSprite.stop()
 	
 	if Input.is_mouse_button_pressed(BUTTON_LEFT):
-		print("rotation = ", rotation)
-		weapon.shot(get_viewport().get_mouse_position())
+		weapon.shot(get_local_mouse_position())
+		print(PersoGlobal.viewportARPG.get_mouse_position())
 	
 	move_and_collide(velocity * delta)
+
+func get_hit():
+	print("énorme bitasse")
+	PersoGlobal.pv -= 1
+	var notificationData = "pv"
+	nc.post_notification("CHANGE_HUD",notificationData)
 
 func fire():
 	var bullet = projectile.instance()
