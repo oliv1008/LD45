@@ -20,7 +20,7 @@ func _ready():
 
 func _on_BaseCQCWeapon_body_entered(body):
 	if body.get_class() == "KinematicBody2D":
-		if body.has_method("get_hit"):
+		if body.has_method("get_hit") && body.name != "Player":
 			body.get_hit(PersoGlobal.meleeDamage * damageMultiplier)
 
 func attack():

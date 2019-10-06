@@ -7,17 +7,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#$HBoxContainer/ARPGUI.visible = false
-	loadLevel("res://ARPG/Maps/testmap.tscn")
+	nc.add_observer(self, "LOAD_LEVEL","handleLoad")
+	$HBoxContainer/ViewportContainer2/ViewportARPG/RPGScreen.visible = false
+	PersoGlobal.viewportARPG = $HBoxContainer/ViewportContainer2/ViewportARPG
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func handleLoad(observer,notificationName,notificationData):
+	SceneLoader.setScene($HBoxContainer/ViewportContainer2/ViewportARPG, notificationData)
 
-func loadLevel(scene):
-	var s = ResourceLoader.load(scene)
-	var scene_loaded = s.instance()
-	# add scene to root
-	#$HBoxContainer/ARPGUI/ViewportARPG.add_child(scene_loaded)
-	
-	print("launching scene : " + scene)

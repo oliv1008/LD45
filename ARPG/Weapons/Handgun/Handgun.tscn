@@ -2,7 +2,7 @@
 
 [ext_resource path="res://ARPG/Weapons/BaseWeapon/BaseWeapon.gd" type="Script" id=1]
 [ext_resource path="res://ARPG/Projectiles/GodotProjectile/GodotBullet.tscn" type="PackedScene" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/Armes/Distance/gun1.png" type="Texture" id=3]
 
 [node name="Handgun" type="Node2D"]
 position = Vector2( 634.815, 650.728 )
@@ -13,9 +13,10 @@ ammoPerShot = 1.0
 projectile = ExtResource( 2 )
 
 [node name="EndBarrel" type="Position2D" parent="."]
-position = Vector2( 30.9827, 0.397217 )
+position = Vector2( -8.73684, -24.8369 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true

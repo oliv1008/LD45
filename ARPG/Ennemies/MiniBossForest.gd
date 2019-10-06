@@ -9,6 +9,7 @@ var currentPos = Vector2()
 var playerPos = Vector2()
 var velocity = Vector2()
 var posToMove = Vector2()
+var player = false
 
 onready var Hurtbox = $Area2D/CollisionShape2D
 onready var Hitbox = $CollisionShape2D
@@ -55,6 +56,9 @@ func attack():
 	animationPlayer.play("attack")
 	
 func die():
+	var notificationData = "ennemies"
+	nc.post_notification("CHANGE_HUD",notificationData)
+	PersoGlobal.ennemiesLeft -= 1
 	queue_free()
 
 #Quand l'animation d'attaque se fini on autorise l'enemie à bouger à nouveau
@@ -65,8 +69,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 #Quand la hitbox d'attaque de l'enemie touche un autre corps
 func _on_Area2D_body_entered(body):
 	if body == self:
-		print("Je suis l'enemie")
+		pass
 	else:
-		print("Je suis une cible")
-#		if body.has_method("get_attack"):
-#			body.get_attack(valeurDeDegat)
+		if (body.has_method("get_hit") && body.player == true):
+			body.get_hit()

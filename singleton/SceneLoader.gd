@@ -1,24 +1,17 @@
 extends Node
 
-#The currently active scene
-var currentScene = null
-
 func _ready():
-	#On load set the current scene to the last scene available
-	currentScene = get_tree().get_root().get_child(get_tree().get_root().get_child_count() -1)
+	pass
    
 # create a function to switch between scenes 
-func setScene(scene):
-	#clean up the current scene
-	if(currentScene != $main):
-		currentScene.queue_free()
-	#load the file passed in as the param "scene"
-	var s = ResourceLoader.load(scene)
-	#create an instance of our scene
-	currentScene = s.instance()
-	# add scene to root
-	get_tree().get_root().add_child(currentScene)
-	
-	print("launching scene : " + scene)
-
-
+func setScene(target_node, scene):
+	var child_id
+	for child_id in target_node.get_child_count():
+		target_node.get_child(child_id).queue_free()
+	var resource = ResourceLoader.load(scene.scene)
+	print("===============================================> " + scene.scene)
+	target_node.add_child(resource.instance())
+	if scene.mainUI :
+		var lol = { "test" : "test"}
+		nc.post_notification("DISPLAY_MAP", lol)
+	print("... loaded")
