@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bruitage_Boss_1_cri_spawn_mort.wav-171c2fed6d3ca31a0dbbccbc425d33d3.sample"
+
+[deps]
+
+source_file="res://music/Bruitage/Boss/Boss_1/Bruitage_Boss_1_cri_spawn_mort.wav"
+dest_files=[ "res://.import/Bruitage_Boss_1_cri_spawn_mort.wav-171c2fed6d3ca31a0dbbccbc425d33d3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

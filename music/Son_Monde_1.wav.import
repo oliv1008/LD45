@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Son_Monde_1.wav-64008a1ffc7d1c69637f8c6c0f807d0b.sample"
+
+[deps]
+
+source_file="res://music/Son_Monde_1.wav"
+dest_files=[ "res://.import/Son_Monde_1.wav-64008a1ffc7d1c69637f8c6c0f807d0b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

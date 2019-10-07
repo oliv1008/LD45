@@ -6,6 +6,8 @@ onready var CenterContainerIddle = $CenterContainerIddle
 func _ready():
 	nc.add_observer(self, "DEMO_NOTIFICATION","handleNotification")
 	nc.add_observer(self, "DISPLAY_MAP","handleDisplay")
+	
+	MusicPlayer.playSong("Menu", 0.02)
 
 func _exit_tree():
 	nc.remove_observer(self,"DEMO_NOTIFICATION")

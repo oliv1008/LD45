@@ -1,11 +1,18 @@
 extends Node2D
 
 #loops
-var songs = { "Song1" : "res://music/1vs0_JuniorGroove.ogg", \
-			"Song2" : "res://music/llab007a_b-complex-amazon_rain.ogg" }
+var songs = { 
+	"Song1" : "res://music/1vs0_JuniorGroove.ogg",
+	"Song2" : "res://music/llab007a_b-complex-amazon_rain.ogg",
+	"Menu" : "res://music/Son_Ambiance_Main.wav",
+	"Monde1" : "res://music/Son_Monde_1.wav",
+	"Boss1" : "res://music/Son_Boss_Monde_1.wav"}
 
 #only to be played at the start of the loop
-var intros = { "intro1" : "res://music/just-like-magic.ogg" }
+var intros = { 
+	"intro1" : "res://music/just-like-magic.ogg",
+	"IntroBoss1" : "res://music/Son_Boss_Monde_1_Tansition.wav",
+}
 
 #CAREFUL when you add music files to set if they must be on loop or not /!\ 
 

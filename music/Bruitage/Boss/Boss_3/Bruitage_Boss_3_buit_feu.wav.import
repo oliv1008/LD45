@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bruitage_Boss_3_buit_feu.wav-4e248b9dd62a92c82b265205aa666118.sample"
+
+[deps]
+
+source_file="res://music/Bruitage/Boss/Boss_3/Bruitage_Boss_3_buit_feu.wav"
+dest_files=[ "res://.import/Bruitage_Boss_3_buit_feu.wav-4e248b9dd62a92c82b265205aa666118.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

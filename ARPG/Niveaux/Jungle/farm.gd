@@ -3,7 +3,9 @@ extends Node2D
 var popUp = load("res://ARPG/PopUpAntimatter.tscn")
 var mob = load("res://ARPG/Ennemies/Forest/TrashForest1.tscn")
 var spawnNumber = 20
+
 func _ready():
+	MusicPlayer.playSong("Monde1", 0.02)
 	$Timer.start()
 	PersoGlobal.ennemiesLeft = 20
 	var notificationData = "ennemies"

@@ -3,6 +3,7 @@ extends Node2D
 var popUp = load("res://ARPG/PopUpAntimatter.tscn")
 
 func _ready():
+	MusicPlayer.playSong("Monde1", 0.02)
 	PersoGlobal.ammoLeft = PersoGlobal.numberOfAmmoMax
 	PersoGlobal.pv = PersoGlobal.pvMax
 	PersoGlobal.ennemiesLeft = 29
