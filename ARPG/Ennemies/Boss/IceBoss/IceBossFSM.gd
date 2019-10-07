@@ -27,37 +27,20 @@ func _decide_on_next_state():
 	if current_state == null:
 		return $Spawn
 	if current_state == $Spawn:
-		return $RoamSequence
-
-	elif phase == 1:
-		if current_state == $RoamSequence:
-			return $BreathAttack
-		if current_state == $IcicleAttack:
-			if sequence_cycles < 1:
-				sequence_cycles += 1
-				return $IcicleAttack
-			else:
-				sequence_cycles = 0
-				return $SummonShieldFront
-		if current_state == $SummonShieldFront:
-				return $RoamSequence
-		if current_state == $BreathAttack:
-			return $IcicleAttack
-
-	elif phase == 2:
-		if current_state == $RoamSequence:
-			return $BreathAttack
-		if current_state == $IcicleAttack:
-			if sequence_cycles < 2:
-				sequence_cycles += 1
-				return $IcicleAttack
-			else:
-				sequence_cycles = 0
-				return $SummonShieldBack
-		if current_state == $SummonShieldBack:
-				return $RoamSequence
-		if current_state == $BreathAttack:
-			return $IcicleAttack
+		return $StraightShot
+		
+	if current_state != $Wait:
+		return $Wait
+	else:
+		var nextAction = randi() % 4
+		if nextAction == 0:
+			return $StraightShot
+		if nextAction == 1:
+			return $SpiralShot
+		if nextAction == 2:
+			return $ScatterShot
+		if nextAction == 3:
+			return $CardinalShot
 
 func change_phase(new_phase):
 	phase = new_phase

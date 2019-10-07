@@ -7,10 +7,13 @@ extends "res://state/State.gd"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-	
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
 func enter():
 	owner.get_node('AnimationPlayer').play('Die')
 
 func _on_animation_finished(anim_name):
-	if anim_name == "Die":
-		queue_free()
+	queue_free()
