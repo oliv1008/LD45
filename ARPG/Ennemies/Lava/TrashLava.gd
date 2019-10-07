@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 export (int) var pv = 50
-var mouvementSpeed = 100
-var valueAM = 100
+var mouvementSpeed = 300
+var valueAM = 500
 onready var raycast = $RayCast2D
 onready var tweenNode = $Tween
 var isAttacking = false
@@ -19,12 +19,12 @@ onready var Hitbox = $CollisionShape2D
 onready var Cast = $RayCast2D
 onready var AgroLine = $RayCast2D2
 
+
 func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
 	currentPos = position
-	move_and_slide(velocity, Vector2(0, -1))
 	if (get_parent().get_node("Player") && player_entered == true):
 		playerPos = get_parent().get_node("Player").position
 		AgroLine.cast_to = playerPos - currentPos
@@ -32,8 +32,8 @@ func _physics_process(delta):
 			goGetHim = true
 
 	if (goGetHim == true):
-		playerPos = get_parent().get_node("Player").position
-		posToMove = playerPos - currentPos
+		playerPos = get_parent().get_node("Player").position		
+		posToMove = (playerPos - currentPos)*2
 		if not isAttacking && not abs(posToMove.x) < 2 && not abs(posToMove.y) < 2:
 			var animationPlayer = $AnimationPlayer
 			animationPlayer.play("move")
@@ -87,7 +87,7 @@ func _on_Area2D_body_entered(body):
 	if body == self:
 		pass
 	else:
-		if (body.has_method("get_hit") && body.player == true):
+		if (body.has_method("get_hit") && body.get_name() == "Player"):
 			body.get_hit()
 
 func _on_Agro_body_entered(body):

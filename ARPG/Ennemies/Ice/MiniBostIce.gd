@@ -34,6 +34,8 @@ func _physics_process(delta):
 		playerPos = get_parent().get_node("Player").position
 		posToMove = playerPos - currentPos
 		if not isAttacking && not abs(posToMove.x) < 2 && not abs(posToMove.y) < 2:
+			var animationPlayer = $AnimationPlayer
+			animationPlayer.play("move")
 			look_at(playerPos)
 			velocity = posToMove.normalized() * mouvementSpeed
 			move_and_collide(velocity*delta)
