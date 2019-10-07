@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BigSword.png-1056439be69e41991c5fd181efd622ec.stex"
+path="res://.import/Rifle.png-19ea7275a6c656707f4f8d6972cc871d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Armes/Cac/BigSword.png"
-dest_files=[ "res://.import/BigSword.png-1056439be69e41991c5fd181efd622ec.stex" ]
+source_file="res://assets/images/Armes/Distance/Rifle.png"
+dest_files=[ "res://.import/Rifle.png-19ea7275a6c656707f4f8d6972cc871d.stex" ]
 
 [params]
 

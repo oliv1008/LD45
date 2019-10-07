@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BigSword.png-1056439be69e41991c5fd181efd622ec.stex"
+path="res://.import/LaserHandgun.png-13800caffacb82a8bc8ae51863eb0fc6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Armes/Cac/BigSword.png"
-dest_files=[ "res://.import/BigSword.png-1056439be69e41991c5fd181efd622ec.stex" ]
+source_file="res://assets/images/Armes/Distance/LaserHandgun.png"
+dest_files=[ "res://.import/LaserHandgun.png-13800caffacb82a8bc8ae51863eb0fc6.stex" ]
 
 [params]
 
