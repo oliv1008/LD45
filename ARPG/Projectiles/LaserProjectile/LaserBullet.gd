@@ -20,6 +20,8 @@ func _process(delta):
 		if collisionData.collider.get_class() == "KinematicBody2D":
 			if collisionData.collider.has_method("get_hit"):
 				collisionData.collider.get_hit(damage)
+			else:
+				queue_free()
 		else:
 			queue_free()
 

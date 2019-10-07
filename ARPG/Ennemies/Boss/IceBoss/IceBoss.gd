@@ -31,13 +31,8 @@ func _on_Health_health_changed(new_health):
 #	tween_node.interpolate_property($Pivot, 'scale', Vector2(0.92, 1.12), Vector2(1.0, 1.0), 0.3, Tween.TRANS_ELASTIC, Tween.EASE_IN_OUT)
 	tween_node.interpolate_property($AnimatedSprite, 'modulate', Color('#ff48de'), Color('#ffffff'), 0.2, Tween.TRANS_QUINT, Tween.EASE_IN)
 	tween_node.start()
-	match state_machine.phase:
-		1:
-			if new_health < 50:
-				state_machine.phase = 2
-		2:
-			if new_health < 25:
-				state_machine.phase = 3
+	if new_health < 50:
+		state_machine.phase = 2
 				
 func tween_dash_in():
 	tween_node.interpolate_property(self, 'position', position, Vector2(position.x, position.y + 125), 0.2, Tween.TRANS_QUINT, Tween.EASE_OUT)
