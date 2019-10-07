@@ -50,3 +50,6 @@ position = Vector2( 0.827931, -44.7018 )
 
 [node name="Position2D2" type="Position2D" parent="."]
 position = Vector2( -0.447525, 35.0774 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
