@@ -4,7 +4,7 @@ extends Node2D
 func _ready():
 	PersoGlobal.ammoLeft = PersoGlobal.numberOfAmmoMax
 	PersoGlobal.pv = PersoGlobal.pvMax
-	PersoGlobal.ennemiesLeft = 0
+	PersoGlobal.ennemiesLeft = 39
 
 func _process(delta):
 	if(PersoGlobal.ennemiesLeft == 0):
