@@ -22,4 +22,4 @@ func on_level_end() :
 		"scene" : "res://ARPG/Level_ending.tscn",
 		"mainUI" : false
 	}
-	nc.post_notification("LOAD_LEVEL",notificationData)
+	ButtonState.tab3= true

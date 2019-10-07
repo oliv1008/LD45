@@ -12,3 +12,5 @@ var level9 = true
 var boss1 = true
 var boss2 = true
 var boss3 = true
+var tab2 = false
+var tab3 = false

@@ -80,7 +80,7 @@ func handleNotification(observer,notificationName,notificationData):
 	if (notificationData == "ennemies"):
 		EnnemiesLeft.text = str(PersoGlobal.ennemiesLeft, " ennemies left")
 		if (PersoGlobal.ennemiesLeft <= 0):
-			var notificationFin = "FIN"
+			var notificationFin = "boss"
 			nc.post_notification("FIN", notificationData)
 	if (notificationData == "ammo"):
 		AmmoLeft.text = str(PersoGlobal.ammoLeft, " ammo left")
