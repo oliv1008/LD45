@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 onready var state_machine = $StateMachine
 onready var tween_node = $Tween
+var pv = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,6 +22,10 @@ func _on_Die_finished():
 	state_machine.set_active(false)
 	emit_signal('died')
 	queue_free()
+	
+func get_hit(damage):
+	pv -= damage
+	_on_Health_health_changed(pv)
 	
 func _on_Health_health_changed(new_health):
 #	tween_node.interpolate_property($Pivot, 'scale', Vector2(0.92, 1.12), Vector2(1.0, 1.0), 0.3, Tween.TRANS_ELASTIC, Tween.EASE_IN_OUT)

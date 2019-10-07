@@ -85,7 +85,7 @@ func _on_Area2D_body_entered(body):
 	if body == self:
 		pass
 	else:
-		if (body.has_method("get_hit") && body.player == true):
+		if (body.has_method("get_hit") && body.get_name() == "Player"):
 			body.get_hit()
 
 func _on_Agro_body_entered(body):

@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://ARPG/Ennemies/Boss/IceBoss/Icicle/Icicle.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/Ennemis/Ice/Boss/floorice0apparition2.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/Ennemis/Ice/Boss/floorice0apparition1.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/Ennemis/Ice/Boss/floorice.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/Ennemis/Ice/Boss/cflooriceapparitioncone.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/Ennemis/Ice/Boss/bpflooriceapparitioncone.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/Ennemis/Ice/Boss/bpaflooriceapparitioncone.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 23.9777, 22.3355 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Spawn"
+length = 2.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 1.5, 1.6, 1.7, 1.8, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( 9, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 0.999999 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Icicle" type="Area2D"]
+position = Vector2( 880.548, 447.263 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 2 )
+offset = Vector2( 9, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Spawn = SubResource( 3 )
+[connection signal="body_entered" from="." to="." method="_on_Icicle_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

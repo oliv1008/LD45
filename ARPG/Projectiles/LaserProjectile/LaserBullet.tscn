@@ -19,4 +19,3 @@ shape = SubResource( 1 )
 modulate = Color( 1, 0, 0, 1 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 3 )
-

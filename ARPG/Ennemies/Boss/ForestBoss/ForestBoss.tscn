@@ -20,7 +20,7 @@
 [ext_resource path="res://ARPG/Ennemies/Boss/ForestBoss/Die.gd" type="Script" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 110.084, 73.7179 )
+extents = Vector2( 158.678, 156.002 )
 
 [sub_resource type="Animation" id=2]
 length = 0.5
@@ -270,6 +270,7 @@ script = ExtResource( 17 )
 script = ExtResource( 18 )
 
 [node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
 scale = Vector2( 0.1, 0.1 )
 collision_layer = 4
 __meta__ = {
