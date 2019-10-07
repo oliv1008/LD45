@@ -31,9 +31,9 @@ func handleNotification(observer,notificationName,notificationData):
 		}
 		nc.post_notification("LEVEL_END",notificationDat)
 		
-		notificationDat = {
-			"scene" : "res://ARPG/ARPG_UI/rpgUI.tscn",
-			"mainUI" : true
+		notificationData = {
+		"scene" : "res://ARPG/Level_ending.tscn",
+		"mainUI" : false
 		}
 		PersoGlobal.ammoLeft = PersoGlobal.numberOfAmmoMax
 		nc.post_notification("LOAD_LEVEL",notificationDat)

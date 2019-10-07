@@ -359,8 +359,8 @@ scale = Vector2( 1.78016, 1.61411 )
 curve = SubResource( 20 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( -350.08, -207.038 )
-rotation = 1.58426
+position = Vector2( -626.868, -272.771 )
+rotation = 1.18066
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
