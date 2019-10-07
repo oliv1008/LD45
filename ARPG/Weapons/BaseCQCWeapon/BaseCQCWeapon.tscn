@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ARPG/Weapons/BaseCQCWeapon/BaseCQCWeapon.gd" type="Script" id=1]
+
+[sub_resource type="SegmentShape2D" id=1]
+b = Vector2( -0.02034, 27.8102 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "BaseAttack"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+
+[node name="BaseCQCWeapon" type="Area2D"]
+position = Vector2( 113.829, 122.209 )
+rotation = -1.5708
+collision_layer = 0
+collision_mask = 4
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/BaseAttack = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_BaseCQCWeapon_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
