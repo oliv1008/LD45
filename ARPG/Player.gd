@@ -27,6 +27,15 @@ func _ready():
 	if (PersoGlobal.currentWeaponCacName == "Spear"):
 		cqcWeapon = $Spear
 		cqcWeapon.visible = true
+	if (PersoGlobal.currentWeaponCacName == "Sword"):
+		cqcWeapon = $Sword
+		cqcWeapon.visible = true
+	if (PersoGlobal.currentWeaponCacName == "Axe"):
+		cqcWeapon = $Axe
+		cqcWeapon.visible = true
+	if (PersoGlobal.currentWeaponCacName == "BigSword"):
+		cqcWeapon = $BigSword
+		cqcWeapon.visible = true
 	bodySize = body_sprite.frames.get_frame("default", 0).get_size()
 	screen_size = get_viewport_rect().size
 	weapon.position = $Position2D.position

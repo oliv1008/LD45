@@ -205,252 +205,239 @@ position = Vector2( -1167.17, -448.218 )
 
 [node name="MiniBostForest" parent="." instance=ExtResource( 7 )]
 position = Vector2( -1146.92, -676.639 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="MiniBostForest2" parent="." instance=ExtResource( 7 )]
 position = Vector2( -993.999, -673.385 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="MiniBostForest3" parent="." instance=ExtResource( 7 )]
 position = Vector2( -899.646, -686.399 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="MiniBostForest4" parent="." instance=ExtResource( 7 )]
 position = Vector2( -1062.32, -741.71 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="MiniBostForest5" parent="." instance=ExtResource( 7 )]
 position = Vector2( -1081.84, -634.342 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="MiniBostForest6" parent="." instance=ExtResource( 7 )]
 position = Vector2( -1055.82, 341.725 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="MiniBostForest8" parent="." instance=ExtResource( 7 )]
 position = Vector2( 339.959, 208.329 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="MiniBostForest9" parent="." instance=ExtResource( 7 )]
 position = Vector2( 593.737, 257.132 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="MiniBostForest10" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1960.23, 536.938 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="MiniBostForest11" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1956.98, 670.334 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="MiniBostForest12" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1960.23, 888.322 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="MiniBostForest13" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1878.89, 1008.7 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="MiniBostForest7" parent="." instance=ExtResource( 7 )]
 position = Vector2( -961.463, 286.414 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="TrashIce" parent="." instance=ExtResource( 8 )]
 position = Vector2( -307.498, -468.411 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce2" parent="." instance=ExtResource( 8 )]
 position = Vector2( -229.413, -439.129 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce3" parent="." instance=ExtResource( 8 )]
 position = Vector2( -180.61, -351.283 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce4" parent="." instance=ExtResource( 8 )]
 position = Vector2( -115.538, -282.958 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce5" parent="." instance=ExtResource( 8 )]
 position = Vector2( -43.9601, -247.169 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce11" parent="." instance=ExtResource( 8 )]
 position = Vector2( -353.048, -94.252 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce12" parent="." instance=ExtResource( 8 )]
 position = Vector2( -353.048, -94.252 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce13" parent="." instance=ExtResource( 8 )]
 position = Vector2( -287.977, -94.252 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce15" parent="." instance=ExtResource( 8 )]
 position = Vector2( -323.766, -81.2378 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce16" parent="." instance=ExtResource( 8 )]
 position = Vector2( -323.766, -81.2378 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce17" parent="." instance=ExtResource( 8 )]
 position = Vector2( -323.766, -81.2378 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce14" parent="." instance=ExtResource( 8 )]
 position = Vector2( -310.752, -42.1952 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce18" parent="." instance=ExtResource( 8 )]
 position = Vector2( 463.595, 211.582 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce19" parent="." instance=ExtResource( 8 )]
 position = Vector2( 502.638, 263.639 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce20" parent="." instance=ExtResource( 8 )]
 position = Vector2( 554.694, 331.964 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce21" parent="." instance=ExtResource( 8 )]
 position = Vector2( 590.484, 403.542 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce23" parent="." instance=ExtResource( 8 )]
 position = Vector2( 375.749, 865.547 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce24" parent="." instance=ExtResource( 8 )]
 position = Vector2( 392.017, 810.237 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce25" parent="." instance=ExtResource( 8 )]
 position = Vector2( 392.017, 810.237 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce26" parent="." instance=ExtResource( 8 )]
 position = Vector2( 444.074, 888.322 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce27" parent="." instance=ExtResource( 8 )]
 position = Vector2( 499.384, 901.336 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce28" parent="." instance=ExtResource( 8 )]
 position = Vector2( 476.609, 836.265 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce29" parent="." instance=ExtResource( 8 )]
 position = Vector2( 148, 465.36 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce47" parent="." instance=ExtResource( 8 )]
 position = Vector2( 99.1967, 549.952 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce48" parent="." instance=ExtResource( 8 )]
 position = Vector2( -356.301, 536.938 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce49" parent="." instance=ExtResource( 8 )]
 position = Vector2( -346.541, 162.779 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce50" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1065.5, 829.758 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce46" parent="." instance=ExtResource( 8 )]
 position = Vector2( 570.962, 872.054 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce30" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1358.32, 279.907 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce31" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1449.42, 266.893 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce32" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1537.27, 312.442 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce33" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1426.65, 328.71 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce34" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1501.48, 371.006 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce35" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1335.55, 364.499 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce36" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1286.75, 325.457 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce37" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1329.04, 1109.56 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce38" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1416.89, 1086.79 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce39" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1485.21, 1080.28 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce40" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1556.79, 1073.77 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce41" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1612.1, 702.869 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce44" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1556.79, 829.758 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce45" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1644.64, 1073.77 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce42" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1485.21, 829.758 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce43" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1517.75, 728.898 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce22" parent="." instance=ExtResource( 8 )]
 position = Vector2( 424.552, 318.95 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce6" parent="." instance=ExtResource( 8 )]
 position = Vector2( -63.4813, -302.48 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce7" parent="." instance=ExtResource( 8 )]
 position = Vector2( -109.031, -374.058 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce8" parent="." instance=ExtResource( 8 )]
 position = Vector2( -138.313, -422.861 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce9" parent="." instance=ExtResource( 8 )]
 position = Vector2( -200.131, -500.947 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )
 
 [node name="TrashIce10" parent="." instance=ExtResource( 8 )]
 position = Vector2( -271.709, -546.496 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 1, 1 )

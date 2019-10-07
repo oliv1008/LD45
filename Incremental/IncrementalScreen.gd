@@ -44,6 +44,7 @@ onready var Heart4 = $CenterRobot/ScrollContainer/VerticalRobot/HPVContainer/Hea
 onready var Heart5 = $CenterRobot/ScrollContainer/VerticalRobot/HPVContainer/Heart5
 
 onready var CacWeaponName = $CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer2/WeaponName
+onready var CacWeaponSprite = $CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer2/TextureRect
 onready var DistanceWeaponName = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer2/WeaponName
 onready var DistanceWeaponSprite = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer2/TextureRect
 
@@ -76,7 +77,7 @@ var quantityBuilding4 = 0
 var totalRevenueBuilding4 = 0
 
 var heartPrice = 10
-var improveMeleePrice = 20
+var improveMeleePrice = 1
 var improveDistancePrice = 1
 var ammoPrice = 1
 
@@ -84,6 +85,11 @@ var spriteHandgun = load("res://assets/images/Armes/Distance/HandgunIncrementalS
 var spriteLaserHandgun = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
 var spriteLaserRifle = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
 var spriteRifle = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
+
+var spriteSpear = load("res://icon.png")
+var spriteSword = load("res://icon.png")
+var spriteAxe = load("res://icon.png")
+var spriteBigSword = load("res://icon.png")
 	
 func _ready():
 	nc.add_observer(self, "Antimatter","handleNotification")
@@ -203,11 +209,26 @@ func _on_ImproveMeleeButton_pressed():
 		antimatter -= improveMeleePrice
 		PersoGlobal.meleeDamage += 10
 		improveMeleePrice *= 2
-		PersoGlobal.dmgTillNextWeaponCac -= 10
-		if (PersoGlobal.dmgTillNextWeaponCac <= 0):
-			PersoGlobal.dmgTillNextWeaponCac = PersoGlobal.dmgBetweenWeapons
-			PersoGlobal.indexMelee += 1
-			BeforeNextMeleeWeapon.text = str(PersoGlobal.dmgTillNextWeaponCac)
+		if (PersoGlobal.indexMelee < 3):
+			PersoGlobal.dmgTillNextWeaponCac -= 10
+			if (PersoGlobal.dmgTillNextWeaponCac <= 0):
+				PersoGlobal.dmgTillNextWeaponCac = PersoGlobal.dmgBetweenWeapons
+				PersoGlobal.indexMelee += 1
+				if (PersoGlobal.indexMelee == 3):
+					BeforeNextMeleeWeapon.text = "You reached the last weapon"
+					LabelAvantBeforeNextMelee.visible = false
+				else:
+					BeforeNextMeleeWeapon.text = str(PersoGlobal.dmgTillNextWeaponCac)
+				PersoGlobal.currentWeaponCacName = PersoGlobal.meleeWeapons[PersoGlobal.indexMelee]
+				CacWeaponName.text = PersoGlobal.currentWeaponCacName
+				if (PersoGlobal.currentWeaponCacName == "Spear"):
+					CacWeaponSprite.texture = spriteSpear
+				if (PersoGlobal.currentWeaponCacName == "Sword"):
+					CacWeaponSprite.texture = spriteSword
+				if (PersoGlobal.currentWeaponCacName == "Axe"):
+					CacWeaponSprite.texture = spriteAxe
+				if (PersoGlobal.currentWeaponCacName == "BigSword"):
+					CacWeaponSprite.texture = spriteBigSword
 		MeleeValue.text = str(PersoGlobal.meleeDamage , " dmg")
 		PriceImproveMelee.text = str(improveMeleePrice)
 		

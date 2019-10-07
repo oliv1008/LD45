@@ -1,5 +1,6 @@
 extends Area2D
 
+export (String) var nameOfWeapon
 export (float) var damageMultiplier
 export (float) var rateOfAttack
 var canAttack = true
