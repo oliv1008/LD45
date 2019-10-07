@@ -1,17 +1,20 @@
 extends Button
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if !ButtonState.boss2 :
+		var colorRectInstance = ColorRect.instance()
+		colorRectInstance.rect_size = self.rect_size
+		colorRectInstance.color = Color(200, 200, 200, 20)
+		self.add_child(colorRectInstance)
 
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _pressed():
-	var notificationData = {
-		"scene" : "res://ARPG/Niveaux/Glace/GlaceBoss.tscn",
-		"mainUI" : false
-		}
-	nc.post_notification("LOAD_LEVEL",notificationData)
-
+	if ButtonState.boss2 :
+		var notificationData = {
+			"scene" : "res://ARPG/Niveaux/Glace/GlaceBoss.tscn",
+			"mainUI" : false
+			}
+		nc.post_notification("LOAD_LEVEL",notificationData)
+	ButtonState.boss2 = false

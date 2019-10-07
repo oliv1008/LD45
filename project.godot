@@ -24,6 +24,7 @@ config/icon="res://icon.png"
 nc="*res://singleton/notification_center.gd"
 PersoGlobal="*res://singleton/PersoGlobal.gd"
 SceneLoader="*res://singleton/SceneLoader.gd"
+ButtonState="*res://singleton/ButtonState.gd"
 
 [display]
 
