@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://ARPG/Weapons/CQCSpear/Spear.gd" type="Script" id=1]
+[ext_resource path="res://ARPG/Weapons/CQCSword/Sword.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
@@ -29,8 +29,11 @@ rotation = -1.5708
 collision_layer = 0
 collision_mask = 4
 script = ExtResource( 1 )
+damageMultiplier = 3.0
+rateOfAttack = 1.0
 
 [node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 0, 17.0583 )
 scale = Vector2( 0.1, 1.53307 )
 texture = ExtResource( 2 )

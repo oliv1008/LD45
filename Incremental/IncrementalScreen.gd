@@ -14,15 +14,23 @@ var secondTime = true
 onready var CreateRobot = $CenterAntimatter/VerticalAntimatter/CreateRobot
 onready var CenterRobot = $CenterRobot
 
+# VARIABLES BUILDING
 onready var NumberBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container2/NumberBuilding1
 onready var RevenueBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container3/RevenueBuilding1
+onready var PriceBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container4/BuyBuilding1
+
 onready var NumberBuilding2 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container2/NumberBuilding2
 onready var RevenueBuilding2 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container3/RevenueBuilding2
+onready var PriceBuilding2 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container4/BuyBuilding2
+
 onready var NumberBuilding3 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container2/NumberBuilding3
 onready var RevenueBuilding3 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container3/RevenueBuilding3
-onready var PriceBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container4/BuyBuilding1
-onready var PriceBuilding2 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container4/BuyBuilding2
 onready var PriceBuilding3 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container4/BuyBuilding3
+
+onready var NumberBuilding4 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container2/NumberBuilding4
+onready var RevenueBuilding4 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container3/RevenueBuilding4
+onready var PriceBuilding4 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container4/BuyBuilding4
+# --------------------
 
 onready var MeleeValue = $CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer/MeleeValue
 onready var DistanceValue = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer/DistanceValue
@@ -57,6 +65,11 @@ var revenueBuilding3 = 400
 var quantityBuilding3 = 0
 var totalRevenueBuilding3 = 0
 
+var priceBuilding4 = 200
+var revenueBuilding4 = 400
+var quantityBuilding4 = 0
+var totalRevenueBuilding4 = 0
+
 var heartPrice = 10
 var improveMeleePrice = 20
 var improveDistancePrice = 40
@@ -75,6 +88,9 @@ func _ready():
 	PriceBuilding3.text = str(priceBuilding3)
 	NumberBuilding3.text = str("Quantity : ", quantityBuilding3)
 	RevenueBuilding3.text = str("Revenue : ", totalRevenueBuilding3)
+	PriceBuilding4.text = str(priceBuilding4)
+	NumberBuilding4.text = str("Quantity : ", quantityBuilding4)
+	RevenueBuilding4.text = str("Revenue : ", totalRevenueBuilding4)
 	MeleeValue.text = str(PersoGlobal.meleeDamage , " dmg")
 	DistanceValue.text = str(PersoGlobal.distanceDamage , " dmg")
 	NumberOfAmmo.text = str(PersoGlobal.numberOfAmmoMax, " Ammo")
@@ -146,6 +162,19 @@ func _on_BuyBuilding3_pressed():
 		totalAntimatter.text = str("You have ", antimatter)
 		NumberBuilding3.text = str("Quantity : ", quantityBuilding3)
 		RevenueBuilding3.text = str("Revenue : ", totalRevenueBuilding3)
+		antimatterPerSeconds.text = str("You earn ", antimatterPerSec)
+		
+func _on_BuyBuilding4_pressed():
+	if (antimatter >= priceBuilding4):
+		antimatter -= priceBuilding4
+		antimatterPerSec += revenueBuilding4
+		totalRevenueBuilding4 += revenueBuilding4
+		quantityBuilding4 += 1
+		priceBuilding4 *= 2
+		PriceBuilding4.text = str(priceBuilding4)
+		totalAntimatter.text = str("You have ", antimatter)
+		NumberBuilding4.text = str("Quantity : ", quantityBuilding4)
+		RevenueBuilding4.text = str("Revenue : ", totalRevenueBuilding4)
 		antimatterPerSeconds.text = str("You earn ", antimatterPerSec)
 
 func _on_ImproveMeleeButton_pressed():
