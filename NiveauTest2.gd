@@ -15,6 +15,7 @@ func _ready():
 
 func _exit_tree():
 	nc.remove_observer(self,"POPUP")
+	nc.remove_observer(self,"FIN")
 	
 func handleNotification(observer,notificationName,notificationData):
 	if (notificationName == "POPUP"):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://ARPG/Ennemies/Ice/MiniBostIce.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/Ennemis/Ice/MiniBossIceAttack1.png" type="Texture" id=2]
@@ -108,6 +108,9 @@ tracks/0/keys = {
 "values": [ 4, 5 ]
 }
 
+[sub_resource type="CircleShape2D" id=7]
+radius = 458.576
+
 [node name="MiniBostIce" type="KinematicBody2D"]
 collision_layer = 4
 collision_mask = 3
@@ -131,6 +134,7 @@ cast_to = Vector2( 140, 0 )
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
 __meta__ = {
 "_edit_group_": true
 }
@@ -144,5 +148,17 @@ shape = SubResource( 3 )
 anims/attack = SubResource( 4 )
 anims/die = SubResource( 5 )
 anims/move = SubResource( 6 )
+
+[node name="Agro" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Agro"]
+shape = SubResource( 7 )
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 50, 0 )
+collide_with_areas = true
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="Agro" to="." method="_on_Agro_body_entered"]
