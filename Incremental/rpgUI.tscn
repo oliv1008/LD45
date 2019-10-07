@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://ARPG/ARPG_UI/rpgUI.gd" type="Script" id=1]
 [ext_resource path="res://ARPG/ARPG_UI/VBoxContainer.gd" type="Script" id=2]
@@ -8,9 +8,8 @@
 [ext_resource path="res://icon.png" type="Texture" id=6]
 [ext_resource path="res://ARPG/ARPG_UI/Level 1.gd" type="Script" id=7]
 [ext_resource path="res://ARPG/ARPG_UI/Planet C.gd" type="Script" id=8]
-[ext_resource path="res://assets/images/Robot de face.png" type="Texture" id=9]
-[ext_resource path="res://ARPG/ARPG_UI/Planet D.gd" type="Script" id=10]
-[ext_resource path="res://assets/72267645_397230914283131_1073197892161765376_n.png" type="Texture" id=11]
+[ext_resource path="res://ARPG/ARPG_UI/Planet D.gd" type="Script" id=9]
+[ext_resource path="res://assets/72267645_397230914283131_1073197892161765376_n.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.304688, 0.304688, 0.304688, 1 )
@@ -199,7 +198,6 @@ margin_left = 15.0
 margin_top = 15.0
 margin_right = -15.0
 margin_bottom = -15.0
-texture = ExtResource( 9 )
 expand = true
 stretch_mode = 2
 
@@ -271,7 +269,7 @@ margin_left = 4.0
 margin_top = 43.0
 margin_right = -4.0
 margin_bottom = -4.0
-script = ExtResource( 10 )
+script = ExtResource( 9 )
 
 [node name="Background3" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/Planet D"]
 show_behind_parent = true
@@ -281,7 +279,7 @@ margin_left = 15.0
 margin_top = 15.0
 margin_right = -15.0
 margin_bottom = -15.0
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 expand = true
 stretch_mode = 2
 
@@ -350,26 +348,23 @@ margin_right = 949.0
 margin_bottom = 1080.0
 
 [node name="CenterContainerIddle" type="CenterContainer" parent="."]
-visible = false
 margin_right = 948.0
 margin_bottom = 1082.0
 
 [node name="VIddleContainer" type="VBoxContainer" parent="CenterContainerIddle"]
-margin_left = 257.0
-margin_top = 177.0
-margin_right = 691.0
-margin_bottom = 904.0
+margin_left = 288.0
+margin_top = 475.0
+margin_right = 660.0
+margin_bottom = 606.0
 custom_constants/separation = 100
 
 [node name="FlexingRobot" type="TextureRect" parent="CenterContainerIddle/VIddleContainer"]
-margin_right = 434.0
-margin_bottom = 596.0
-texture = ExtResource( 9 )
+margin_right = 372.0
 
 [node name="LetsGo" type="Button" parent="CenterContainerIddle/VIddleContainer"]
-margin_top = 696.0
-margin_right = 434.0
-margin_bottom = 727.0
+margin_top = 100.0
+margin_right = 372.0
+margin_bottom = 131.0
 custom_fonts/font = ExtResource( 3 )
 text = "Let's go on an adventure !"
 [connection signal="pressed" from="CenterContainerIddle/VIddleContainer/LetsGo" to="." method="_on_LetsGo_pressed"]

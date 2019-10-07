@@ -262,10 +262,10 @@ expand = true
 stretch_mode = 2
 
 [node name="Level 4" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
-margin_left = 425.75
-margin_top = 327.0
-margin_right = 501.75
-margin_bottom = 400.0
+margin_left = 320.631
+margin_top = 482.575
+margin_right = 916.631
+margin_bottom = 1078.58
 rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
@@ -275,10 +275,10 @@ flat = true
 script = ExtResource( 17 )
 
 [node name="Level 5" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
-margin_left = 572.0
-margin_top = 210.0
-margin_right = 648.0
-margin_bottom = 283.0
+margin_left = 420.629
+margin_top = 310.914
+margin_right = 1016.63
+margin_bottom = 906.914
 rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
@@ -288,10 +288,10 @@ flat = true
 script = ExtResource( 18 )
 
 [node name="Level 6" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
-margin_left = 691.25
-margin_top = 453.0
-margin_right = 767.25
-margin_bottom = 526.0
+margin_left = 518.856
+margin_top = 566.528
+margin_right = 1114.86
+margin_bottom = 1162.53
 rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
@@ -301,10 +301,10 @@ flat = true
 script = ExtResource( 19 )
 
 [node name="Farm2" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
-margin_left = 142.25
-margin_top = 354.0
-margin_right = 218.25
-margin_bottom = 427.0
+margin_left = 491.243
+margin_top = 131.149
+margin_right = 1087.24
+margin_bottom = 727.149
 rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
@@ -314,10 +314,10 @@ flat = true
 script = ExtResource( 20 )
 
 [node name="Boss2" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
-margin_left = 248.0
-margin_top = 174.0
-margin_right = 324.0
-margin_bottom = 247.0
+margin_left = 340.504
+margin_top = 720.616
+margin_right = 936.504
+margin_bottom = 1316.62
 rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
@@ -349,10 +349,10 @@ expand = true
 stretch_mode = 2
 
 [node name="Level 7" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet D/Background3"]
-margin_left = 425.75
-margin_top = 327.0
-margin_right = 501.75
-margin_bottom = 400.0
+margin_left = 308.017
+margin_top = 612.922
+margin_right = 904.017
+margin_bottom = 1208.92
 rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
@@ -362,10 +362,10 @@ flat = true
 script = ExtResource( 24 )
 
 [node name="Level 8" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet D/Background3"]
-margin_left = 572.0
-margin_top = 210.0
-margin_right = 648.0
-margin_bottom = 283.0
+margin_left = 223.007
+margin_top = 445.465
+margin_right = 819.007
+margin_bottom = 1041.47
 rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
@@ -375,10 +375,10 @@ flat = true
 script = ExtResource( 25 )
 
 [node name="Level 9" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet D/Background3"]
-margin_left = 691.25
-margin_top = 453.0
-margin_right = 767.25
-margin_bottom = 526.0
+margin_left = 527.265
+margin_top = 436.181
+margin_right = 1123.27
+margin_bottom = 1032.18
 rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
@@ -388,10 +388,10 @@ flat = true
 script = ExtResource( 26 )
 
 [node name="Farm3" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet D/Background3"]
-margin_left = 142.25
-margin_top = 354.0
-margin_right = 218.25
-margin_bottom = 427.0
+margin_left = 297.825
+margin_top = 152.173
+margin_right = 893.825
+margin_bottom = 748.173
 rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
@@ -401,10 +401,10 @@ flat = true
 script = ExtResource( 27 )
 
 [node name="Boss3" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet D/Background3"]
-margin_left = 248.0
-margin_top = 174.0
-margin_right = 324.0
-margin_bottom = 247.0
+margin_left = 630.631
+margin_top = 615.497
+margin_right = 1226.63
+margin_bottom = 1211.5
 rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
@@ -455,10 +455,10 @@ position = Vector2( 700, 977 )
 position = Vector2( 880, 500 )
 
 [node name="Star12" parent="." instance=ExtResource( 29 )]
+visible = false
 position = Vector2( 75, 550 )
 
 [node name="Frontground" type="TextureRect" parent="."]
-visible = false
 margin_right = 949.0
 margin_bottom = 1080.0
 texture = ExtResource( 30 )
@@ -476,7 +476,6 @@ anims/Iddle = SubResource( 10 )
 [node name="FlexingRobot" type="AnimatedSprite" parent="CenterContainerIddle"]
 position = Vector2( 484.11, 523.812 )
 frames = SubResource( 11 )
-frame = 1
 
 [node name="LetsGo" type="Button" parent="CenterContainerIddle"]
 margin_left = 308.449
