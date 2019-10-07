@@ -971,14 +971,12 @@ margin_bottom = 32.0
 texture = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 margin_right = 964.0
 margin_bottom = 1085.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="CenterIntroduction" type="CenterContainer" parent="."]
 editor/display_folded = true
-visible = false
 margin_right = 961.0
 margin_bottom = 1085.0
 
@@ -1001,7 +999,6 @@ margin_right = 896.0
 margin_bottom = 675.0
 custom_fonts/font = SubResource( 5 )
 text = "Start the game"
-
 [connection signal="timeout" from="CenterAntimatter/VerticalAntimatter/HBoxContainer/TotalAntimatter/CurrencyTimer" to="." method="_on_CurrencyTimer_timeout"]
 [connection signal="pressed" from="CenterAntimatter/VerticalAntimatter/TurnOnScreen" to="." method="_on_TurnOnScreen_pressed"]
 [connection signal="pressed" from="CenterAntimatter/VerticalAntimatter/CreateRobot" to="." method="_on_CreateRobot_pressed"]

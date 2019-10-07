@@ -33,7 +33,7 @@ func _physics_process(delta):
 
 	if (goGetHim == true):
 		playerPos = get_parent().get_node("Player").position		
-		posToMove = playerPos - currentPos
+		posToMove = (playerPos - currentPos)*2
 		if not isAttacking && not abs(posToMove.x) < 2 && not abs(posToMove.y) < 2:
 			look_at(playerPos)
 			velocity = posToMove.normalized() * mouvementSpeed

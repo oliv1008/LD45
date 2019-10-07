@@ -27,6 +27,15 @@ func _ready():
 	if (PersoGlobal.currentWeaponCacName == "Spear"):
 		cqcWeapon = $Spear
 		cqcWeapon.visible = true
+	if (PersoGlobal.currentWeaponCacName == "Sword"):
+		cqcWeapon = $Sword
+		cqcWeapon.visible = true
+	if (PersoGlobal.currentWeaponCacName == "Axe"):
+		cqcWeapon = $Axe
+		cqcWeapon.visible = true
+	if (PersoGlobal.currentWeaponCacName == "BigSword"):
+		cqcWeapon = $BigSword
+		cqcWeapon.visible = true
 	bodySize = body_sprite.frames.get_frame("default", 0).get_size()
 	screen_size = get_viewport_rect().size
 	weapon.position = $Position2D.position
@@ -59,7 +68,7 @@ func _physics_process(delta):
 		weapon.shot(get_global_mouse_position())
 	if Input.is_mouse_button_pressed(BUTTON_RIGHT):
 		cqcWeapon.attack()
-	
+	move_and_slide(velocity, Vector2(0, -1))
 	move_and_collide(velocity * delta)
 
 func get_hit():

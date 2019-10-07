@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ARPG/Weapons/CQCAxe/Axe.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/Armes/Cac/Axe.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BaseAttack"
@@ -19,9 +19,8 @@ tracks/0/keys = {
 "values": [ Vector2( 20, 35 ), Vector2( 100, 35 ), Vector2( 20, 35 ) ]
 }
 
-[sub_resource type="SegmentShape2D" id=2]
-a = Vector2( -0.164593, -1.28429 )
-b = Vector2( 0.518215, 102.095 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 28.2173, 25.8373 )
 
 [node name="Axe" type="Area2D"]
 position = Vector2( 20, 35 )
@@ -29,13 +28,14 @@ rotation = -1.5708
 collision_layer = 0
 collision_mask = 4
 script = ExtResource( 1 )
+nameOfWeapon = "Axe"
 damageMultiplier = 10.0
 rateOfAttack = 1.0
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0, 1, 0.109804, 1 )
-position = Vector2( 0, 36.6818 )
-scale = Vector2( 0.1, 2.14631 )
+position = Vector2( 0, 45 )
+rotation = 3.92699
+scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -44,8 +44,8 @@ anims/BaseAttack = SubResource( 1 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.751236, 55.5765 )
 shape = SubResource( 2 )
-
 [connection signal="body_entered" from="." to="." method="_on_Spear_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

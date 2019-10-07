@@ -29,6 +29,7 @@ rotation = -1.5708
 collision_layer = 0
 collision_mask = 4
 script = ExtResource( 1 )
+nameOfWeapon = "BigSword"
 damageMultiplier = 10.0
 rateOfAttack = 0.5
 
@@ -45,7 +46,6 @@ anims/BaseAttack = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
-
 [connection signal="body_entered" from="." to="." method="_on_Spear_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

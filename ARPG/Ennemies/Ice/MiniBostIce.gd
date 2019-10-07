@@ -37,6 +37,7 @@ func _physics_process(delta):
 			look_at(playerPos)
 			velocity = posToMove.normalized() * mouvementSpeed
 			move_and_collide(velocity*delta)
+
 	if raycast.is_colliding() && raycast.get_collider().get_name() == "Player":
 		isAttacking = true
 		attack()
