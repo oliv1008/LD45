@@ -25,6 +25,7 @@ func _ready():
 
 func _physics_process(delta):
 	currentPos = position
+	move_and_slide(velocity, Vector2(0, -1))	
 	if (get_parent().get_node("Player") && player_entered == true):
 		playerPos = get_parent().get_node("Player").position
 		AgroLine.cast_to = playerPos - currentPos
