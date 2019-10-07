@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=2]
 
-[ext_resource path="res://ARPG/Niveaux/Glace/Glace4.gd" type="Script" id=1]
+[ext_resource path="res://ARPG/Niveaux/Glace/Glace5.gd" type="Script" id=1]
 [ext_resource path="res://assets/glace/ice.png" type="Texture" id=2]
 [ext_resource path="res://assets/glace/icewall.png" type="Texture" id=3]
 [ext_resource path="res://assets/glace/icicle.png" type="Texture" id=4]
