@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export (int) var pv = 50
 var mouvementSpeed = 100
+var valueAM = 100
 onready var raycast = $RayCast2D
 onready var tweenNode = $Tween
 var isAttacking = false
@@ -10,26 +11,34 @@ var playerPos = Vector2()
 var velocity = Vector2()
 var posToMove = Vector2()
 var player = false
+var player_entered = false
+var goGetHim = false
 
 onready var Hurtbox = $Area2D/CollisionShape2D
 onready var Hitbox = $CollisionShape2D
 onready var Cast = $RayCast2D
+onready var AgroLine = $RayCast2D2
 
 func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
 	currentPos = position
-	playerPos = get_parent().get_node("Player").position
-	posToMove = playerPos - currentPos
-	if not isAttacking && not abs(posToMove.x) < 2 && not abs(posToMove.y) < 2:
-		var animationPlayer = $AnimationPlayer
-		animationPlayer.play("move")
-		look_at(playerPos)
-		velocity = posToMove.normalized() * mouvementSpeed
-		move_and_collide(velocity*delta)
+	if (get_parent().get_node("Player") && player_entered == true):
+		playerPos = get_parent().get_node("Player").position
+		AgroLine.cast_to = playerPos - currentPos
+		if (AgroLine.is_colliding() && AgroLine.get_collider().get_name() == "Player"):
+			goGetHim = true
 
-	if raycast.is_colliding():
+	if (goGetHim == true):
+		playerPos = get_parent().get_node("Player").position
+		posToMove = playerPos - currentPos
+		if not isAttacking && not abs(posToMove.x) < 2 && not abs(posToMove.y) < 2:
+			look_at(playerPos)
+			velocity = posToMove.normalized() * mouvementSpeed
+			move_and_collide(velocity*delta)
+
+	if raycast.is_colliding() && raycast.get_collider().player == true:
 		isAttacking = true
 		attack()
 
@@ -56,9 +65,13 @@ func attack():
 	animationPlayer.play("attack")
 	
 func die():
+	PersoGlobal.ennemiesLeft -= 1
 	var notificationData = "ennemies"
 	nc.post_notification("CHANGE_HUD",notificationData)
-	PersoGlobal.ennemiesLeft -= 1
+	var notificationAM = valueAM
+	nc.post_notification("Antimatter",notificationAM)
+	var notificationPopUp = [global_position, valueAM]
+	nc.post_notification("POPUP",notificationPopUp)
 	queue_free()
 
 #Quand l'animation d'attaque se fini on autorise l'enemie à bouger à nouveau
@@ -73,3 +86,7 @@ func _on_Area2D_body_entered(body):
 	else:
 		if (body.has_method("get_hit") && body.player == true):
 			body.get_hit()
+
+func _on_Agro_body_entered(body):
+	if (body.player == true):
+		player_entered = true

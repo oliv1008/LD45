@@ -14,23 +14,31 @@ var secondTime = true
 onready var CreateRobot = $CenterAntimatter/VerticalAntimatter/CreateRobot
 onready var CenterRobot = $CenterRobot
 
+# VARIABLES BUILDING
 onready var NumberBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container2/NumberBuilding1
 onready var RevenueBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container3/RevenueBuilding1
+onready var PriceBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container4/BuyBuilding1
+
 onready var NumberBuilding2 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container2/NumberBuilding2
 onready var RevenueBuilding2 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container3/RevenueBuilding2
+onready var PriceBuilding2 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container4/BuyBuilding2
+
 onready var NumberBuilding3 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container2/NumberBuilding3
 onready var RevenueBuilding3 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container3/RevenueBuilding3
-onready var PriceBuilding1 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container4/BuyBuilding1
-onready var PriceBuilding2 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container4/BuyBuilding2
 onready var PriceBuilding3 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container4/BuyBuilding3
+
+onready var NumberBuilding4 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container2/NumberBuilding4
+onready var RevenueBuilding4 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container3/RevenueBuilding4
+onready var PriceBuilding4 = $CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container4/BuyBuilding4
+# --------------------
 
 onready var MeleeValue = $CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer/MeleeValue
 onready var DistanceValue = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer/DistanceValue
-onready var NumberOfAmmo = $CenterRobot/ScrollContainer/VerticalRobot/HAmmoContainer/NumberOfAmmo
+onready var NumberOfAmmo = $CenterRobot/ScrollContainer/VerticalRobot/VAmmoContainer/HAmmoContainer1/NumberOfAmmo
 onready var PriceHeart = $CenterRobot/ScrollContainer/VerticalRobot/HPVContainer/ImprovePVButton
-onready var PriceImproveMelee = $CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer/ImproveMeleeButton
-onready var PriceImproveDistance = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer/ImproveDistanceButton
-onready var PriceAmmo = $CenterRobot/ScrollContainer/VerticalRobot/HAmmoContainer/AmmoButton
+onready var PriceImproveMelee = $CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer4/ImproveMeleeButton
+onready var PriceImproveDistance = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer4/ImproveDistanceButton
+onready var PriceAmmo = $CenterRobot/ScrollContainer/VerticalRobot/VAmmoContainer/HAmmoContainer2/AmmoButton
 
 onready var Heart4 = $CenterRobot/ScrollContainer/VerticalRobot/HPVContainer/Heart4
 onready var Heart5 = $CenterRobot/ScrollContainer/VerticalRobot/HPVContainer/Heart5
@@ -38,6 +46,11 @@ onready var Heart5 = $CenterRobot/ScrollContainer/VerticalRobot/HPVContainer/Hea
 onready var CacWeaponName = $CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer2/WeaponName
 onready var DistanceWeaponName = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer2/WeaponName
 onready var DistanceWeaponSprite = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer2/TextureRect
+
+onready var BeforeNextDistanceWeapon = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer3/Label
+onready var BeforeNextMeleeWeapon = $CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer3/Label
+onready var LabelAvantBeforeNextDistance = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer3/BeforeNext
+onready var LabelAvantBeforeNextMelee = $CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer3/BeforeNext
 
 var antimatter = 0
 var antimatterPerSec = 1
@@ -57,14 +70,23 @@ var revenueBuilding3 = 400
 var quantityBuilding3 = 0
 var totalRevenueBuilding3 = 0
 
+var priceBuilding4 = 200
+var revenueBuilding4 = 400
+var quantityBuilding4 = 0
+var totalRevenueBuilding4 = 0
+
 var heartPrice = 10
 var improveMeleePrice = 20
-var improveDistancePrice = 40
+var improveDistancePrice = 1
 var ammoPrice = 1
 
 var spriteHandgun = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
-
+var spriteLaserHandgun = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
+var spriteLaserRifle = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
+var spriteRifle = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
+	
 func _ready():
+	nc.add_observer(self, "Antimatter","handleNotification")
 	NumberBuilding1.text = str("Quantity : ", quantityBuilding1)
 	RevenueBuilding1.text = str("Revenue : ", totalRevenueBuilding1)
 	PriceBuilding1.text = str(priceBuilding1)
@@ -74,6 +96,9 @@ func _ready():
 	PriceBuilding3.text = str(priceBuilding3)
 	NumberBuilding3.text = str("Quantity : ", quantityBuilding3)
 	RevenueBuilding3.text = str("Revenue : ", totalRevenueBuilding3)
+	PriceBuilding4.text = str(priceBuilding4)
+	NumberBuilding4.text = str("Quantity : ", quantityBuilding4)
+	RevenueBuilding4.text = str("Revenue : ", totalRevenueBuilding4)
 	MeleeValue.text = str(PersoGlobal.meleeDamage , " dmg")
 	DistanceValue.text = str(PersoGlobal.distanceDamage , " dmg")
 	NumberOfAmmo.text = str(PersoGlobal.numberOfAmmoMax, " Ammo")
@@ -81,11 +106,30 @@ func _ready():
 	PriceImproveDistance.text = str(improveDistancePrice)
 	PriceAmmo.text = str(ammoPrice)
 	PriceHeart.text = str(heartPrice)
+	
+	BeforeNextDistanceWeapon.text = str(PersoGlobal.dmgTillNextWeaponDistance)
+	BeforeNextMeleeWeapon.text = str(PersoGlobal.dmgTillNextWeaponCac)
+	
 	CacWeaponName.text = PersoGlobal.currentWeaponCacName
 	DistanceWeaponName.text = PersoGlobal.currentWeaponDistanceName
-	DistanceWeaponSprite.texture = spriteHandgun
-	#DistanceWeaponSprite.rotation = 90
+	if (PersoGlobal.currentWeaponDistanceName == "Handgun"):
+		DistanceWeaponSprite.texture = spriteHandgun
+	if (PersoGlobal.currentWeaponDistanceName == "Laser Gun"):
+		DistanceWeaponSprite.texture = spriteLaserHandgun
+	if (PersoGlobal.currentWeaponDistanceName == "Laser Rifle"):
+		DistanceWeaponSprite.texture = spriteHandgun
+	if (PersoGlobal.currentWeaponDistanceName == "Rifle"):
+		DistanceWeaponSprite.texture = spriteRifle
+		
+		
 	
+
+func _exit_tree():
+	nc.remove_observer(self,"Antimatter")
+
+func handleNotification(observer,notificationName,notificationData):
+	if (notificationName == "Antimatter"):
+		antimatter += notificationData
 
 func _letsGoAntimatter():
 	totalAntimatter.text = str("You have ", antimatter)
@@ -140,14 +184,33 @@ func _on_BuyBuilding3_pressed():
 		NumberBuilding3.text = str("Quantity : ", quantityBuilding3)
 		RevenueBuilding3.text = str("Revenue : ", totalRevenueBuilding3)
 		antimatterPerSeconds.text = str("You earn ", antimatterPerSec)
+		
+func _on_BuyBuilding4_pressed():
+	if (antimatter >= priceBuilding4):
+		antimatter -= priceBuilding4
+		antimatterPerSec += revenueBuilding4
+		totalRevenueBuilding4 += revenueBuilding4
+		quantityBuilding4 += 1
+		priceBuilding4 *= 2
+		PriceBuilding4.text = str(priceBuilding4)
+		totalAntimatter.text = str("You have ", antimatter)
+		NumberBuilding4.text = str("Quantity : ", quantityBuilding4)
+		RevenueBuilding4.text = str("Revenue : ", totalRevenueBuilding4)
+		antimatterPerSeconds.text = str("You earn ", antimatterPerSec)
 
 func _on_ImproveMeleeButton_pressed():
 	if (antimatter >= improveMeleePrice):
 		antimatter -= improveMeleePrice
 		PersoGlobal.meleeDamage += 10
 		improveMeleePrice *= 2
+		PersoGlobal.dmgTillNextWeaponCac -= 10
+		if (PersoGlobal.dmgTillNextWeaponCac <= 0):
+			PersoGlobal.dmgTillNextWeaponCac = PersoGlobal.dmgBetweenWeapons
+			PersoGlobal.indexMelee += 1
+			BeforeNextMeleeWeapon.text = str(PersoGlobal.dmgTillNextWeaponCac)
 		MeleeValue.text = str(PersoGlobal.meleeDamage , " dmg")
 		PriceImproveMelee.text = str(improveMeleePrice)
+		
 		
 
 func _on_ImproveDistanceButton_pressed():
@@ -155,6 +218,26 @@ func _on_ImproveDistanceButton_pressed():
 		antimatter -= improveDistancePrice
 		PersoGlobal.distanceDamage += 10
 		improveDistancePrice *= 2
+		if (PersoGlobal.indexDistance < 3):
+			PersoGlobal.dmgTillNextWeaponDistance -= 10
+			if (PersoGlobal.dmgTillNextWeaponDistance <= 0):
+				PersoGlobal.dmgTillNextWeaponDistance = PersoGlobal.dmgBetweenWeapons
+				PersoGlobal.indexDistance += 1
+				if (PersoGlobal.indexDistance == 3):
+					BeforeNextDistanceWeapon.text = "You reached the last weapon"
+					LabelAvantBeforeNextDistance.visible = false
+				else:
+					BeforeNextDistanceWeapon.text = str(PersoGlobal.dmgTillNextWeaponDistance)
+				PersoGlobal.currentWeaponDistanceName = PersoGlobal.distanceWeapons[PersoGlobal.indexDistance]
+				DistanceWeaponName.text = PersoGlobal.currentWeaponDistanceName
+				if (PersoGlobal.currentWeaponDistanceName == "Handgun"):
+					DistanceWeaponSprite.texture = spriteHandgun
+				if (PersoGlobal.currentWeaponDistanceName == "Laser Gun"):
+					DistanceWeaponSprite.texture = spriteLaserHandgun
+				if (PersoGlobal.currentWeaponDistanceName == "Laser Rifle"):
+					DistanceWeaponSprite.texture = spriteHandgun
+				if (PersoGlobal.currentWeaponDistanceName == "Rifle"):
+					DistanceWeaponSprite.texture = spriteRifle
 		DistanceValue.text = str(PersoGlobal.distanceDamage , " dmg")
 		PriceImproveDistance.text = str(improveDistancePrice)
 

@@ -10,7 +10,7 @@ extents = Vector2( 6.26818, 6.38485 )
 [node name="LaserBullet" instance=ExtResource( 1 )]
 collision_mask = 12
 script = ExtResource( 2 )
-speed = 700
+speed = 1000
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )
