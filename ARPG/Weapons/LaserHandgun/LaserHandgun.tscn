@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://ARPG/Weapons/BaseWeapon/BaseWeapon.gd" type="Script" id=1]
-[ext_resource path="res://ARPG/Projectiles/GodotProjectile/GodotBullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ARPG/Weapons/LaserHandgun/LaserHandgun.gd" type="Script" id=1]
+[ext_resource path="res://ARPG/Projectiles/LaserProjectile/LaserBullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/images/Armes/Distance/gun1.png" type="Texture" id=3]
 
 [node name="Handgun" type="Node2D"]
 position = Vector2( 634.815, 650.728 )
 script = ExtResource( 1 )
-nameOfWeapon = "Handgun"
-damageMultiplier = 1.0
-rateOfFire = 0.5
-shotsPerAmmo = 1.0
+nameOfWeapon = "Laser Gun"
+damageMultiplier = 2.0
+rateOfFire = 0.3
+shotsPerAmmo = 5.0
 projectile = ExtResource( 2 )
 
 [node name="EndBarrel" type="Position2D" parent="."]

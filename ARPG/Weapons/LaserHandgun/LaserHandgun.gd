@@ -17,12 +17,13 @@ func _ready():
 		print("Arme fille d'un kinematicBody, on initialise le porteur")
 
 func _process(delta):
-	pass
+	if Input.is_mouse_button_pressed(BUTTON_RIGHT):
+		shot(get_global_mouse_position())
 
 func shot(targetPos):
+	print("$EndBarrel.global_position = ", $EndBarrel.global_position)
 	if (canShot && PersoGlobal.ammoLeft >= 1):
 		var projectileInstance = projectile.instance()
-		projectileInstance.mousePos = targetPos
 		projectileInstance.damage = PersoGlobal.distanceDamage * damageMultiplier
 		projectileInstance.shooter = holder
 		print("self = ", self)
