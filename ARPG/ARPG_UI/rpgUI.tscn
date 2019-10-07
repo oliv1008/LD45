@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://ARPG/ARPG_UI/rpgUI.gd" type="Script" id=1]
 [ext_resource path="res://ARPG/ARPG_UI/VBoxContainer.gd" type="Script" id=2]
@@ -12,10 +12,14 @@
 [ext_resource path="res://assets/images/HUD/CercleBoss.png" type="Texture" id=10]
 [ext_resource path="res://ARPG/ARPG_UI/Planet C.gd" type="Script" id=11]
 [ext_resource path="res://assets/images/PlanetIce.png" type="Texture" id=12]
-[ext_resource path="res://ARPG/ARPG_UI/Planet D.gd" type="Script" id=13]
-[ext_resource path="res://assets/images/PlanetFire.png" type="Texture" id=14]
-[ext_resource path="res://assets/Star.tscn" type="PackedScene" id=15]
-[ext_resource path="res://assets/images/Robot de face.png" type="Texture" id=16]
+[ext_resource path="res://ARPG/ARPG_UI/Level 5.gd" type="Script" id=13]
+[ext_resource path="res://ARPG/ARPG_UI/Level 6.gd" type="Script" id=14]
+[ext_resource path="res://ARPG/ARPG_UI/Farm2.gd" type="Script" id=15]
+[ext_resource path="res://ARPG/ARPG_UI/Boss2.gd" type="Script" id=16]
+[ext_resource path="res://ARPG/ARPG_UI/Planet D.gd" type="Script" id=17]
+[ext_resource path="res://assets/images/PlanetFire.png" type="Texture" id=18]
+[ext_resource path="res://assets/Star.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/images/Robot de face.png" type="Texture" id=20]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.304688, 0.304688, 0.304688, 1 )
@@ -243,7 +247,7 @@ custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
 icon = ExtResource( 7 )
 flat = true
-script = ExtResource( 8 )
+script = ExtResource( 13 )
 
 [node name="Level 6" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
 margin_left = 691.25
@@ -256,7 +260,7 @@ custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
 icon = ExtResource( 7 )
 flat = true
-script = ExtResource( 8 )
+script = ExtResource( 14 )
 
 [node name="Farm2" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
 margin_left = 142.25
@@ -269,7 +273,7 @@ custom_styles/pressed = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
 icon = ExtResource( 9 )
 flat = true
-script = ExtResource( 8 )
+script = ExtResource( 15 )
 
 [node name="Boss2" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
 margin_left = 248.0
@@ -282,7 +286,7 @@ custom_styles/pressed = SubResource( 8 )
 custom_styles/normal = SubResource( 9 )
 icon = ExtResource( 10 )
 flat = true
-script = ExtResource( 8 )
+script = ExtResource( 16 )
 
 [node name="Planet D" type="Tabs" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
@@ -292,7 +296,7 @@ margin_left = 4.0
 margin_top = 43.0
 margin_right = -4.0
 margin_bottom = -4.0
-script = ExtResource( 13 )
+script = ExtResource( 17 )
 
 [node name="Background3" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/Planet D"]
 show_behind_parent = true
@@ -302,7 +306,7 @@ margin_left = 15.0
 margin_top = 15.0
 margin_right = -15.0
 margin_bottom = -15.0
-texture = ExtResource( 14 )
+texture = ExtResource( 18 )
 expand = true
 stretch_mode = 2
 
@@ -371,40 +375,40 @@ icon = ExtResource( 10 )
 flat = true
 script = ExtResource( 8 )
 
-[node name="Star" parent="." instance=ExtResource( 15 )]
+[node name="Star" parent="." instance=ExtResource( 19 )]
 position = Vector2( 100, 200 )
 
-[node name="Star2" parent="." instance=ExtResource( 15 )]
+[node name="Star2" parent="." instance=ExtResource( 19 )]
 position = Vector2( 700, 150 )
 
-[node name="Star3" parent="." instance=ExtResource( 15 )]
+[node name="Star3" parent="." instance=ExtResource( 19 )]
 position = Vector2( 850, 250 )
 
-[node name="Star4" parent="." instance=ExtResource( 15 )]
+[node name="Star4" parent="." instance=ExtResource( 19 )]
 position = Vector2( 139, 900 )
 
-[node name="Star5" parent="." instance=ExtResource( 15 )]
+[node name="Star5" parent="." instance=ExtResource( 19 )]
 position = Vector2( 80, 800 )
 
-[node name="Star6" parent="." instance=ExtResource( 15 )]
+[node name="Star6" parent="." instance=ExtResource( 19 )]
 position = Vector2( 187, 1000 )
 
-[node name="Star7" parent="." instance=ExtResource( 15 )]
+[node name="Star7" parent="." instance=ExtResource( 19 )]
 position = Vector2( 200, 130 )
 
-[node name="Star8" parent="." instance=ExtResource( 15 )]
+[node name="Star8" parent="." instance=ExtResource( 19 )]
 position = Vector2( 800, 900 )
 
-[node name="Star9" parent="." instance=ExtResource( 15 )]
+[node name="Star9" parent="." instance=ExtResource( 19 )]
 position = Vector2( 850, 1000 )
 
-[node name="Star10" parent="." instance=ExtResource( 15 )]
+[node name="Star10" parent="." instance=ExtResource( 19 )]
 position = Vector2( 700, 977 )
 
-[node name="Star11" parent="." instance=ExtResource( 15 )]
+[node name="Star11" parent="." instance=ExtResource( 19 )]
 position = Vector2( 880, 500 )
 
-[node name="Star12" parent="." instance=ExtResource( 15 )]
+[node name="Star12" parent="." instance=ExtResource( 19 )]
 position = Vector2( 75, 550 )
 
 [node name="Frontground" type="ColorRect" parent="."]
@@ -426,7 +430,7 @@ custom_constants/separation = 100
 [node name="FlexingRobot" type="TextureRect" parent="CenterContainerIddle/VIddleContainer"]
 margin_right = 434.0
 margin_bottom = 596.0
-texture = ExtResource( 16 )
+texture = ExtResource( 20 )
 
 [node name="LetsGo" type="Button" parent="CenterContainerIddle/VIddleContainer"]
 margin_top = 696.0

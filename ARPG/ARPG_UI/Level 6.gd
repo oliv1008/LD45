@@ -10,7 +10,7 @@ func _ready():
 
 func _pressed():
 	var notificationData = {
-		"scene" : "res://ARPG/Niveaux/Glace/Glace3.tscn",
+		"scene" : "res://ARPG/Niveaux/Glace/Glace5.tscn",
 		"mainUI" : false
 		}
 	nc.post_notification("LOAD_LEVEL",notificationData)
