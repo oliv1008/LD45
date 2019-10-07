@@ -77,4 +77,3 @@ position = Vector2( -0.447525, 35.0774 )
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
 current = true
-zoom = Vector2( 2, 2 )

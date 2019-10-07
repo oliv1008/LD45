@@ -68,7 +68,7 @@ func _physics_process(delta):
 		weapon.shot(get_global_mouse_position())
 	if Input.is_mouse_button_pressed(BUTTON_RIGHT):
 		cqcWeapon.attack()
-	
+	move_and_slide(velocity, Vector2(0, -1))
 	move_and_collide(velocity * delta)
 
 func get_hit():
