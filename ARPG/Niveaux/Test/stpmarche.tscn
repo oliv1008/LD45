@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://NiveauTest2.gd" type="Script" id=1]
 [ext_resource path="res://ARPG/HUD RPG.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://ARPG/Ennemies/Ice/TrashIce.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ARPG/Ennemies/Forest/MiniBossForest.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ARPG/Ennemies/Ice/MiniBostIce.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ARPG/Ennemies/Lava/TrashLava.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ARPG/Ennemies/Lava/MiniBossLava.tscn" type="PackedScene" id=9]
 
 [node name="NiveauTest2" type="Node2D"]
 script = ExtResource( 1 )
@@ -17,19 +19,25 @@ script = ExtResource( 1 )
 position = Vector2( 71.2971, 967.662 )
 
 [node name="TrashForest1" parent="." instance=ExtResource( 4 )]
-position = Vector2( 10.7923, 10.7923 )
+position = Vector2( 79.4511, 403.128 )
 
 [node name="TrashForest2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1451.78, 837.576 )
+position = Vector2( 1093.77, 817.959 )
 
 [node name="TrashForest3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1675.42, -369.103 )
+position = Vector2( 954.503, 381.239 )
 
 [node name="TrashIce" parent="." instance=ExtResource( 5 )]
-position = Vector2( 531.125, 1733.15 )
+position = Vector2( 227.065, 1473.23 )
 
 [node name="MiniBostForest" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2574.71, 299.156 )
+position = Vector2( 1412.42, 789.576 )
 
 [node name="MiniBostIce" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1961.68, 1814.56 )
+position = Vector2( 392.337, 1226.06 )
+
+[node name="TrashLava" parent="." instance=ExtResource( 8 )]
+position = Vector2( 459.3, 476.002 )
+
+[node name="MiniBossLava" parent="." instance=ExtResource( 9 )]
+position = Vector2( 290.127, 643.325 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Robot de face.png-92eef0d87b41151a08c4caf69886dc58.stex"
+path="res://.import/EpeeIncrementalScreen.png-d49cacbd3fa1bb13c32b72dce7732c86.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Robot de face.png"
-dest_files=[ "res://.import/Robot de face.png-92eef0d87b41151a08c4caf69886dc58.stex" ]
+source_file="res://assets/images/Armes/Cac/EpeeIncrementalScreen.png"
+dest_files=[ "res://.import/EpeeIncrementalScreen.png-d49cacbd3fa1bb13c32b72dce7732c86.stex" ]
 
 [params]
 

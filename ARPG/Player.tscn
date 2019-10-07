@@ -1,16 +1,19 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://ARPG/Player.gd" type="Script" id=1]
 [ext_resource path="res://ARPG/Weapons/CQCSpear/Spear.tscn" type="PackedScene" id=2]
-[ext_resource path="res://ARPG/Weapons/Handgun/Handgun.tscn" type="PackedScene" id=3]
-[ext_resource path="res://ARPG/Weapons/LaserHandgun/LaserHandgun.tscn" type="PackedScene" id=4]
-[ext_resource path="res://ARPG/Weapons/LaserRifle/LaserRifle.tscn" type="PackedScene" id=5]
-[ext_resource path="res://ARPG/Weapons/Rifle/Rifle.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/72267645_397230914283131_1073197892161765376_n.png" type="Texture" id=7]
+[ext_resource path="res://ARPG/Weapons/CQCSword/Sword.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ARPG/Weapons/CQCAxe/Axe.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ARPG/Weapons/CQCBigSword/BigSword.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ARPG/Weapons/Handgun/Handgun.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ARPG/Weapons/LaserHandgun/LaserHandgun.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ARPG/Weapons/LaserRifle/LaserRifle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ARPG/Weapons/Rifle/Rifle.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/72267645_397230914283131_1073197892161765376_n.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -33,18 +36,27 @@ SPEED = 500
 visible = false
 rotation = 1.5708
 
-[node name="Handgun" parent="." instance=ExtResource( 3 )]
+[node name="Sword" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="Axe" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="BigSword" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="Handgun" parent="." instance=ExtResource( 6 )]
 visible = false
 position = Vector2( 0, 0 )
 
-[node name="LaserHandgun" parent="." instance=ExtResource( 4 )]
+[node name="LaserHandgun" parent="." instance=ExtResource( 7 )]
 visible = false
 rotation = 1.5708
 
-[node name="LaserRifle" parent="." instance=ExtResource( 5 )]
+[node name="LaserRifle" parent="." instance=ExtResource( 8 )]
 visible = false
 
-[node name="Rifle" parent="." instance=ExtResource( 6 )]
+[node name="Rifle" parent="." instance=ExtResource( 9 )]
 visible = false
 
 [node name="BodySprite" type="AnimatedSprite" parent="."]
@@ -64,4 +76,5 @@ position = Vector2( 0.827931, -44.7018 )
 position = Vector2( -0.447525, 35.0774 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
 current = true

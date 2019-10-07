@@ -25,6 +25,7 @@ func _ready():
 
 func _physics_process(delta):
 	currentPos = position
+	move_and_slide(velocity, Vector2(0, -1))
 	if (get_parent().get_node("Player") && player_entered == true):
 		playerPos = get_parent().get_node("Player").position
 		AgroLine.cast_to = playerPos - currentPos
@@ -39,7 +40,7 @@ func _physics_process(delta):
 			velocity = posToMove.normalized() * mouvementSpeed
 			move_and_collide(velocity*delta)
 
-	if raycast.is_colliding() && raycast.get_collider().player == true:
+	if raycast.is_colliding() && raycast.get_collider().get_name() == "Player":
 		isAttacking = true
 		attack()
 
@@ -89,6 +90,6 @@ func _on_Area2D_body_entered(body):
 			body.get_hit()
 
 func _on_Agro_body_entered(body):
-	if (body.player == true):
+	if (body.get_name() == "Player"):
 		player_entered = true
 

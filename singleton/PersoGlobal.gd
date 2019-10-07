@@ -15,7 +15,7 @@ var dmgBetweenWeapons = 10
 var viewportARPG
 
 var indexMelee = 0
-var meleeWeapons = ["Spear"]
+var meleeWeapons = ["Spear", "Sword", "Axe", "BigSword"]
 var indexDistance = 0
 var distanceWeapons = ["Handgun", "Rifle", "Laser Gun", "Laser Rifle"]
 

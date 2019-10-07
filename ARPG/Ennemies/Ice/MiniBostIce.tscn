@@ -120,7 +120,7 @@ script = ExtResource( 1 )
 rotation = -1.5708
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
-frame = 4
+frame = 2
 offset = Vector2( -15, -100 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -150,7 +150,6 @@ anims/die = SubResource( 5 )
 anims/move = SubResource( 6 )
 
 [node name="Agro" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Agro"]
