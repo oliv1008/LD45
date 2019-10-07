@@ -476,6 +476,7 @@ anims/Iddle = SubResource( 10 )
 [node name="FlexingRobot" type="AnimatedSprite" parent="CenterContainerIddle"]
 position = Vector2( 484.11, 523.812 )
 frames = SubResource( 11 )
+frame = 1
 
 [node name="LetsGo" type="Button" parent="CenterContainerIddle"]
 margin_left = 308.449
