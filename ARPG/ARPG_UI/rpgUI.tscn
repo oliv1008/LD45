@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://ARPG/ARPG_UI/rpgUI.gd" type="Script" id=1]
 [ext_resource path="res://ARPG/ARPG_UI/VBoxContainer.gd" type="Script" id=2]
@@ -29,7 +29,10 @@
 [ext_resource path="res://ARPG/ARPG_UI/Farm3.gd" type="Script" id=27]
 [ext_resource path="res://ARPG/ARPG_UI/Boss3.gd" type="Script" id=28]
 [ext_resource path="res://assets/Star.tscn" type="PackedScene" id=29]
-[ext_resource path="res://assets/images/Robot de face.png" type="Texture" id=30]
+[ext_resource path="res://assets/images/HUD/fondacceuil.png" type="Texture" id=30]
+[ext_resource path="res://ARPG/ARPG_UI/CenterContainerIddle.gd" type="Script" id=31]
+[ext_resource path="res://assets/images/robot3.png" type="Texture" id=32]
+[ext_resource path="res://assets/images/robot31.png" type="Texture" id=33]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.304688, 0.304688, 0.304688, 1 )
@@ -93,6 +96,31 @@ corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
+
+[sub_resource type="Animation" id=11]
+resource_name = "Iddle"
+length = 0.51
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("FlexingRobot:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
+}
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ ExtResource( 32 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="RPGScreen" type="Control"]
 script = ExtResource( 1 )
@@ -385,6 +413,14 @@ icon = ExtResource( 13 )
 flat = true
 script = ExtResource( 28 )
 
+[node name="ChooseLevel" type="Label" parent="."]
+margin_left = 352.171
+margin_top = 95.427
+margin_right = 619.171
+margin_bottom = 120.427
+custom_fonts/font = ExtResource( 3 )
+text = "Choose your level !"
+
 [node name="Star" parent="." instance=ExtResource( 29 )]
 position = Vector2( 100, 200 )
 
@@ -421,31 +457,31 @@ position = Vector2( 880, 500 )
 [node name="Star12" parent="." instance=ExtResource( 29 )]
 position = Vector2( 75, 550 )
 
-[node name="Frontground" type="ColorRect" parent="."]
+[node name="Frontground" type="TextureRect" parent="."]
 margin_right = 949.0
 margin_bottom = 1080.0
+texture = ExtResource( 30 )
+expand = true
 
-[node name="CenterContainerIddle" type="CenterContainer" parent="."]
+[node name="CenterContainerIddle" type="Control" parent="."]
 visible = false
 margin_right = 948.0
 margin_bottom = 1082.0
+script = ExtResource( 31 )
 
-[node name="VIddleContainer" type="VBoxContainer" parent="CenterContainerIddle"]
-margin_left = 257.0
-margin_top = 177.0
-margin_right = 691.0
-margin_bottom = 904.0
-custom_constants/separation = 100
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CenterContainerIddle"]
+anims/Iddle = SubResource( 11 )
 
-[node name="FlexingRobot" type="TextureRect" parent="CenterContainerIddle/VIddleContainer"]
-margin_right = 434.0
-margin_bottom = 596.0
-texture = ExtResource( 30 )
+[node name="FlexingRobot" type="AnimatedSprite" parent="CenterContainerIddle"]
+position = Vector2( 484.11, 523.812 )
+frames = SubResource( 10 )
+frame = 1
 
-[node name="LetsGo" type="Button" parent="CenterContainerIddle/VIddleContainer"]
-margin_top = 696.0
-margin_right = 434.0
-margin_bottom = 727.0
+[node name="LetsGo" type="Button" parent="CenterContainerIddle"]
+margin_left = 308.449
+margin_top = 843.09
+margin_right = 680.449
+margin_bottom = 874.09
 custom_fonts/font = ExtResource( 3 )
 text = "Let's go on an adventure !"
-[connection signal="pressed" from="CenterContainerIddle/VIddleContainer/LetsGo" to="." method="_on_LetsGo_pressed"]
+[connection signal="pressed" from="CenterContainerIddle/LetsGo" to="." method="_on_LetsGo_pressed"]
