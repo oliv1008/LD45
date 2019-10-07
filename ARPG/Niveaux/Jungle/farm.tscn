@@ -354,8 +354,8 @@ tile_data = PoolIntArray( -1638429, 1, 0, -1638428, 1, 1, -1638427, 1, 1, -16384
 [node name="HUD RPG" parent="." instance=ExtResource( 5 )]
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2( 279.292, 127.143 )
-scale = Vector2( 1.78016, 1.61411 )
+position = Vector2( 279.292, 118.851 )
+scale = Vector2( 1.78016, 1.58371 )
 curve = SubResource( 20 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]

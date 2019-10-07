@@ -1,9 +1,11 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://ARPG/Niveaux/Lave/level3.gd" type="Script" id=1]
 [ext_resource path="res://assets/lavacave.png" type="Texture" id=2]
 [ext_resource path="res://ARPG/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ARPG/HUD RPG.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ARPG/Ennemies/Lava/MiniBossLava.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ARPG/Ennemies/Lava/TrashLava.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -219,3 +221,120 @@ tile_data = PoolIntArray( 1310737, 0, 0, 1310738, 0, 1, 1310739, 0, 1, 1310740, 
 position = Vector2( 2854.52, 2535.59 )
 
 [node name="HUD RPG" parent="Player" instance=ExtResource( 4 )]
+
+[node name="MiniBossLava" parent="." instance=ExtResource( 5 )]
+position = Vector2( 4845.93, 3902.71 )
+
+[node name="MiniBossLava6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 5519.61, 4584.14 )
+
+[node name="MiniBossLava7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 8043.99, 4924.85 )
+
+[node name="MiniBossLava8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 8013.02, 5559.82 )
+
+[node name="MiniBossLava4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2058.28, 3794.3 )
+
+[node name="MiniBossLava5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2166.68, 4011.12 )
+
+[node name="MiniBossLava2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 5318.28, 3066.41 )
+
+[node name="MiniBossLava3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 4691.06, 2284.32 )
+
+[node name="MiniBossLava10" parent="." instance=ExtResource( 5 )]
+position = Vector2( 6696.62, 3182.57 )
+
+[node name="MiniBossLava9" parent="." instance=ExtResource( 5 )]
+position = Vector2( 7285.13, 2261.09 )
+
+[node name="MiniBossLava11" parent="." instance=ExtResource( 5 )]
+position = Vector2( 7860, 3198.19 )
+
+[node name="TrashLava" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3802.52, 2999.51 )
+
+[node name="TrashLava2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3810.27, 3487.35 )
+
+[node name="TrashLava6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3910.93, 4168.77 )
+
+[node name="TrashLava10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3810.27, 4633.38 )
+
+[node name="TrashLava11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3818.01, 5059.28 )
+
+[node name="TrashLava12" parent="." instance=ExtResource( 6 )]
+position = Vector2( 4228.42, 5190.91 )
+
+[node name="TrashLava13" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3848.99, 5252.86 )
+
+[node name="TrashLava14" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3972.88, 5105.74 )
+
+[node name="TrashLava15" parent="." instance=ExtResource( 6 )]
+position = Vector2( 5170, 5080 )
+
+[node name="TrashLava16" parent="." instance=ExtResource( 6 )]
+position = Vector2( 4960.93, 5242.61 )
+
+[node name="TrashLava17" parent="." instance=ExtResource( 6 )]
+position = Vector2( 5208.72, 5312.3 )
+
+[node name="TrashLava18" parent="." instance=ExtResource( 6 )]
+position = Vector2( 5425.53, 5397.48 )
+
+[node name="TrashLava19" parent="." instance=ExtResource( 6 )]
+position = Vector2( 5340.36, 5180.66 )
+
+[node name="TrashLava20" parent="." instance=ExtResource( 6 )]
+position = Vector2( 7779.55, 5165.18 )
+
+[node name="TrashLava21" parent="." instance=ExtResource( 6 )]
+position = Vector2( 7725.35, 5513.63 )
+
+[node name="TrashLava22" parent="." instance=ExtResource( 6 )]
+position = Vector2( 7531.76, 5374.25 )
+
+[node name="TrashLava7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2896.54, 4966.35 )
+
+[node name="TrashLava8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2493.87, 4881.18 )
+
+[node name="TrashLava9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2308.03, 4579.18 )
+
+[node name="TrashLava4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 4003.85, 3409.91 )
+
+[node name="TrashLava5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3988.37, 3015 )
+
+[node name="TrashLava3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 4127.75, 3200.84 )
+
+[node name="TrashLava23" parent="." instance=ExtResource( 6 )]
+position = Vector2( 6868.94, 2000.6 )
+
+[node name="TrashLava24" parent="." instance=ExtResource( 6 )]
+position = Vector2( 7248.38, 1977.37 )
+
+[node name="TrashLava25" parent="." instance=ExtResource( 6 )]
+position = Vector2( 7511.65, 1977.37 )
+
+[node name="TrashLava26" parent="." instance=ExtResource( 6 )]
+position = Vector2( 7821.39, 1985.11 )
+
+[node name="TrashLava27" parent="." instance=ExtResource( 6 )]
+position = Vector2( 7743.96, 3982.93 )
+
+[node name="TrashLava28" parent="." instance=ExtResource( 6 )]
+position = Vector2( 7550.37, 4145.54 )

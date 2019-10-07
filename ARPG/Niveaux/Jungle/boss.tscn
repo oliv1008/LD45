@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/tree2.png" type="Texture" id=1]
 [ext_resource path="res://assets/grass_base.png" type="Texture" id=2]
 [ext_resource path="res://ARPG/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://ARPG/Ennemies/Boss/ForestBoss/ForestBoss.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ARPG/HUD RPG.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ARPG/Ennemies/Boss/ForestBoss/ForestBoss.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 16, 16, 16, 16, 16, 0, 16 )
@@ -345,5 +346,7 @@ tile_data = PoolIntArray( 1966154, 1, 0, 1966155, 1, 131077, 1966156, 1, 131077,
 position = Vector2( 2708.91, 2300.02 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="ForestBoss" parent="." instance=ExtResource( 4 )]
+[node name="HUD RPG" parent="Player" instance=ExtResource( 4 )]
+
+[node name="ForestBoss" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2720.02, 1516.07 )
