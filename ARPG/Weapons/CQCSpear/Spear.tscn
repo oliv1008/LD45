@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ARPG/Weapons/CQCSpear/Spear.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/Armes/Cac/Lance.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BaseAttack"
@@ -16,23 +16,25 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.3 ),
 "transitions": PoolRealArray( 1, 0.392292, 1 ),
 "update": 0,
-"values": [ Vector2( 20, 35 ), Vector2( 100, 35 ), Vector2( 20, 35 ) ]
+"values": [ Vector2( 50, 35 ), Vector2( 85, 35 ), Vector2( 50, 35 ) ]
 }
 
 [sub_resource type="SegmentShape2D" id=2]
-a = Vector2( -0.164593, -1.28429 )
+a = Vector2( -0.354599, 14.7021 )
 b = Vector2( -0.0644569, 65.3757 )
 
 [node name="Spear" type="Area2D"]
-position = Vector2( 20, 35 )
+position = Vector2( 50, 35 )
 rotation = -1.5708
+scale = Vector2( 2, 2 )
 collision_layer = 0
 collision_mask = 4
 script = ExtResource( 1 )
+nameOfWeapon = "Spear"
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, 17.0583 )
-scale = Vector2( 0.1, 1.53307 )
+position = Vector2( -0.556, 8.41097 )
+scale = Vector2( 1, 2.59005 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -41,8 +43,8 @@ anims/BaseAttack = SubResource( 1 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.366427, -25.9884 )
 shape = SubResource( 2 )
-
 [connection signal="body_entered" from="." to="." method="_on_Spear_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

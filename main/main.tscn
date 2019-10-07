@@ -1,3 +1,45 @@
 [gd_scene format=2]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource path="res://main/main.gd" type="Script" id=1]
+[ext_resource path="res://Incremental/IncrementalScreen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ARPG/ARPG_UI/rpgUI.tscn" type="PackedScene" id=3]
+
+[node name="MainControl" type="Control"]
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="ViewportContainer" type="ViewportContainer" parent="HBoxContainer"]
+margin_right = 960.0
+margin_bottom = 1080.0
+
+[node name="ViewportIncremental" type="Viewport" parent="HBoxContainer/ViewportContainer"]
+size = Vector2( 960, 1080 )
+handle_input_locally = false
+usage = 0
+debug_draw = 2
+render_target_update_mode = 3
+
+[node name="IncrementalScreen" parent="HBoxContainer/ViewportContainer/ViewportIncremental" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ViewportContainer2" type="ViewportContainer" parent="HBoxContainer"]
+margin_left = 964.0
+margin_right = 1924.0
+margin_bottom = 1080.0
+
+[node name="ViewportARPG" type="Viewport" parent="HBoxContainer/ViewportContainer2"]
+size = Vector2( 960, 1080 )
+handle_input_locally = false
+debug_draw = 1
+render_target_update_mode = 3
+
+[node name="RPGScreen" parent="HBoxContainer/ViewportContainer2/ViewportARPG" instance=ExtResource( 3 )]
+

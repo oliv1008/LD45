@@ -2,10 +2,11 @@
 
 [ext_resource path="res://ARPG/Weapons/LaserHandgun/LaserHandgun.gd" type="Script" id=1]
 [ext_resource path="res://ARPG/Projectiles/LaserProjectile/LaserBullet.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/images/Armes/Distance/gun1.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/Armes/Distance/LaserRifle.png" type="Texture" id=3]
 
 [node name="Handgun" type="Node2D"]
 position = Vector2( 634.815, 650.728 )
+rotation = 1.5708
 script = ExtResource( 1 )
 nameOfWeapon = "Laser Rifle"
 damageMultiplier = 2.0
@@ -14,7 +15,7 @@ shotsPerAmmo = 10.0
 projectile = ExtResource( 2 )
 
 [node name="EndBarrel" type="Position2D" parent="."]
-position = Vector2( -8.73684, -24.8369 )
+position = Vector2( 3.55735, -46.5136 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 3, 3 )
@@ -25,5 +26,4 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

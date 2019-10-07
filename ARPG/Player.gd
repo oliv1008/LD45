@@ -14,12 +14,27 @@ func _ready():
 	nc.add_observer(self, "WEAPON_CHANGED","handleNotification")
 	if (PersoGlobal.currentWeaponDistanceName == "Handgun"):
 		weapon = $Handgun
-		$Handgun.visible = true
+		weapon.visible = true
 	if (PersoGlobal.currentWeaponDistanceName == "Laser Gun"):
 		weapon = $LaserHandgun
-		$LaserHandgun.visible = true
+		weapon.visible = true
+	if (PersoGlobal.currentWeaponDistanceName == "Laser Rifle"):
+		weapon = $LaserRifle
+		weapon.visible = true
+	if (PersoGlobal.currentWeaponDistanceName == "Rifle"):
+		weapon = $Rifle
+		weapon.visible = true
 	if (PersoGlobal.currentWeaponCacName == "Spear"):
 		cqcWeapon = $Spear
+		cqcWeapon.visible = true
+	if (PersoGlobal.currentWeaponCacName == "Sword"):
+		cqcWeapon = $Sword
+		cqcWeapon.visible = true
+	if (PersoGlobal.currentWeaponCacName == "Axe"):
+		cqcWeapon = $Axe
+		cqcWeapon.visible = true
+	if (PersoGlobal.currentWeaponCacName == "BigSword"):
+		cqcWeapon = $BigSword
 		cqcWeapon.visible = true
 	bodySize = body_sprite.frames.get_frame("default", 0).get_size()
 	screen_size = get_viewport_rect().size
@@ -53,7 +68,7 @@ func _physics_process(delta):
 		weapon.shot(get_global_mouse_position())
 	if Input.is_mouse_button_pressed(BUTTON_RIGHT):
 		cqcWeapon.attack()
-	
+	move_and_slide(velocity, Vector2(0, -1))
 	move_and_collide(velocity * delta)
 
 func get_hit():

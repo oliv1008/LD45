@@ -8,13 +8,10 @@ func _ready():
 	nc.post_notification("CHANGE_HUD",notificationData)
 	nc.add_observer(self, "POPUP","handleNotification")
 	nc.add_observer(self, "FIN", "handleNotification")
-	notificationData = {
-		"mobs" : 0
-	}
-	nc.post_notification("LEVEL_INIT",notificationData)
 
 func _exit_tree():
 	nc.remove_observer(self,"POPUP")
+	nc.remove_observer(self,"FIN")
 	
 func handleNotification(observer,notificationName,notificationData):
 	if (notificationName == "POPUP"):
