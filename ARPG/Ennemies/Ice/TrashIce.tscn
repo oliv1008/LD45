@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://ARPG/Ennemies/Ice/TrashIce.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/Ennemis/Ice/TrashIceAttack.png" type="Texture" id=2]
@@ -94,6 +94,9 @@ tracks/0/keys = {
 "values": [ 2, 1 ]
 }
 
+[sub_resource type="CircleShape2D" id=7]
+radius = 647.149
+
 [node name="TrashIce" type="KinematicBody2D"]
 collision_layer = 4
 collision_mask = 3
@@ -116,6 +119,7 @@ cast_to = Vector2( 80, 0 )
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0.663422, 0 )
@@ -125,5 +129,17 @@ shape = SubResource( 3 )
 anims/attack = SubResource( 4 )
 anims/die = SubResource( 5 )
 anims/move = SubResource( 6 )
+
+[node name="Agro" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Agro"]
+shape = SubResource( 7 )
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+enabled = true
+collide_with_areas = true
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="Agro" to="." method="_on_Agro_body_entered"]

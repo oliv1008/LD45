@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://ARPG/Ennemies/Forest/MiniBossForest.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/Ennemis/Forest/MiniBossForestIddle.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/Ennemis/Forest/MiniBossForestWalking.png" type="Texture" id=3]
 [ext_resource path="res://assets/images/Ennemis/Forest/MiniBossForestDead.png" type="Texture" id=4]
 [ext_resource path="res://assets/images/Ennemis/Forest/MiniBossForestAttack.png" type="Texture" id=5]
-
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -94,6 +93,9 @@ tracks/0/keys = {
 "values": [ 0, 1, 0 ]
 }
 
+[sub_resource type="CircleShape2D" id=7]
+radius = 705.548
+
 [node name="MiniBostForest" type="KinematicBody2D"]
 collision_layer = 4
 collision_mask = 3
@@ -116,6 +118,7 @@ cast_to = Vector2( 140, 0 )
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
 __meta__ = {
 "_edit_group_": true
 }
@@ -129,5 +132,17 @@ shape = SubResource( 3 )
 anims/attack = SubResource( 4 )
 anims/die = SubResource( 5 )
 anims/move = SubResource( 6 )
+
+[node name="Agro" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Agro"]
+shape = SubResource( 7 )
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 50, 0 )
+collide_with_areas = true
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="Agro" to="." method="_on_Agro_body_entered"]

@@ -11,26 +11,33 @@ var playerPos = Vector2()
 var velocity = Vector2()
 var posToMove = Vector2()
 var player = false
+var player_entered = false
+var goGetHim = false
 
 onready var Hurtbox = $Area2D/CollisionShape2D
 onready var Hitbox = $CollisionShape2D
 onready var Cast = $RayCast2D
+onready var AgroLine = $RayCast2D2
 
 func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
 	currentPos = position
-	playerPos = get_parent().get_node("Player").position
-	posToMove = playerPos - currentPos
-	if not isAttacking && not abs(posToMove.x) < 2 && not abs(posToMove.y) < 2:
-		var animationPlayer = $AnimationPlayer
-		animationPlayer.play("move")
-		look_at(playerPos)
-		velocity = posToMove.normalized() * mouvementSpeed
-		move_and_collide(velocity*delta)
+	if (get_parent().get_node("Player") && player_entered == true):
+		playerPos = get_parent().get_node("Player").position
+		AgroLine.cast_to = playerPos - currentPos
+		if (AgroLine.is_colliding() && AgroLine.get_collider().get_name() == "Player"):
+			goGetHim = true
 
-	if raycast.is_colliding():
+	if (goGetHim == true):
+		playerPos = get_parent().get_node("Player").position
+		posToMove = playerPos - currentPos
+		if not isAttacking && not abs(posToMove.x) < 2 && not abs(posToMove.y) < 2:
+			look_at(playerPos)
+			velocity = posToMove.normalized() * mouvementSpeed
+			move_and_collide(velocity*delta)
+	if raycast.is_colliding() && raycast.get_collider().get_name() == "Player":
 		isAttacking = true
 		attack()
 
@@ -76,5 +83,9 @@ func _on_Area2D_body_entered(body):
 	if body == self:
 		pass
 	else:
-		if (body.has_method("get_hit") && body.player == true):
+		if (body.has_method("get_hit") && body.get_name() == "Player"):
 			body.get_hit()
+
+func _on_Agro_body_entered(body):
+	if (body.get_name() == "Player"):
+		player_entered = true
