@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Incremental/IncrementalScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/Star.tscn" type="PackedScene" id=2]
@@ -7,6 +7,15 @@
 [ext_resource path="res://assets/polices/CaveStory40.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/images/HUD/coeur final plus petits.png" type="Texture" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/Buildings/microwave.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/Buildings/Tamagocthi.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/Buildings/strangeeye.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/Buildings/convecteur.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/Buildings/brain.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/Buildings/mysteriousstone.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/Buildings/breadcat.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/Buildings/bocalsoleil.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/Buildings/bookofvoid.png" type="Texture" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -45,6 +54,9 @@ color = Color( 0, 0, 0, 1 )
 [node name="Star" parent="." instance=ExtResource( 2 )]
 position = Vector2( 900, 200 )
 
+[node name="Star18" parent="." instance=ExtResource( 2 )]
+position = Vector2( 743.227, 643.054 )
+
 [node name="Star12" parent="." instance=ExtResource( 2 )]
 position = Vector2( 180, 243 )
 
@@ -70,7 +82,31 @@ position = Vector2( 400, 300 )
 position = Vector2( 70, 150 )
 
 [node name="Star11" parent="." instance=ExtResource( 2 )]
-position = Vector2( 800, 100 )
+position = Vector2( 770.463, 122.721 )
+
+[node name="Star21" parent="." instance=ExtResource( 2 )]
+position = Vector2( 402.387, 1013.37 )
+
+[node name="Star20" parent="." instance=ExtResource( 2 )]
+position = Vector2( 756.831, 888.409 )
+
+[node name="Star19" parent="." instance=ExtResource( 2 )]
+position = Vector2( 888.611, 783.894 )
+
+[node name="Star17" parent="." instance=ExtResource( 2 )]
+position = Vector2( 163.82, 1031.55 )
+
+[node name="Star16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 856.802, 520.333 )
+
+[node name="Star15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 425.108, 902.042 )
+
+[node name="Star14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 327.409, 704.371 )
+
+[node name="Star13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 409.203, 474.892 )
 
 [node name="Star4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 150, 80 )
@@ -79,6 +115,7 @@ position = Vector2( 150, 80 )
 position = Vector2( 650, 60 )
 
 [node name="HorizontalLimit" type="ColorRect" parent="."]
+visible = false
 margin_top = 350.0
 margin_right = 960.0
 margin_bottom = 355.0
@@ -87,6 +124,7 @@ size_flags_vertical = 3
 color = Color( 1, 0, 0, 1 )
 
 [node name="VerticalLimit" type="ColorRect" parent="."]
+visible = false
 margin_left = 480.0
 margin_top = 350.0
 margin_right = 485.0
@@ -96,65 +134,65 @@ color = Color( 1, 0, 0, 1 )
 [node name="CenterAntimatter" type="CenterContainer" parent="."]
 editor/display_folded = true
 margin_left = 1.94323
-margin_top = -1.75809
+margin_top = -4.03015
 margin_right = 961.943
-margin_bottom = 351.242
+margin_bottom = 348.97
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VerticalAntimatter" type="VBoxContainer" parent="CenterAntimatter"]
-margin_left = 271.0
+margin_left = 303.0
 margin_top = 134.0
-margin_right = 687.0
+margin_right = 656.0
 margin_bottom = 219.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 21
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterAntimatter/VerticalAntimatter"]
-margin_right = 416.0
+margin_right = 353.0
 margin_bottom = 32.0
 alignment = 1
 
 [node name="TotalAntimatter" type="Label" parent="CenterAntimatter/VerticalAntimatter/HBoxContainer"]
-margin_left = 84.0
-margin_right = 295.0
+margin_left = 83.0
+margin_right = 234.0
 margin_bottom = 32.0
 size_flags_vertical = 7
 custom_fonts/font = SubResource( 1 )
-text = "You have XXXX"
+text = "You have 0"
 
 [node name="CurrencyTimer" type="Timer" parent="CenterAntimatter/VerticalAntimatter/HBoxContainer/TotalAntimatter"]
 autostart = true
 
 [node name="Antimatter" type="TextureRect" parent="CenterAntimatter/VerticalAntimatter/HBoxContainer"]
-margin_left = 299.0
-margin_right = 331.0
+margin_left = 238.0
+margin_right = 270.0
 margin_bottom = 32.0
 texture = ExtResource( 4 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterAntimatter/VerticalAntimatter"]
 margin_top = 53.0
-margin_right = 416.0
+margin_right = 353.0
 margin_bottom = 85.0
 
 [node name="AntimatterPerSeconds" type="Label" parent="CenterAntimatter/VerticalAntimatter/HBoxContainer2"]
 margin_top = 3.0
-margin_right = 211.0
+margin_right = 148.0
 margin_bottom = 28.0
 custom_fonts/font = SubResource( 2 )
-text = "You earn XXXX"
+text = "You earn 1"
 
 [node name="TextureRect" type="TextureRect" parent="CenterAntimatter/VerticalAntimatter/HBoxContainer2"]
-margin_left = 215.0
-margin_right = 247.0
+margin_left = 152.0
+margin_right = 184.0
 margin_bottom = 32.0
 texture = ExtResource( 4 )
 
 [node name="per second" type="Label" parent="CenterAntimatter/VerticalAntimatter/HBoxContainer2"]
-margin_left = 251.0
+margin_left = 188.0
 margin_top = 3.0
-margin_right = 416.0
+margin_right = 353.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 5 )
 text = " per second"
@@ -196,7 +234,7 @@ custom_constants/separation = 50
 margin_right = 448.0
 margin_bottom = 25.0
 custom_fonts/font = ExtResource( 5 )
-text = "Improve your Robot"
+text = "          IMPROVE YOUR ROBOT"
 
 [node name="HPVContainer" type="HBoxContainer" parent="CenterRobot/ScrollContainer/VerticalRobot"]
 margin_top = 75.0
@@ -525,66 +563,74 @@ margin_bottom = 725.0
 rect_min_size = Vector2( 475, 725 )
 
 [node name="VerticalBuildings" type="VBoxContainer" parent="CenterBuildings/ScrollContainer"]
-margin_right = 333.0
-margin_bottom = 757.0
+margin_right = 345.0
+margin_bottom = 1996.0
 custom_constants/separation = 50
 
 [node name="BuyBuildings" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
-margin_right = 333.0
+margin_right = 345.0
 margin_bottom = 25.0
 custom_fonts/font = ExtResource( 5 )
-text = "Buy buildings"
+text = "        BUY NEW BUILDINGS"
+align = 1
 
 [node name="VBuilding1Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
 editor/display_folded = true
 margin_top = 75.0
-margin_right = 333.0
-margin_bottom = 208.0
+margin_right = 345.0
+margin_bottom = 244.0
 
-[node name="HBuilding1Container" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container"]
-margin_right = 333.0
+[node name="HBuilding1Container1" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container"]
+margin_right = 345.0
 margin_bottom = 32.0
 custom_constants/separation = 10
 
-[node name="Building1" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container"]
+[node name="TextureRect" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container1"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+stretch_mode = 1
+
+[node name="Building1" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container1"]
+margin_left = 42.0
 margin_top = 3.0
-margin_right = 126.0
+margin_right = 187.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 5 )
-text = "Building1"
+text = "Microwave"
 align = 1
 
-[node name="VSeparator" type="VSeparator" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container"]
-margin_left = 136.0
-margin_right = 140.0
-margin_bottom = 32.0
+[node name="HBuilding1Container" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container"]
+margin_top = 36.0
+margin_right = 345.0
+margin_bottom = 68.0
+custom_constants/separation = 10
 
 [node name="ValuePerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container"]
-margin_left = 150.0
 margin_top = 3.0
-margin_right = 170.0
+margin_right = 20.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 5 )
 text = "2"
 
 [node name="Antimatter" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container"]
-margin_left = 180.0
-margin_right = 212.0
+margin_left = 30.0
+margin_right = 62.0
 margin_bottom = 32.0
 texture = ExtResource( 4 )
 
 [node name="PerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container"]
-margin_left = 222.0
+margin_left = 72.0
 margin_top = 3.0
-margin_right = 292.0
+margin_right = 142.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 5 )
 text = "/ sec"
 
 [node name="HBuilding1Container2" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container"]
-margin_top = 36.0
-margin_right = 333.0
-margin_bottom = 61.0
+margin_top = 72.0
+margin_right = 345.0
+margin_bottom = 97.0
 custom_constants/separation = 15
 
 [node name="NumberBuilding1" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container2"]
@@ -594,9 +640,9 @@ custom_fonts/font = ExtResource( 5 )
 text = "Quantity : 0"
 
 [node name="HBuilding1Container3" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container"]
-margin_top = 65.0
-margin_right = 333.0
-margin_bottom = 97.0
+margin_top = 101.0
+margin_right = 345.0
+margin_bottom = 133.0
 
 [node name="RevenueBuilding1" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container3"]
 margin_top = 3.0
@@ -620,9 +666,9 @@ custom_fonts/font = ExtResource( 5 )
 text = "/ sec"
 
 [node name="HBuilding1Container4" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container"]
-margin_top = 101.0
-margin_right = 333.0
-margin_bottom = 133.0
+margin_top = 137.0
+margin_right = 345.0
+margin_bottom = 169.0
 
 [node name="Label" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container/HBuilding1Container4"]
 margin_top = 3.0
@@ -646,54 +692,60 @@ texture = ExtResource( 4 )
 
 [node name="VBuilding2Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
 editor/display_folded = true
-margin_top = 258.0
-margin_right = 333.0
-margin_bottom = 391.0
+margin_top = 294.0
+margin_right = 345.0
+margin_bottom = 463.0
 
-[node name="HBuilding2Container" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container"]
-margin_right = 333.0
+[node name="HBuilding2Container1" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container"]
+margin_right = 345.0
 margin_bottom = 32.0
 custom_constants/separation = 10
 
-[node name="Building2" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container"]
+[node name="TextureRect" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container1"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 9 )
+
+[node name="Building2" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container1"]
+margin_left = 42.0
 margin_top = 3.0
-margin_right = 129.0
+margin_right = 188.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 5 )
-text = "Building2"
+text = "Tamagochi"
 align = 1
 
-[node name="VSeparator" type="VSeparator" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container"]
-margin_left = 139.0
-margin_right = 143.0
-margin_bottom = 32.0
+[node name="HBuilding2Container" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container"]
+margin_top = 36.0
+margin_right = 345.0
+margin_bottom = 68.0
+custom_constants/separation = 10
 
 [node name="ValuePerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container"]
-margin_left = 153.0
 margin_top = 3.0
-margin_right = 192.0
+margin_right = 39.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 5 )
 text = "30"
 
 [node name="Antimatter" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container"]
-margin_left = 202.0
-margin_right = 234.0
+margin_left = 49.0
+margin_right = 81.0
 margin_bottom = 32.0
 texture = ExtResource( 4 )
 
 [node name="PerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container"]
-margin_left = 244.0
+margin_left = 91.0
 margin_top = 3.0
-margin_right = 314.0
+margin_right = 161.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 5 )
 text = "/ sec"
 
 [node name="HBuilding2Container2" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container"]
-margin_top = 36.0
-margin_right = 333.0
-margin_bottom = 61.0
+margin_top = 72.0
+margin_right = 345.0
+margin_bottom = 97.0
 custom_constants/separation = 15
 
 [node name="NumberBuilding2" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container2"]
@@ -703,9 +755,9 @@ custom_fonts/font = ExtResource( 5 )
 text = "Quantity : 0"
 
 [node name="HBuilding2Container3" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container"]
-margin_top = 65.0
-margin_right = 333.0
-margin_bottom = 97.0
+margin_top = 101.0
+margin_right = 345.0
+margin_bottom = 133.0
 
 [node name="RevenueBuilding2" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container3"]
 margin_top = 3.0
@@ -729,9 +781,9 @@ custom_fonts/font = ExtResource( 5 )
 text = "/ sec"
 
 [node name="HBuilding2Container4" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container"]
-margin_top = 101.0
-margin_right = 333.0
-margin_bottom = 133.0
+margin_top = 137.0
+margin_right = 345.0
+margin_bottom = 169.0
 
 [node name="Buy" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container4"]
 margin_top = 3.0
@@ -755,54 +807,60 @@ texture = ExtResource( 4 )
 
 [node name="VBuilding3Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
 editor/display_folded = true
-margin_top = 441.0
-margin_right = 333.0
-margin_bottom = 574.0
+margin_top = 513.0
+margin_right = 345.0
+margin_bottom = 682.0
 
-[node name="HBuilding3Container" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container"]
-margin_right = 333.0
+[node name="HBuilding3Container1" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container"]
+margin_right = 345.0
 margin_bottom = 32.0
 custom_constants/separation = 10
 
-[node name="Building3" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container"]
+[node name="TextureRect" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container1"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 10 )
+
+[node name="Building3" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container1"]
+margin_left = 42.0
 margin_top = 3.0
-margin_right = 128.0
+margin_right = 125.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 5 )
-text = "Building3"
+text = "Totem"
 align = 1
 
-[node name="VSeparator" type="VSeparator" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container"]
-margin_left = 138.0
-margin_right = 142.0
-margin_bottom = 32.0
+[node name="HBuilding3Container" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container"]
+margin_top = 36.0
+margin_right = 345.0
+margin_bottom = 68.0
+custom_constants/separation = 10
 
 [node name="ValuePerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container"]
-margin_left = 152.0
 margin_top = 3.0
-margin_right = 211.0
+margin_right = 59.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 5 )
 text = "400"
 
 [node name="Antimatte" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container"]
-margin_left = 221.0
-margin_right = 253.0
+margin_left = 69.0
+margin_right = 101.0
 margin_bottom = 32.0
 texture = ExtResource( 4 )
 
 [node name="PerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container"]
-margin_left = 263.0
+margin_left = 111.0
 margin_top = 3.0
-margin_right = 333.0
+margin_right = 181.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 5 )
 text = "/ sec"
 
 [node name="HBuilding3Container2" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container"]
-margin_top = 36.0
-margin_right = 333.0
-margin_bottom = 61.0
+margin_top = 72.0
+margin_right = 345.0
+margin_bottom = 97.0
 custom_constants/separation = 15
 
 [node name="NumberBuilding3" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container2"]
@@ -812,9 +870,9 @@ custom_fonts/font = ExtResource( 5 )
 text = "Quantity : 0"
 
 [node name="HBuilding3Container3" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container"]
-margin_top = 65.0
-margin_right = 333.0
-margin_bottom = 97.0
+margin_top = 101.0
+margin_right = 345.0
+margin_bottom = 133.0
 
 [node name="RevenueBuilding3" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container3"]
 margin_top = 3.0
@@ -838,9 +896,9 @@ custom_fonts/font = ExtResource( 5 )
 text = "/ sec"
 
 [node name="HBuilding3Container4" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container"]
-margin_top = 101.0
-margin_right = 333.0
-margin_bottom = 133.0
+margin_top = 137.0
+margin_right = 345.0
+margin_bottom = 169.0
 
 [node name="Buy" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container4"]
 margin_top = 3.0
@@ -863,54 +921,61 @@ margin_bottom = 32.0
 texture = ExtResource( 4 )
 
 [node name="VBuilding4Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
-margin_top = 624.0
-margin_right = 333.0
-margin_bottom = 757.0
+editor/display_folded = true
+margin_top = 732.0
+margin_right = 345.0
+margin_bottom = 901.0
 
-[node name="HBuilding4Container" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container"]
-margin_right = 333.0
+[node name="HBuilding4Container1" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container"]
+margin_right = 345.0
 margin_bottom = 32.0
 custom_constants/separation = 10
 
-[node name="Building4" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container"]
+[node name="TextureRect" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container1"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 11 )
+
+[node name="Building4" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container1"]
+margin_left = 42.0
 margin_top = 3.0
-margin_right = 128.0
+margin_right = 257.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 5 )
-text = "Building3"
+text = "Time Convector"
 align = 1
 
-[node name="VSeparator" type="VSeparator" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container"]
-margin_left = 138.0
-margin_right = 142.0
-margin_bottom = 32.0
+[node name="HBuilding4Container" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container"]
+margin_top = 36.0
+margin_right = 345.0
+margin_bottom = 68.0
+custom_constants/separation = 10
 
 [node name="ValuePerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container"]
-margin_left = 152.0
 margin_top = 3.0
-margin_right = 211.0
+margin_right = 59.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 5 )
 text = "400"
 
 [node name="Antimatte" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container"]
-margin_left = 221.0
-margin_right = 253.0
+margin_left = 69.0
+margin_right = 101.0
 margin_bottom = 32.0
 texture = ExtResource( 4 )
 
 [node name="PerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container"]
-margin_left = 263.0
+margin_left = 111.0
 margin_top = 3.0
-margin_right = 333.0
+margin_right = 181.0
 margin_bottom = 28.0
 custom_fonts/font = ExtResource( 5 )
 text = "/ sec"
 
 [node name="HBuilding4Container2" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container"]
-margin_top = 36.0
-margin_right = 333.0
-margin_bottom = 61.0
+margin_top = 72.0
+margin_right = 345.0
+margin_bottom = 97.0
 custom_constants/separation = 15
 
 [node name="NumberBuilding4" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container2"]
@@ -920,9 +985,9 @@ custom_fonts/font = ExtResource( 5 )
 text = "Quantity : 0"
 
 [node name="HBuilding4Container3" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container"]
-margin_top = 65.0
-margin_right = 333.0
-margin_bottom = 97.0
+margin_top = 101.0
+margin_right = 345.0
+margin_bottom = 133.0
 
 [node name="RevenueBuilding4" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container3"]
 margin_top = 3.0
@@ -946,9 +1011,9 @@ custom_fonts/font = ExtResource( 5 )
 text = "/ sec"
 
 [node name="HBuilding4Container4" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container"]
-margin_top = 101.0
-margin_right = 333.0
-margin_bottom = 133.0
+margin_top = 137.0
+margin_right = 345.0
+margin_bottom = 169.0
 
 [node name="Buy" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container4"]
 margin_top = 3.0
@@ -965,6 +1030,581 @@ custom_fonts/font = ExtResource( 5 )
 text = "1000"
 
 [node name="Antimatter" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container4"]
+margin_left = 172.0
+margin_right = 204.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+
+[node name="VBuilding5Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
+editor/display_folded = true
+margin_top = 951.0
+margin_right = 345.0
+margin_bottom = 1120.0
+
+[node name="HBuilding5Container1" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container"]
+margin_right = 345.0
+margin_bottom = 32.0
+custom_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container/HBuilding5Container1"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 12 )
+
+[node name="Building5" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container/HBuilding5Container1"]
+margin_left = 42.0
+margin_top = 3.0
+margin_right = 289.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "Paul Dirac's Brain"
+align = 1
+
+[node name="HBuilding5Container" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container"]
+margin_top = 36.0
+margin_right = 345.0
+margin_bottom = 68.0
+custom_constants/separation = 10
+
+[node name="ValuePerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container/HBuilding5Container"]
+margin_top = 3.0
+margin_right = 59.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "400"
+
+[node name="Antimatte" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container/HBuilding5Container"]
+margin_left = 69.0
+margin_right = 101.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+
+[node name="PerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container/HBuilding5Container"]
+margin_left = 111.0
+margin_top = 3.0
+margin_right = 181.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "/ sec"
+
+[node name="HBuilding5Container2" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container"]
+margin_top = 72.0
+margin_right = 345.0
+margin_bottom = 97.0
+custom_constants/separation = 15
+
+[node name="NumberBuilding5" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container/HBuilding5Container2"]
+margin_right = 160.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 5 )
+text = "Quantity : 0"
+
+[node name="HBuilding5Container3" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container"]
+margin_top = 101.0
+margin_right = 345.0
+margin_bottom = 133.0
+
+[node name="RevenueBuilding5" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container/HBuilding5Container3"]
+margin_top = 3.0
+margin_right = 161.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "Revenue : 0"
+
+[node name="Antimatter" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container/HBuilding5Container3"]
+margin_left = 165.0
+margin_right = 197.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+
+[node name="PerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container/HBuilding5Container3"]
+margin_left = 201.0
+margin_top = 3.0
+margin_right = 271.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "/ sec"
+
+[node name="HBuilding5Container4" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container"]
+margin_top = 137.0
+margin_right = 345.0
+margin_bottom = 169.0
+
+[node name="Buy" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container/HBuilding5Container4"]
+margin_top = 3.0
+margin_right = 75.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "Buy : "
+
+[node name="BuyBuilding5" type="Button" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container/HBuilding5Container4"]
+margin_left = 79.0
+margin_right = 168.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 5 )
+text = "1000"
+
+[node name="Antimatter" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container/HBuilding5Container4"]
+margin_left = 172.0
+margin_right = 204.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+
+[node name="VBuilding6Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
+editor/display_folded = true
+margin_top = 1170.0
+margin_right = 345.0
+margin_bottom = 1339.0
+
+[node name="HBuilding6Container1" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container"]
+margin_right = 345.0
+margin_bottom = 32.0
+custom_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container/HBuilding6Container1"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 13 )
+
+[node name="Building6" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container/HBuilding6Container1"]
+margin_left = 42.0
+margin_top = 3.0
+margin_right = 288.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "Mysterious Stone"
+align = 1
+
+[node name="HBuilding6Container" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container"]
+margin_top = 36.0
+margin_right = 345.0
+margin_bottom = 68.0
+custom_constants/separation = 10
+
+[node name="ValuePerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container/HBuilding6Container"]
+margin_top = 3.0
+margin_right = 59.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "400"
+
+[node name="Antimatte" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container/HBuilding6Container"]
+margin_left = 69.0
+margin_right = 101.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+
+[node name="PerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container/HBuilding6Container"]
+margin_left = 111.0
+margin_top = 3.0
+margin_right = 181.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "/ sec"
+
+[node name="HBuilding6Container2" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container"]
+margin_top = 72.0
+margin_right = 345.0
+margin_bottom = 97.0
+custom_constants/separation = 15
+
+[node name="NumberBuilding6" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container/HBuilding6Container2"]
+margin_right = 160.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 5 )
+text = "Quantity : 0"
+
+[node name="HBuilding6Container3" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container"]
+margin_top = 101.0
+margin_right = 345.0
+margin_bottom = 133.0
+
+[node name="RevenueBuilding6" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container/HBuilding6Container3"]
+margin_top = 3.0
+margin_right = 161.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "Revenue : 0"
+
+[node name="Antimatter" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container/HBuilding6Container3"]
+margin_left = 165.0
+margin_right = 197.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+
+[node name="PerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container/HBuilding6Container3"]
+margin_left = 201.0
+margin_top = 3.0
+margin_right = 271.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "/ sec"
+
+[node name="HBuilding6Container4" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container"]
+margin_top = 137.0
+margin_right = 345.0
+margin_bottom = 169.0
+
+[node name="Buy" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container/HBuilding6Container4"]
+margin_top = 3.0
+margin_right = 75.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "Buy : "
+
+[node name="BuyBuilding6" type="Button" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container/HBuilding6Container4"]
+margin_left = 79.0
+margin_right = 168.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 5 )
+text = "1000"
+
+[node name="Antimatter" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container/HBuilding6Container4"]
+margin_left = 172.0
+margin_right = 204.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+
+[node name="VBuilding7Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
+editor/display_folded = true
+margin_top = 1389.0
+margin_right = 345.0
+margin_bottom = 1558.0
+
+[node name="HBuilding7Container1" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container"]
+margin_right = 345.0
+margin_bottom = 32.0
+custom_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container/HBuilding7Container1"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 14 )
+
+[node name="Building7" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container/HBuilding7Container1"]
+margin_left = 42.0
+margin_top = 3.0
+margin_right = 282.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "Cat with a tartine"
+align = 1
+
+[node name="HBuilding7Container" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container"]
+margin_top = 36.0
+margin_right = 345.0
+margin_bottom = 68.0
+custom_constants/separation = 10
+
+[node name="ValuePerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container/HBuilding7Container"]
+margin_top = 3.0
+margin_right = 59.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "400"
+
+[node name="Antimatte" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container/HBuilding7Container"]
+margin_left = 69.0
+margin_right = 101.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+
+[node name="PerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container/HBuilding7Container"]
+margin_left = 111.0
+margin_top = 3.0
+margin_right = 181.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "/ sec"
+
+[node name="HBuilding7Container2" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container"]
+margin_top = 72.0
+margin_right = 345.0
+margin_bottom = 97.0
+custom_constants/separation = 15
+
+[node name="NumberBuilding7" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container/HBuilding7Container2"]
+margin_right = 160.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 5 )
+text = "Quantity : 0"
+
+[node name="HBuilding7Container3" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container"]
+margin_top = 101.0
+margin_right = 345.0
+margin_bottom = 133.0
+
+[node name="RevenueBuilding7" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container/HBuilding7Container3"]
+margin_top = 3.0
+margin_right = 161.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "Revenue : 0"
+
+[node name="Antimatter" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container/HBuilding7Container3"]
+margin_left = 165.0
+margin_right = 197.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+
+[node name="PerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container/HBuilding7Container3"]
+margin_left = 201.0
+margin_top = 3.0
+margin_right = 271.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "/ sec"
+
+[node name="HBuilding7Container4" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container"]
+margin_top = 137.0
+margin_right = 345.0
+margin_bottom = 169.0
+
+[node name="Buy" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container/HBuilding7Container4"]
+margin_top = 3.0
+margin_right = 75.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "Buy : "
+
+[node name="BuyBuilding7" type="Button" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container/HBuilding7Container4"]
+margin_left = 79.0
+margin_right = 168.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 5 )
+text = "1000"
+
+[node name="Antimatter" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container/HBuilding7Container4"]
+margin_left = 172.0
+margin_right = 204.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+
+[node name="VBuilding8Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
+editor/display_folded = true
+margin_top = 1608.0
+margin_right = 345.0
+margin_bottom = 1777.0
+
+[node name="HBuilding8Container1" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container"]
+margin_right = 345.0
+margin_bottom = 32.0
+custom_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container/HBuilding8Container1"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 15 )
+
+[node name="Building8" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container/HBuilding8Container1"]
+margin_left = 42.0
+margin_top = 3.0
+margin_right = 285.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "Little Sun in a Jar"
+align = 1
+
+[node name="HBuilding8Container" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container"]
+margin_top = 36.0
+margin_right = 345.0
+margin_bottom = 68.0
+custom_constants/separation = 10
+
+[node name="ValuePerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container/HBuilding8Container"]
+margin_top = 3.0
+margin_right = 59.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "400"
+
+[node name="Antimatte" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container/HBuilding8Container"]
+margin_left = 69.0
+margin_right = 101.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+
+[node name="PerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container/HBuilding8Container"]
+margin_left = 111.0
+margin_top = 3.0
+margin_right = 181.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "/ sec"
+
+[node name="HBuilding8Container2" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container"]
+margin_top = 72.0
+margin_right = 345.0
+margin_bottom = 97.0
+custom_constants/separation = 15
+
+[node name="NumberBuilding8" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container/HBuilding8Container2"]
+margin_right = 160.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 5 )
+text = "Quantity : 0"
+
+[node name="HBuilding8Container3" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container"]
+margin_top = 101.0
+margin_right = 345.0
+margin_bottom = 133.0
+
+[node name="RevenueBuilding8" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container/HBuilding8Container3"]
+margin_top = 3.0
+margin_right = 161.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "Revenue : 0"
+
+[node name="Antimatter" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container/HBuilding8Container3"]
+margin_left = 165.0
+margin_right = 197.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+
+[node name="PerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container/HBuilding8Container3"]
+margin_left = 201.0
+margin_top = 3.0
+margin_right = 271.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "/ sec"
+
+[node name="HBuilding8Container4" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container"]
+margin_top = 137.0
+margin_right = 345.0
+margin_bottom = 169.0
+
+[node name="Buy" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container/HBuilding8Container4"]
+margin_top = 3.0
+margin_right = 75.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "Buy : "
+
+[node name="BuyBuilding8" type="Button" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container/HBuilding8Container4"]
+margin_left = 79.0
+margin_right = 168.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 5 )
+text = "1000"
+
+[node name="Antimatter" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container/HBuilding8Container4"]
+margin_left = 172.0
+margin_right = 204.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+
+[node name="VBuilding9Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
+editor/display_folded = true
+margin_top = 1827.0
+margin_right = 345.0
+margin_bottom = 1996.0
+
+[node name="HBuilding9Container1" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container"]
+margin_right = 345.0
+margin_bottom = 32.0
+custom_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container/HBuilding9Container1"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 16 )
+
+[node name="Building9" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container/HBuilding9Container1"]
+margin_left = 42.0
+margin_top = 3.0
+margin_right = 284.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "Prophecy of Void"
+align = 1
+
+[node name="HBuilding9Container" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container"]
+margin_top = 36.0
+margin_right = 345.0
+margin_bottom = 68.0
+custom_constants/separation = 10
+
+[node name="ValuePerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container/HBuilding9Container"]
+margin_top = 3.0
+margin_right = 59.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "400"
+
+[node name="Antimatte" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container/HBuilding9Container"]
+margin_left = 69.0
+margin_right = 101.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+
+[node name="PerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container/HBuilding9Container"]
+margin_left = 111.0
+margin_top = 3.0
+margin_right = 181.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "/ sec"
+
+[node name="HBuilding9Container2" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container"]
+margin_top = 72.0
+margin_right = 345.0
+margin_bottom = 97.0
+custom_constants/separation = 15
+
+[node name="NumberBuilding9" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container/HBuilding9Container2"]
+margin_right = 160.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 5 )
+text = "Quantity : 0"
+
+[node name="HBuilding9Container3" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container"]
+margin_top = 101.0
+margin_right = 345.0
+margin_bottom = 133.0
+
+[node name="RevenueBuilding9" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container/HBuilding9Container3"]
+margin_top = 3.0
+margin_right = 161.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "Revenue : 0"
+
+[node name="Antimatter" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container/HBuilding9Container3"]
+margin_left = 165.0
+margin_right = 197.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+
+[node name="PerSec" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container/HBuilding9Container3"]
+margin_left = 201.0
+margin_top = 3.0
+margin_right = 271.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "/ sec"
+
+[node name="HBuilding9Container4" type="HBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container"]
+margin_top = 137.0
+margin_right = 345.0
+margin_bottom = 169.0
+
+[node name="Buy" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container/HBuilding9Container4"]
+margin_top = 3.0
+margin_right = 75.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 5 )
+text = "Buy : "
+
+[node name="BuyBuilding9" type="Button" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container/HBuilding9Container4"]
+margin_left = 79.0
+margin_right = 168.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 5 )
+text = "1000"
+
+[node name="Antimatter" type="TextureRect" parent="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container/HBuilding9Container4"]
 margin_left = 172.0
 margin_right = 204.0
 margin_bottom = 32.0
@@ -1001,7 +1641,6 @@ margin_right = 896.0
 margin_bottom = 675.0
 custom_fonts/font = SubResource( 5 )
 text = "Start the game"
-
 [connection signal="timeout" from="CenterAntimatter/VerticalAntimatter/HBoxContainer/TotalAntimatter/CurrencyTimer" to="." method="_on_CurrencyTimer_timeout"]
 [connection signal="pressed" from="CenterAntimatter/VerticalAntimatter/TurnOnScreen" to="." method="_on_TurnOnScreen_pressed"]
 [connection signal="pressed" from="CenterAntimatter/VerticalAntimatter/CreateRobot" to="." method="_on_CreateRobot_pressed"]
@@ -1013,4 +1652,9 @@ text = "Start the game"
 [connection signal="pressed" from="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container/HBuilding2Container4/BuyBuilding2" to="." method="_on_BuyBuilding2_pressed"]
 [connection signal="pressed" from="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container/HBuilding3Container4/BuyBuilding3" to="." method="_on_BuyBuilding3_pressed"]
 [connection signal="pressed" from="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container/HBuilding4Container4/BuyBuilding4" to="." method="_on_BuyBuilding4_pressed"]
+[connection signal="pressed" from="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container/HBuilding5Container4/BuyBuilding5" to="." method="_on_BuyBuilding5_pressed"]
+[connection signal="pressed" from="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container/HBuilding6Container4/BuyBuilding6" to="." method="_on_BuyBuilding6_pressed"]
+[connection signal="pressed" from="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container/HBuilding7Container4/BuyBuilding7" to="." method="_on_BuyBuilding7_pressed"]
+[connection signal="pressed" from="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container/HBuilding8Container4/BuyBuilding8" to="." method="_on_BuyBuilding8_pressed"]
+[connection signal="pressed" from="CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container/HBuilding9Container4/BuyBuilding9" to="." method="_on_BuyBuilding9_pressed"]
 [connection signal="pressed" from="CenterIntroduction/VBoxContainer/StartTheGame" to="." method="_on_StartTheGame_pressed"]
