@@ -84,14 +84,14 @@ margin_right = 960.0
 margin_bottom = 355.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 1, 0, 0, 1 )
+color = Color( 0.607843, 0, 0.635294, 1 )
 
 [node name="VerticalLimit" type="ColorRect" parent="."]
 margin_left = 480.0
 margin_top = 350.0
 margin_right = 485.0
 margin_bottom = 1080.0
-color = Color( 1, 0, 0, 1 )
+color = Color( 0.607843, 0, 0.635294, 1 )
 
 [node name="CenterAntimatter" type="CenterContainer" parent="."]
 editor/display_folded = true

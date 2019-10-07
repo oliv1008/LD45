@@ -82,14 +82,14 @@ var improveDistancePrice = 1
 var ammoPrice = 1
 
 var spriteHandgun = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
-var spriteLaserHandgun = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
-var spriteLaserRifle = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
-var spriteRifle = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
+var spriteLaserHandgun = load("res://assets/images/Armes/Distance/LaserHandgunIncrementalScreen.png")
+var spriteLaserRifle = load("res://assets/images/Armes/Distance/LaserRifleIncrementalScreen.png")
+var spriteRifle = load("res://assets/images/Armes/Distance/RifleIncrementalScreen.png")
 
-var spriteSpear = load("res://icon.png")
-var spriteSword = load("res://icon.png")
-var spriteAxe = load("res://icon.png")
-var spriteBigSword = load("res://icon.png")
+var spriteSpear = load("res://assets/images/Armes/Cac/LanceIncrementalScreen.png")
+var spriteSword = load("res://assets/images/Armes/Cac/EpeeIncrementalScreen.png")
+var spriteAxe = load("res://assets/images/Armes/Cac/AxeIncrementalScreen.png")
+var spriteBigSword = load("res://assets/images/Armes/Cac/BigSwordIncrementalScreen.png")
 	
 func _ready():
 	nc.add_observer(self, "Antimatter","handleNotification")
@@ -117,6 +117,14 @@ func _ready():
 	BeforeNextMeleeWeapon.text = str(PersoGlobal.dmgTillNextWeaponCac)
 	
 	CacWeaponName.text = PersoGlobal.currentWeaponCacName
+	if (PersoGlobal.currentWeaponCacName == "Spear"):
+		CacWeaponSprite.texture = spriteSpear
+	if (PersoGlobal.currentWeaponCacName == "Sword"):
+		CacWeaponSprite.texture = spriteSword
+	if (PersoGlobal.currentWeaponCacName == "Axe"):
+		CacWeaponSprite.texture = spriteAxe
+	if (PersoGlobal.currentWeaponCacName == "BigSword"):
+		CacWeaponSprite.texture = spriteBigSword
 	DistanceWeaponName.text = PersoGlobal.currentWeaponDistanceName
 	if (PersoGlobal.currentWeaponDistanceName == "Handgun"):
 		DistanceWeaponSprite.texture = spriteHandgun
@@ -220,7 +228,10 @@ func _on_ImproveMeleeButton_pressed():
 				else:
 					BeforeNextMeleeWeapon.text = str(PersoGlobal.dmgTillNextWeaponCac)
 				PersoGlobal.currentWeaponCacName = PersoGlobal.meleeWeapons[PersoGlobal.indexMelee]
-				CacWeaponName.text = PersoGlobal.currentWeaponCacName
+				if (PersoGlobal.indexMelee == 3):
+					CacWeaponName.text = "Antimatter Sword"
+				else:
+					CacWeaponName.text = PersoGlobal.currentWeaponCacName
 				if (PersoGlobal.currentWeaponCacName == "Spear"):
 					CacWeaponSprite.texture = spriteSpear
 				if (PersoGlobal.currentWeaponCacName == "Sword"):
@@ -256,7 +267,7 @@ func _on_ImproveDistanceButton_pressed():
 				if (PersoGlobal.currentWeaponDistanceName == "Laser Gun"):
 					DistanceWeaponSprite.texture = spriteLaserHandgun
 				if (PersoGlobal.currentWeaponDistanceName == "Laser Rifle"):
-					DistanceWeaponSprite.texture = spriteHandgun
+					DistanceWeaponSprite.texture = spriteLaserRifle
 				if (PersoGlobal.currentWeaponDistanceName == "Rifle"):
 					DistanceWeaponSprite.texture = spriteRifle
 		DistanceValue.text = str(PersoGlobal.distanceDamage , " dmg")

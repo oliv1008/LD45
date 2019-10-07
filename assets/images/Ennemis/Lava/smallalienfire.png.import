@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BigSword.png-1056439be69e41991c5fd181efd622ec.stex"
+path="res://.import/smallalienfire.png-2ed05afbd701f52b14bf12c21e666fae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Armes/Cac/BigSword.png"
-dest_files=[ "res://.import/BigSword.png-1056439be69e41991c5fd181efd622ec.stex" ]
+source_file="res://assets/images/Ennemis/Lava/smallalienfire.png"
+dest_files=[ "res://.import/smallalienfire.png-2ed05afbd701f52b14bf12c21e666fae.stex" ]
 
 [params]
 
