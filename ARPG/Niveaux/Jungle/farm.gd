@@ -48,3 +48,8 @@ func _on_Timer_timeout():
 		add_child(spawn)
 		spawn.position = $Path2D/PathFollow2D.position
 		spawnNumber = spawnNumber-1
+	var notificationData = {
+		"scene" : "res://ARPG/Level_ending.tscn",
+		"mainUI" : false
+	}
+	nc.post_notification("LOAD_LEVEL",notificationData)
