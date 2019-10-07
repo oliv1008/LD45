@@ -53,3 +53,4 @@ position = Vector2( -0.447525, 35.0774 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
