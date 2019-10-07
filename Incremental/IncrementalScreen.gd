@@ -39,6 +39,11 @@ onready var CacWeaponName = $CenterRobot/ScrollContainer/VerticalRobot/VCacConta
 onready var DistanceWeaponName = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer2/WeaponName
 onready var DistanceWeaponSprite = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer2/TextureRect
 
+onready var BeforeNextDistanceWeapon = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer3/Label
+onready var BeforeNextMeleeWeapon = $CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer3/Label
+onready var LabelAvantBeforeNextDistance = $CenterRobot/ScrollContainer/VerticalRobot/VDistanceContainer/HDistanceContainer3/BeforeNext
+onready var LabelAvantBeforeNextMelee = $CenterRobot/ScrollContainer/VerticalRobot/VCacContainer/HCacContainer3/BeforeNext
+
 var antimatter = 0
 var antimatterPerSec = 1
 
@@ -59,10 +64,13 @@ var totalRevenueBuilding3 = 0
 
 var heartPrice = 10
 var improveMeleePrice = 20
-var improveDistancePrice = 40
+var improveDistancePrice = 1
 var ammoPrice = 1
 
 var spriteHandgun = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
+var spriteLaserHandgun = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
+var spriteLaserRifle = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
+var spriteRifle = load("res://assets/images/Armes/Distance/HandgunIncrementalScreen.png")
 	
 func _ready():
 	nc.add_observer(self, "Antimatter","handleNotification")
@@ -82,9 +90,22 @@ func _ready():
 	PriceImproveDistance.text = str(improveDistancePrice)
 	PriceAmmo.text = str(ammoPrice)
 	PriceHeart.text = str(heartPrice)
+	
+	BeforeNextDistanceWeapon.text = str(PersoGlobal.dmgTillNextWeaponDistance)
+	BeforeNextMeleeWeapon.text = str(PersoGlobal.dmgTillNextWeaponCac)
+	
 	CacWeaponName.text = PersoGlobal.currentWeaponCacName
 	DistanceWeaponName.text = PersoGlobal.currentWeaponDistanceName
-	DistanceWeaponSprite.texture = spriteHandgun
+	if (PersoGlobal.currentWeaponDistanceName == "Handgun"):
+		DistanceWeaponSprite.texture = spriteHandgun
+	if (PersoGlobal.currentWeaponDistanceName == "Laser Gun"):
+		DistanceWeaponSprite.texture = spriteLaserHandgun
+	if (PersoGlobal.currentWeaponDistanceName == "Laser Rifle"):
+		DistanceWeaponSprite.texture = spriteHandgun
+	if (PersoGlobal.currentWeaponDistanceName == "Rifle"):
+		DistanceWeaponSprite.texture = spriteRifle
+		
+		
 	
 
 func _exit_tree():
@@ -153,8 +174,14 @@ func _on_ImproveMeleeButton_pressed():
 		antimatter -= improveMeleePrice
 		PersoGlobal.meleeDamage += 10
 		improveMeleePrice *= 2
+		PersoGlobal.dmgTillNextWeaponCac -= 10
+		if (PersoGlobal.dmgTillNextWeaponCac <= 0):
+			PersoGlobal.dmgTillNextWeaponCac = PersoGlobal.dmgBetweenWeapons
+			PersoGlobal.indexMelee += 1
+			BeforeNextMeleeWeapon.text = str(PersoGlobal.dmgTillNextWeaponCac)
 		MeleeValue.text = str(PersoGlobal.meleeDamage , " dmg")
 		PriceImproveMelee.text = str(improveMeleePrice)
+		
 		
 
 func _on_ImproveDistanceButton_pressed():
@@ -162,6 +189,26 @@ func _on_ImproveDistanceButton_pressed():
 		antimatter -= improveDistancePrice
 		PersoGlobal.distanceDamage += 10
 		improveDistancePrice *= 2
+		if (PersoGlobal.indexDistance < 3):
+			PersoGlobal.dmgTillNextWeaponDistance -= 10
+			if (PersoGlobal.dmgTillNextWeaponDistance <= 0):
+				PersoGlobal.dmgTillNextWeaponDistance = PersoGlobal.dmgBetweenWeapons
+				PersoGlobal.indexDistance += 1
+				if (PersoGlobal.indexDistance == 3):
+					BeforeNextDistanceWeapon.text = "You reached the last weapon"
+					LabelAvantBeforeNextDistance.visible = false
+				else:
+					BeforeNextDistanceWeapon.text = str(PersoGlobal.dmgTillNextWeaponDistance)
+				PersoGlobal.currentWeaponDistanceName = PersoGlobal.distanceWeapons[PersoGlobal.indexDistance]
+				DistanceWeaponName.text = PersoGlobal.currentWeaponDistanceName
+				if (PersoGlobal.currentWeaponDistanceName == "Handgun"):
+					DistanceWeaponSprite.texture = spriteHandgun
+				if (PersoGlobal.currentWeaponDistanceName == "Laser Gun"):
+					DistanceWeaponSprite.texture = spriteLaserHandgun
+				if (PersoGlobal.currentWeaponDistanceName == "Laser Rifle"):
+					DistanceWeaponSprite.texture = spriteHandgun
+				if (PersoGlobal.currentWeaponDistanceName == "Rifle"):
+					DistanceWeaponSprite.texture = spriteRifle
 		DistanceValue.text = str(PersoGlobal.distanceDamage , " dmg")
 		PriceImproveDistance.text = str(improveDistancePrice)
 

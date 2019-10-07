@@ -14,10 +14,16 @@ func _ready():
 	nc.add_observer(self, "WEAPON_CHANGED","handleNotification")
 	if (PersoGlobal.currentWeaponDistanceName == "Handgun"):
 		weapon = $Handgun
-		$Handgun.visible = true
+		weapon.visible = true
 	if (PersoGlobal.currentWeaponDistanceName == "Laser Gun"):
 		weapon = $LaserHandgun
-		$LaserHandgun.visible = true
+		weapon.visible = true
+	if (PersoGlobal.currentWeaponDistanceName == "Laser Rifle"):
+		weapon = $LaserRifle
+		weapon.visible = true
+	if (PersoGlobal.currentWeaponDistanceName == "Rifle"):
+		weapon = $Rifle
+		weapon.visible = true
 	if (PersoGlobal.currentWeaponCacName == "Spear"):
 		cqcWeapon = $Spear
 		cqcWeapon.visible = true

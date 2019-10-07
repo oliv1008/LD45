@@ -1,14 +1,16 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://ARPG/Player.gd" type="Script" id=1]
 [ext_resource path="res://ARPG/Weapons/CQCSpear/Spear.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ARPG/Weapons/Handgun/Handgun.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ARPG/Weapons/LaserHandgun/LaserHandgun.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/72267645_397230914283131_1073197892161765376_n.png" type="Texture" id=5]
+[ext_resource path="res://ARPG/Weapons/LaserRifle/LaserRifle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ARPG/Weapons/Rifle/Rifle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/72267645_397230914283131_1073197892161765376_n.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -19,8 +21,11 @@ radius = 17.8401
 height = 50.5649
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 195.192, 104.856 )
+position = Vector2( 220.232, 218.673 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 SPEED = 500
 
 [node name="Spear" parent="." instance=ExtResource( 2 )]
@@ -35,6 +40,12 @@ position = Vector2( 0, 0 )
 visible = false
 rotation = 1.5708
 
+[node name="LaserRifle" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="Rifle" parent="." instance=ExtResource( 6 )]
+visible = false
+
 [node name="BodySprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.196899, -3.80688 )
 rotation = -1.5708
@@ -42,7 +53,7 @@ scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.35646, -4.94862 )
+position = Vector2( 0.848801, -4.94862 )
 shape = SubResource( 2 )
 
 [node name="Position2D" type="Position2D" parent="."]
@@ -53,3 +64,4 @@ position = Vector2( -0.447525, 35.0774 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 5, 5 )
