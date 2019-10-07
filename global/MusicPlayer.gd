@@ -19,11 +19,6 @@ func _ready():
 	player = get_node("SongPlayer")
 	timer = get_node("Timer")
 	timer.connect("timeout", self, "on_Timer_timeout")
-	
-	playSong("Song1", 2.0)
-	yield(get_tree().create_timer(5.0), "timeout")
-	#stopSong()
-	playSong("Song2", 2.0)
 
 func playSong(songName, introDuration, introName=null):
 	if currentSongName != songName: #in case it's asked to play a song that's already being played
