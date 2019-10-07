@@ -13,7 +13,7 @@ func _ready():
 func _pressed():
 	if ButtonState.boss1 :
 		var notificationData = {
-			"scene" : "res://ARPG/Niveaux/Glace/Glace3.tscn",
+			"scene" : "res://ARPG/Niveaux/Jungle/boss.tscn",
 			"mainUI" : false
 			}
 		nc.post_notification("LOAD_LEVEL",notificationData)
