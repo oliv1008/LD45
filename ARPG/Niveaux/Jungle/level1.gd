@@ -5,7 +5,7 @@ var popUp = load("res://ARPG/PopUpAntimatter.tscn")
 func _ready():
 	PersoGlobal.ammoLeft = PersoGlobal.numberOfAmmoMax
 	PersoGlobal.pv = PersoGlobal.pvMax
-	PersoGlobal.ennemiesLeft = 29
+	PersoGlobal.ennemiesLeft = 28
 	var notificationData = "ennemies"
 	nc.post_notification("CHANGE_HUD",notificationData)
 	nc.add_observer(self, "POPUP","handleNotification")

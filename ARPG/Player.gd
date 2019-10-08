@@ -86,7 +86,6 @@ func get_hit():
 			}
 			nc.post_notification("LOAD_LEVEL",notificationDat)
 		invincibility()
-	
 
 func invincibility():
 	canBeHit = false
