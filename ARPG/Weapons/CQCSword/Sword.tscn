@@ -59,6 +59,6 @@ shape = SubResource( 2 )
 position = Vector2( 0, 9 )
 rotation = -2.35619
 texture = ExtResource( 2 )
-[connection signal="body_entered" from="." to="." method="_on_Spear_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Sword_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

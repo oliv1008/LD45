@@ -472,7 +472,6 @@ position = Vector2( 880, 500 )
 position = Vector2( 75, 550 )
 
 [node name="Frontground" type="TextureRect" parent="."]
-visible = false
 margin_right = 949.0
 margin_bottom = 1080.0
 texture = ExtResource( 31 )
