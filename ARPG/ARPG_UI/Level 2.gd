@@ -7,8 +7,6 @@ func _ready():
 		icon = newIcon
 		text = "Done"
 
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _pressed():
 	if ButtonState.level2 :
 		var notificationData = {
