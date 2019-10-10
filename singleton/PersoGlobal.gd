@@ -1,11 +1,11 @@
 extends Node
 
 var antimatterPerSec = 1
-var meleeDamage = 100
-var distanceDamage = 30
+var meleeDamage = 10
+var distanceDamage = 10
 var pv = 3
 var pvMax = 3
-var numberOfAmmoMax = 100
+var numberOfAmmoMax = 10
 var ammoLeft = numberOfAmmoMax
 var ennemiesLeft = 0
 var currentWeaponCacName = "Spear"

@@ -118,10 +118,12 @@ var revenueBuilding9 = 44187000
 var quantityBuilding9 = 0
 var totalRevenueBuilding9 = 0
 
-var heartPrice = 10
-var improveMeleePrice = 1
-var improveDistancePrice = 1
-var ammoPrice = 1
+var heartPrice = 1000
+var improveMeleePrice = 10
+var improveDistancePrice = 10
+var coeffWeapon = 1.15
+var coeffAmmo = 1.15
+var ammoPrice = 10
 
 var bFactor = 1.03
 
@@ -424,8 +426,8 @@ func _on_BuyBuilding9_pressed():
 func _on_ImproveMeleeButton_pressed():
 	if (antimatter >= improveMeleePrice):
 		antimatter -= improveMeleePrice
+		improveMeleePrice *= pow(coeffWeapon, PersoGlobal.meleeDamage/10)
 		PersoGlobal.meleeDamage += 10
-		improveMeleePrice *= 2
 		if (PersoGlobal.indexMelee < 3):
 			PersoGlobal.dmgTillNextWeaponCac -= 10
 			if (PersoGlobal.dmgTillNextWeaponCac <= 0):
@@ -457,8 +459,8 @@ func _on_ImproveMeleeButton_pressed():
 func _on_ImproveDistanceButton_pressed():
 	if (antimatter >= improveDistancePrice):
 		antimatter -= improveDistancePrice
+		improveDistancePrice *= pow(coeffWeapon, PersoGlobal.distanceDamage/10)
 		PersoGlobal.distanceDamage += 10
-		improveDistancePrice *= 2
 		if (PersoGlobal.indexDistance < 3):
 			PersoGlobal.dmgTillNextWeaponDistance -= 10
 			if (PersoGlobal.dmgTillNextWeaponDistance <= 0):
@@ -485,8 +487,8 @@ func _on_ImproveDistanceButton_pressed():
 func _on_1AmmoButton_pressed():
 	if (antimatter >= ammoPrice):
 		antimatter -= ammoPrice
-		PersoGlobal.numberOfAmmoMax += 1
-		ammoPrice *= 2
+		ammoPrice *= pow(coeffAmmo, PersoGlobal.numberOfAmmoMax/5)
+		PersoGlobal.numberOfAmmoMax += 5
 		NumberOfAmmo.text = str(PersoGlobal.numberOfAmmoMax, " Ammo")
 		PriceAmmo.text = str(_format(ammoPrice))
 

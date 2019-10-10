@@ -5,6 +5,8 @@ var mob = load("res://ARPG/Ennemies/Forest/TrashForest1.tscn")
 var spawnNumber = 20
 
 func _ready():
+	PersoGlobal.ammoLeft = PersoGlobal.numberOfAmmoMax
+	PersoGlobal.pv = PersoGlobal.pv
 	MusicPlayer.playSong("Monde1", 0.02)
 	$Timer.start()
 	PersoGlobal.ennemiesLeft = 20
@@ -26,15 +28,6 @@ func handleNotification(observer,notificationName,notificationData):
 		print("position du popup : ", popUpInstance.position)
 		popUpInstance.get_node("HBoxContainer/AMEarned").text = str("+", notificationData[1])
 		self.add_child(popUpInstance)
-		
-		
-		notificationDat = {
-			"scene" : "res://ARPG/Farm_ending.tscn",
-			"mainUI" : true
-		}
-		PersoGlobal.ammoLeft = PersoGlobal.numberOfAmmoMax
-		nc.post_notification("LOAD_LEVEL",notificationDat)
-		nc.post_notification("LEVEL_END",notificationDat)
 
 func _on_Timer_timeout():
 	if (spawnNumber != 0):
@@ -43,3 +36,10 @@ func _on_Timer_timeout():
 		add_child(spawn)
 		spawn.position = $Path2D/PathFollow2D.position
 		spawnNumber = spawnNumber-1
+
+func on_level_end():
+	var notificationDat = {
+		"scene" : "res://ARPG/Farm_ending.tscn",
+		"mainUI" : true
+	}
+	nc.post_notification("LOAD_LEVEL",notificationDat)	
