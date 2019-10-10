@@ -27,14 +27,15 @@ func handleNotification(observer,notificationName,notificationData):
 		popUpInstance.get_node("HBoxContainer/AMEarned").text = str("+", notificationData[1])
 		self.add_child(popUpInstance)
 		
-func on_level_end() :
-	
-	var notificationData = {
-		"scene" : "res://ARPG/Level_ending.tscn",
-		"mainUI" : false
-	}
-	nc.post_notification("LOAD_LEVEL",notificationData)
-	
+		
+		notificationDat = {
+			"scene" : "res://ARPG/Farm_ending.tscn",
+			"mainUI" : true
+		}
+		PersoGlobal.ammoLeft = PersoGlobal.numberOfAmmoMax
+		nc.post_notification("LOAD_LEVEL",notificationDat)
+		nc.post_notification("LEVEL_END",notificationDat)
+
 func _on_Timer_timeout():
 	if (spawnNumber != 0):
 		$Path2D/PathFollow2D.set_offset(randi())

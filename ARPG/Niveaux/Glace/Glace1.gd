@@ -19,8 +19,8 @@ func _process(delta):
 
 func on_level_end() :
 	
-	var notificationData = {
-		"scene" : "res://ARPG/Level_ending.tscn",
+	notificationData = {
+		"scene" : "res://ARPG/Farm_ending.tscn",
 		"mainUI" : false
 	}
 	nc.post_notification("LOAD_LEVEL",notificationData)
