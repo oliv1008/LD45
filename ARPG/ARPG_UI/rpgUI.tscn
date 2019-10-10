@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://ARPG/ARPG_UI/rpgUI.gd" type="Script" id=1]
 [ext_resource path="res://ARPG/ARPG_UI/VBoxContainer.gd" type="Script" id=2]
@@ -6,30 +6,34 @@
 [ext_resource path="res://ARPG/ARPG_UI/TabContainer.gd" type="Script" id=4]
 [ext_resource path="res://ARPG/ARPG_UI/Planet G.gd" type="Script" id=5]
 [ext_resource path="res://assets/images/PlanetForest.png" type="Texture" id=6]
-[ext_resource path="res://assets/images/HUD/CercleVierge.png" type="Texture" id=7]
-[ext_resource path="res://ARPG/ARPG_UI/Level 1.gd" type="Script" id=8]
-[ext_resource path="res://ARPG/ARPG_UI/Level 2.gd" type="Script" id=9]
-[ext_resource path="res://ARPG/ARPG_UI/Level 3.gd" type="Script" id=10]
-[ext_resource path="res://assets/images/HUD/CercleInfini.png" type="Texture" id=11]
-[ext_resource path="res://ARPG/ARPG_UI/Farm.gd" type="Script" id=12]
-[ext_resource path="res://assets/images/HUD/CercleBoss.png" type="Texture" id=13]
-[ext_resource path="res://ARPG/ARPG_UI/Boss.gd" type="Script" id=14]
-[ext_resource path="res://ARPG/ARPG_UI/Planet C.gd" type="Script" id=15]
-[ext_resource path="res://assets/images/PlanetIce.png" type="Texture" id=16]
-[ext_resource path="res://ARPG/ARPG_UI/Level 4.gd" type="Script" id=17]
-[ext_resource path="res://ARPG/ARPG_UI/Level 5.gd" type="Script" id=18]
-[ext_resource path="res://ARPG/ARPG_UI/Level 6.gd" type="Script" id=19]
-[ext_resource path="res://ARPG/ARPG_UI/Farm2.gd" type="Script" id=20]
-[ext_resource path="res://ARPG/ARPG_UI/Boss2.gd" type="Script" id=21]
-[ext_resource path="res://ARPG/ARPG_UI/Planet D.gd" type="Script" id=22]
-[ext_resource path="res://assets/images/PlanetFire.png" type="Texture" id=23]
-[ext_resource path="res://ARPG/ARPG_UI/Level 7.gd" type="Script" id=24]
-[ext_resource path="res://ARPG/ARPG_UI/Level 8.gd" type="Script" id=25]
-[ext_resource path="res://ARPG/ARPG_UI/Level 9.gd" type="Script" id=26]
-[ext_resource path="res://ARPG/ARPG_UI/Farm3.gd" type="Script" id=27]
-[ext_resource path="res://ARPG/ARPG_UI/Boss3.gd" type="Script" id=28]
-[ext_resource path="res://assets/Star.tscn" type="PackedScene" id=29]
-[ext_resource path="res://assets/images/Robot de face.png" type="Texture" id=30]
+[ext_resource path="res://assets/polices/CaveStory120.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/images/HUD/CercleVierge.png" type="Texture" id=8]
+[ext_resource path="res://ARPG/ARPG_UI/Level 1.gd" type="Script" id=9]
+[ext_resource path="res://ARPG/ARPG_UI/Level 2.gd" type="Script" id=10]
+[ext_resource path="res://ARPG/ARPG_UI/Level 3.gd" type="Script" id=11]
+[ext_resource path="res://assets/images/HUD/CercleInfini.png" type="Texture" id=12]
+[ext_resource path="res://ARPG/ARPG_UI/Farm.gd" type="Script" id=13]
+[ext_resource path="res://assets/images/HUD/CercleBoss.png" type="Texture" id=14]
+[ext_resource path="res://ARPG/ARPG_UI/Boss.gd" type="Script" id=15]
+[ext_resource path="res://ARPG/ARPG_UI/Planet C.gd" type="Script" id=16]
+[ext_resource path="res://assets/images/PlanetIce.png" type="Texture" id=17]
+[ext_resource path="res://ARPG/ARPG_UI/Level 4.gd" type="Script" id=18]
+[ext_resource path="res://ARPG/ARPG_UI/Level 5.gd" type="Script" id=19]
+[ext_resource path="res://ARPG/ARPG_UI/Level 6.gd" type="Script" id=20]
+[ext_resource path="res://ARPG/ARPG_UI/Farm2.gd" type="Script" id=21]
+[ext_resource path="res://ARPG/ARPG_UI/Boss2.gd" type="Script" id=22]
+[ext_resource path="res://ARPG/ARPG_UI/Planet D.gd" type="Script" id=23]
+[ext_resource path="res://assets/images/PlanetFire.png" type="Texture" id=24]
+[ext_resource path="res://ARPG/ARPG_UI/Level 7.gd" type="Script" id=25]
+[ext_resource path="res://ARPG/ARPG_UI/Level 8.gd" type="Script" id=26]
+[ext_resource path="res://ARPG/ARPG_UI/Level 9.gd" type="Script" id=27]
+[ext_resource path="res://ARPG/ARPG_UI/Farm3.gd" type="Script" id=28]
+[ext_resource path="res://ARPG/ARPG_UI/Boss3.gd" type="Script" id=29]
+[ext_resource path="res://assets/Star.tscn" type="PackedScene" id=30]
+[ext_resource path="res://assets/images/HUD/fondacceuil.png" type="Texture" id=31]
+[ext_resource path="res://ARPG/ARPG_UI/CenterContainerIddle.gd" type="Script" id=32]
+[ext_resource path="res://assets/images/robot3.png" type="Texture" id=33]
+[ext_resource path="res://assets/images/robot31.png" type="Texture" id=34]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.304688, 0.304688, 0.304688, 1 )
@@ -94,6 +98,31 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
+[sub_resource type="Animation" id=10]
+resource_name = "Iddle"
+length = 0.51
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("FlexingRobot:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
+}
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 33 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="RPGScreen" type="Control"]
 script = ExtResource( 1 )
 
@@ -147,17 +176,18 @@ expand = true
 stretch_mode = 2
 
 [node name="Level 1" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet G/Background1"]
-margin_left = 623.371
-margin_top = 499.044
-margin_right = 1219.37
-margin_bottom = 1095.04
+margin_left = 623.0
+margin_top = 499.0
+margin_right = 1219.0
+margin_bottom = 1095.0
 rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-icon = ExtResource( 7 )
+custom_fonts/font = ExtResource( 7 )
+icon = ExtResource( 8 )
 flat = true
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="Level 2" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet G/Background1"]
 margin_left = 360.887
@@ -168,9 +198,10 @@ rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-icon = ExtResource( 7 )
+custom_fonts/font = ExtResource( 7 )
+icon = ExtResource( 8 )
 flat = true
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="Level 3" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet G/Background1"]
 margin_left = 391.617
@@ -181,9 +212,10 @@ rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-icon = ExtResource( 7 )
+custom_fonts/font = ExtResource( 7 )
+icon = ExtResource( 8 )
 flat = true
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="Farm" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet G/Background1"]
 margin_left = 190.015
@@ -194,9 +226,9 @@ rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
-icon = ExtResource( 11 )
+icon = ExtResource( 12 )
 flat = true
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
 [node name="Boss" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet G/Background1"]
 margin_left = 574.686
@@ -207,9 +239,10 @@ rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/normal = SubResource( 9 )
-icon = ExtResource( 13 )
+custom_fonts/font = ExtResource( 7 )
+icon = ExtResource( 14 )
 flat = true
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 
 [node name="Planet C" type="Tabs" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
@@ -219,7 +252,7 @@ margin_left = 4.0
 margin_top = 43.0
 margin_right = -4.0
 margin_bottom = -4.0
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 
 [node name="Background2" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/Planet C"]
 show_behind_parent = true
@@ -229,7 +262,7 @@ margin_left = 15.0
 margin_top = 15.0
 margin_right = -15.0
 margin_bottom = -15.0
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 expand = true
 stretch_mode = 2
 
@@ -242,9 +275,10 @@ rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-icon = ExtResource( 7 )
+custom_fonts/font = ExtResource( 7 )
+icon = ExtResource( 8 )
 flat = true
-script = ExtResource( 17 )
+script = ExtResource( 18 )
 
 [node name="Level 5" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
 margin_left = 572.0
@@ -255,9 +289,10 @@ rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-icon = ExtResource( 7 )
+custom_fonts/font = ExtResource( 7 )
+icon = ExtResource( 8 )
 flat = true
-script = ExtResource( 18 )
+script = ExtResource( 19 )
 
 [node name="Level 6" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
 margin_left = 691.25
@@ -268,9 +303,10 @@ rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-icon = ExtResource( 7 )
+custom_fonts/font = ExtResource( 7 )
+icon = ExtResource( 8 )
 flat = true
-script = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="Farm2" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
 margin_left = 142.25
@@ -281,9 +317,10 @@ rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
-icon = ExtResource( 11 )
+custom_fonts/font = ExtResource( 7 )
+icon = ExtResource( 12 )
 flat = true
-script = ExtResource( 20 )
+script = ExtResource( 21 )
 
 [node name="Boss2" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet C/Background2"]
 margin_left = 248.0
@@ -294,9 +331,10 @@ rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/normal = SubResource( 9 )
-icon = ExtResource( 13 )
+custom_fonts/font = ExtResource( 7 )
+icon = ExtResource( 14 )
 flat = true
-script = ExtResource( 21 )
+script = ExtResource( 22 )
 
 [node name="Planet D" type="Tabs" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
@@ -306,7 +344,7 @@ margin_left = 4.0
 margin_top = 43.0
 margin_right = -4.0
 margin_bottom = -4.0
-script = ExtResource( 22 )
+script = ExtResource( 23 )
 
 [node name="Background3" type="TextureRect" parent="MarginContainer/VBoxContainer/TabContainer/Planet D"]
 show_behind_parent = true
@@ -316,7 +354,7 @@ margin_left = 15.0
 margin_top = 15.0
 margin_right = -15.0
 margin_bottom = -15.0
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 expand = true
 stretch_mode = 2
 
@@ -329,9 +367,10 @@ rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-icon = ExtResource( 7 )
+custom_fonts/font = ExtResource( 7 )
+icon = ExtResource( 8 )
 flat = true
-script = ExtResource( 24 )
+script = ExtResource( 25 )
 
 [node name="Level 8" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet D/Background3"]
 margin_left = 572.0
@@ -342,9 +381,10 @@ rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-icon = ExtResource( 7 )
+custom_fonts/font = ExtResource( 7 )
+icon = ExtResource( 8 )
 flat = true
-script = ExtResource( 25 )
+script = ExtResource( 26 )
 
 [node name="Level 9" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet D/Background3"]
 margin_left = 691.25
@@ -355,9 +395,10 @@ rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-icon = ExtResource( 7 )
+custom_fonts/font = ExtResource( 7 )
+icon = ExtResource( 8 )
 flat = true
-script = ExtResource( 26 )
+script = ExtResource( 27 )
 
 [node name="Farm3" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet D/Background3"]
 margin_left = 142.25
@@ -368,9 +409,9 @@ rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
-icon = ExtResource( 11 )
+icon = ExtResource( 12 )
 flat = true
-script = ExtResource( 27 )
+script = ExtResource( 28 )
 
 [node name="Boss3" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Planet D/Background3"]
 margin_left = 248.0
@@ -381,71 +422,80 @@ rect_scale = Vector2( 0.15, 0.15 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/normal = SubResource( 9 )
-icon = ExtResource( 13 )
+custom_fonts/font = ExtResource( 7 )
+icon = ExtResource( 14 )
 flat = true
-script = ExtResource( 28 )
+script = ExtResource( 29 )
 
-[node name="Star" parent="." instance=ExtResource( 29 )]
+[node name="ChooseLevel" type="Label" parent="."]
+margin_left = 352.171
+margin_top = 95.427
+margin_right = 619.171
+margin_bottom = 120.427
+custom_fonts/font = ExtResource( 3 )
+text = "Choose your level !"
+
+[node name="Star" parent="." instance=ExtResource( 30 )]
 position = Vector2( 100, 200 )
 
-[node name="Star2" parent="." instance=ExtResource( 29 )]
+[node name="Star2" parent="." instance=ExtResource( 30 )]
 position = Vector2( 700, 150 )
 
-[node name="Star3" parent="." instance=ExtResource( 29 )]
+[node name="Star3" parent="." instance=ExtResource( 30 )]
 position = Vector2( 850, 250 )
 
-[node name="Star4" parent="." instance=ExtResource( 29 )]
+[node name="Star4" parent="." instance=ExtResource( 30 )]
 position = Vector2( 139, 900 )
 
-[node name="Star5" parent="." instance=ExtResource( 29 )]
+[node name="Star5" parent="." instance=ExtResource( 30 )]
 position = Vector2( 80, 800 )
 
-[node name="Star6" parent="." instance=ExtResource( 29 )]
+[node name="Star6" parent="." instance=ExtResource( 30 )]
 position = Vector2( 187, 1000 )
 
-[node name="Star7" parent="." instance=ExtResource( 29 )]
+[node name="Star7" parent="." instance=ExtResource( 30 )]
 position = Vector2( 200, 130 )
 
-[node name="Star8" parent="." instance=ExtResource( 29 )]
+[node name="Star8" parent="." instance=ExtResource( 30 )]
 position = Vector2( 800, 900 )
 
-[node name="Star9" parent="." instance=ExtResource( 29 )]
+[node name="Star9" parent="." instance=ExtResource( 30 )]
 position = Vector2( 850, 1000 )
 
-[node name="Star10" parent="." instance=ExtResource( 29 )]
+[node name="Star10" parent="." instance=ExtResource( 30 )]
 position = Vector2( 700, 977 )
 
-[node name="Star11" parent="." instance=ExtResource( 29 )]
+[node name="Star11" parent="." instance=ExtResource( 30 )]
 position = Vector2( 880, 500 )
 
-[node name="Star12" parent="." instance=ExtResource( 29 )]
+[node name="Star12" parent="." instance=ExtResource( 30 )]
 position = Vector2( 75, 550 )
 
-[node name="Frontground" type="ColorRect" parent="."]
+[node name="Frontground" type="TextureRect" parent="."]
 margin_right = 949.0
 margin_bottom = 1080.0
+texture = ExtResource( 31 )
+expand = true
 
-[node name="CenterContainerIddle" type="CenterContainer" parent="."]
+[node name="CenterContainerIddle" type="Control" parent="."]
 visible = false
 margin_right = 948.0
 margin_bottom = 1082.0
+script = ExtResource( 32 )
 
-[node name="VIddleContainer" type="VBoxContainer" parent="CenterContainerIddle"]
-margin_left = 257.0
-margin_top = 177.0
-margin_right = 691.0
-margin_bottom = 904.0
-custom_constants/separation = 100
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CenterContainerIddle"]
+anims/Iddle = SubResource( 10 )
 
-[node name="FlexingRobot" type="TextureRect" parent="CenterContainerIddle/VIddleContainer"]
-margin_right = 434.0
-margin_bottom = 596.0
-texture = ExtResource( 30 )
+[node name="FlexingRobot" type="AnimatedSprite" parent="CenterContainerIddle"]
+position = Vector2( 484.11, 523.812 )
+frames = SubResource( 11 )
+frame = 1
 
-[node name="LetsGo" type="Button" parent="CenterContainerIddle/VIddleContainer"]
-margin_top = 696.0
-margin_right = 434.0
-margin_bottom = 727.0
+[node name="LetsGo" type="Button" parent="CenterContainerIddle"]
+margin_left = 308.449
+margin_top = 843.09
+margin_right = 680.449
+margin_bottom = 874.09
 custom_fonts/font = ExtResource( 3 )
 text = "Let's go on an adventure !"
-[connection signal="pressed" from="CenterContainerIddle/VIddleContainer/LetsGo" to="." method="_on_LetsGo_pressed"]
+[connection signal="pressed" from="CenterContainerIddle/LetsGo" to="." method="_on_LetsGo_pressed"]

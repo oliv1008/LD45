@@ -19,7 +19,7 @@ func on_level_end() :
 	nc.post_notification("LEVEL_END",notificationData)
 	
 	notificationData = {
-		"scene" : "res://ARPG/Level_ending.tscn",
+		"scene" : "res://ARPG/Farm_ending.tscn",
 		"mainUI" : false
 	}
 	nc.post_notification("LOAD_LEVEL",notificationData)
