@@ -18,6 +18,13 @@ func _process(delta):
 		on_level_end()
 
 func on_level_end() :
+	if (get_name() == "Glace3") :
+		ButtonState.level4 = false
+	if (get_name() == "Glace4") :
+		ButtonState.level5 = false
+	if (get_name() == "Glace5") :
+		ButtonState.level6 = false
+		
 	var notificationData = 1
 	nc.post_notification("LEVEL_END",notificationData)
 
