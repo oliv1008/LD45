@@ -3,7 +3,9 @@ extends Node2D
 var popUp = load("res://ARPG/PopUpAntimatter.tscn")
 
 func _ready():
-	PersoGlobal.ennemiesLeft = 38
+	PersoGlobal.ammoLeft = PersoGlobal.numberOfAmmoMax
+	PersoGlobal.pv = PersoGlobal.pvMax
+	PersoGlobal.ennemiesLeft = get_child_count()-3
 	var notificationData = "ennemies"
 	nc.post_notification("CHANGE_HUD",notificationData)
 	nc.add_observer(self, "POPUP","handleNotification")

@@ -6,7 +6,7 @@ func _ready():
 	MusicPlayer.playSong("Monde1", 0.02)
 	PersoGlobal.ammoLeft = PersoGlobal.numberOfAmmoMax
 	PersoGlobal.pv = PersoGlobal.pvMax
-	PersoGlobal.ennemiesLeft = 29
+	PersoGlobal.ennemiesLeft = get_child_count()-3
 	var notificationData = "ennemies"
 	nc.post_notification("CHANGE_HUD",notificationData)
 	nc.add_observer(self, "POPUP","handleNotification")

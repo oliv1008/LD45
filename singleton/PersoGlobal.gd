@@ -12,6 +12,7 @@ var currentWeaponDistanceName = "Handgun"
 var dmgTillNextWeaponCac = 10
 var dmgTillNextWeaponDistance = 10
 var dmgBetweenWeapons = 10
+var currentNumberOfBuilding = 0
 var viewportARPG
 
 var indexMelee = 0

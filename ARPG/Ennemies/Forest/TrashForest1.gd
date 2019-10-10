@@ -33,6 +33,8 @@ func _physics_process(delta):
 			goGetHim = true
 
 	if (goGetHim == true):
+		#$Agro.queue_free()
+		#AgroLine.queue_free()
 		playerPos = get_parent().get_node("Player").position
 		posToMove = playerPos - currentPos
 		if not isAttacking && not abs(posToMove.x) < 2 && not abs(posToMove.y) < 2:

@@ -18,11 +18,8 @@ func _ready():
 
 func _on_Spear_body_entered(body):
 	if ($CollisionShape2D.disabled == false):
-		print("ici")
 		if body.get_class() == "KinematicBody2D":
-			print("kinematic")
-			if body.has_method("get_hit") && body.get_name() == "Player":
-				print("got hit")
+			if body.has_method("get_hit") && body.get_name() != "Player":
 				body.get_hit(PersoGlobal.meleeDamage * damageMultiplier)
 
 func attack():

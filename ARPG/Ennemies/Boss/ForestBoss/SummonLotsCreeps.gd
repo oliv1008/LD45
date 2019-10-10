@@ -1,6 +1,6 @@
 extends "res://state/State.gd"
 
-var trashMob = load("res://ARPG/Ennemies/TrashForest1.tscn")
+var trashMob = load("res://ARPG/Ennemies/Forest/TrashForest1.tscn")
 
 func enter():
 	print("SummonFewCreeps")
