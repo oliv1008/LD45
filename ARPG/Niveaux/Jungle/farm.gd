@@ -40,7 +40,7 @@ func handleNotification(observer,notificationName,notificationData):
 		nc.post_notification("LEVEL_END",notificationDat)
 		
 		notificationDat = {
-			"scene" : "res://ARPG/ARPG_UI/rpgUI.tscn",
+			"scene" : "res://ARPG/Farm_ending.tscn",
 			"mainUI" : true
 		}
 		PersoGlobal.ammoLeft = PersoGlobal.numberOfAmmoMax
