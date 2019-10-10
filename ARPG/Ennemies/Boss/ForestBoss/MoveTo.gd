@@ -21,7 +21,6 @@ func update(delta):
 
 func calculate_new_random_target_position():
 	var x = randi() % 1921
-	var y = randi() % 1081
 	return Vector2(x, owner.position.y)
 	
 func exit():

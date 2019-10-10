@@ -12,8 +12,8 @@ func summonCreeps():
 
 	for i in range(0, iteration):
 		#TODO NE PAS GARDER DES POSITION2D RELATIVE AU BOSS
-		var x = randi() % int(owner.get_node("Position2DBottomRight").global_position.x) + int(owner.get_node("Position2DTopLeft").global_position.x)
-		var y = randi() % int(owner.get_node("Position2DBottomRight").global_position.y) + int(owner.get_node("Position2DTopLeft").global_position.y)
+		var x = randi() % int(owner.get_parent().get_node("Position2DBottomRight").global_position.x) + int(owner.get_parent().get_node("Position2DTopLeft").global_position.x)
+		var y = randi() % int(owner.get_parent().get_node("Position2DBottomRight").global_position.y) + int(owner.get_parent().get_node("Position2DTopLeft").global_position.y)
 		var trashInstance = trashMob.instance()
 		trashInstance.position = Vector2(x, y)
 		owner.get_parent().add_child(trashInstance)

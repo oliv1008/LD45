@@ -136,7 +136,7 @@ tracks/4/keys = {
 "values": [ Vector2( 0.1, 0.1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.1, 0.1 ) ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=13]
 resource_name = "Die"
 length = 3.0
 tracks/0/type = "value"
@@ -188,8 +188,7 @@ tracks/3/keys = {
 "values": [ 5 ]
 }
 
-[sub_resource type="Animation" id=13]
-resource_name = "IcicleAttack"
+[sub_resource type="Animation" id=14]
 length = 2.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:frame")
@@ -230,7 +229,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=15]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -258,8 +257,7 @@ tracks/1/keys = {
 "values": [ 5 ]
 }
 
-[sub_resource type="Animation" id=15]
-resource_name = "ShieldBack"
+[sub_resource type="Animation" id=16]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:frame")
@@ -300,8 +298,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=16]
-resource_name = "ShieldFront"
+[sub_resource type="Animation" id=17]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:frame")
@@ -342,7 +339,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=18]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:scale")
@@ -393,7 +390,7 @@ tracks/3/keys = {
 "values": [ 5 ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=19]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -434,13 +431,13 @@ shape = SubResource( 11 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/BreathAttack = SubResource( 12 )
-anims/Die = SubResource( 19 )
-anims/IcicleAttack = SubResource( 13 )
-anims/Idle = SubResource( 14 )
-anims/ShieldBack = SubResource( 15 )
-anims/ShieldFront = SubResource( 16 )
-anims/Spawn = SubResource( 17 )
-anims/Walk = SubResource( 18 )
+anims/Die = SubResource( 13 )
+anims/IcicleAttack = SubResource( 14 )
+anims/Idle = SubResource( 15 )
+anims/ShieldBack = SubResource( 16 )
+anims/ShieldFront = SubResource( 17 )
+anims/Spawn = SubResource( 18 )
+anims/Walk = SubResource( 19 )
 
 [node name="StateMachine" parent="." instance=ExtResource( 9 )]
 script = ExtResource( 10 )

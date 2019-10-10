@@ -33,6 +33,8 @@ func _on_Health_health_changed(new_health):
 	tween_node.start()
 	if new_health < 50:
 		state_machine.phase = 2
+	if new_health <= 0:
+		state_machine.go_to_next_state($StateMachine/Die)
 				
 func tween_dash_in():
 	tween_node.interpolate_property(self, 'position', position, Vector2(position.x, position.y + 125), 0.2, Tween.TRANS_QUINT, Tween.EASE_OUT)

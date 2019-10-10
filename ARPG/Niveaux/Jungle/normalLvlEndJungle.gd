@@ -9,6 +9,8 @@ func _ready():
 	PersoGlobal.ennemiesLeft = get_child_count()-3
 	var notificationData = "ennemies"
 	nc.post_notification("CHANGE_HUD",notificationData)
+	notificationData = "ammo"
+	nc.post_notification("CHANGE_HUD", notificationData)
 	nc.add_observer(self, "POPUP","handleNotification")
 
 func _exit_tree():

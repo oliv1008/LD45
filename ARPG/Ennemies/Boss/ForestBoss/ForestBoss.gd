@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 onready var state_machine = $StateMachine
 onready var tween_node = $Tween
-var pv = 100
+var pv = 10000
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,6 +38,8 @@ func _on_Health_health_changed(new_health):
 		2:
 			if new_health < 25:
 				state_machine.phase = 3
+	if new_health <= 0:
+		state_machine.go_to_next_state($StateMachine/Die)
 				
 func tween_dash_in():
 	tween_node.interpolate_property(self, 'position', position, Vector2(position.x, position.y + 125), 0.2, Tween.TRANS_QUINT, Tween.EASE_OUT)

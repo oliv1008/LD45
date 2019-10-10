@@ -214,7 +214,6 @@ custom_fonts/font = ExtResource( 5 )
 text = "Create robot (5 AM)"
 
 [node name="CenterRobot" type="CenterContainer" parent="."]
-editor/display_folded = true
 visible = false
 margin_left = 5.0
 margin_top = 362.0
