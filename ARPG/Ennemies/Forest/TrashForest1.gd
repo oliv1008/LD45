@@ -93,5 +93,5 @@ func _on_Area2D_body_entered(body):
 
 func _on_Agro_body_entered(body):
 	if (body.get_name() == "Player"):
-		player_entered = true
+		goGetHim = true
 

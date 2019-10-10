@@ -77,8 +77,8 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="CircleShape2D" id=6]
-radius = 875.612
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 700, 200, 700, -200 )
 
 [node name="TrashForest1" type="KinematicBody2D"]
 collision_layer = 4
