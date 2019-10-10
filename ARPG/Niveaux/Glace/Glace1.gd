@@ -18,10 +18,8 @@ func _process(delta):
 		on_level_end()
 
 func on_level_end() :
-	var notificationData = 1
-	nc.post_notification("LEVEL_END",notificationData)
 	
-	notificationData = {
+	var notificationData = {
 		"scene" : "res://ARPG/Level_ending.tscn",
 		"mainUI" : false
 	}

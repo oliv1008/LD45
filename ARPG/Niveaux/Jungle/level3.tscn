@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=2]
 
-[ext_resource path="res://ARPG/Niveaux/Jungle/level3.gd" type="Script" id=1]
+[ext_resource path="res://ARPG/Niveaux/Jungle/normalLvlEndJungle.gd" type="Script" id=1]
 [ext_resource path="res://assets/tree2.png" type="Texture" id=2]
 [ext_resource path="res://assets/grass_base.png" type="Texture" id=3]
 [ext_resource path="res://assets/dirt.png" type="Texture" id=4]

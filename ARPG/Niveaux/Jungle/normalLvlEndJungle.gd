@@ -3,6 +3,7 @@ extends Node2D
 var popUp = load("res://ARPG/PopUpAntimatter.tscn")
 
 func _ready():
+	MusicPlayer.playSong("Monde1", 0.02)
 	PersoGlobal.ammoLeft = PersoGlobal.numberOfAmmoMax
 	PersoGlobal.pv = PersoGlobal.pvMax
 	PersoGlobal.ennemiesLeft = get_child_count()-3
@@ -12,7 +13,7 @@ func _ready():
 
 func _exit_tree():
 	nc.remove_observer(self,"POPUP")
-	
+
 func _process(delta):
 	if(PersoGlobal.ennemiesLeft == 0):
 		on_level_end()
@@ -20,13 +21,13 @@ func _process(delta):
 func on_level_end() :
 	var notificationData = 1
 	nc.post_notification("LEVEL_END",notificationData)
-	
+
 	notificationData = {
 		"scene" : "res://ARPG/Level_ending.tscn",
 		"mainUI" : false
 	}
 	nc.post_notification("LOAD_LEVEL",notificationData)
-	
+
 func handleNotification(observer,notificationName,notificationData):
 	if (notificationName == "POPUP"):
 		var popUpInstance = popUp.instance()

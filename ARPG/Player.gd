@@ -79,7 +79,6 @@ func get_hit():
 		var notificationData = "pv"
 		nc.post_notification("CHANGE_HUD",notificationData)
 		if (PersoGlobal.pv <= 0):
-			print("u ded")
 			var notificationDat = {
 				"scene" : "res://ARPG/Game_Over.tscn",
 				"mainUI" : false
