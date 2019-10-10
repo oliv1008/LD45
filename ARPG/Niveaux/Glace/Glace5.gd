@@ -22,10 +22,9 @@ func on_level_end() :
 	nc.post_notification("LEVEL_END",notificationData)
 	
 	notificationData = {
-		"scene" : "res://ARPG/ARPG_UI/rpgUI.tscn",
-		"mainUI" : true
+		"scene" : "res://ARPG/Level_ending.tscn",
+		"mainUI" : false
 	}
-	nc.post_notification("LOAD_LEVEL",notificationData)
 	
 func handleNotification(observer,notificationName,notificationData):
 	if (notificationName == "POPUP"):
