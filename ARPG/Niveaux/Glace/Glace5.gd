@@ -5,7 +5,7 @@ var popUp = load("res://ARPG/PopUpAntimatter.tscn")
 func _ready():
 	PersoGlobal.ammoLeft = PersoGlobal.numberOfAmmoMax
 	PersoGlobal.pv = PersoGlobal.pvMax
-	PersoGlobal.ennemiesLeft = 78
+	PersoGlobal.ennemiesLeft = get_child_count()-3
 	var notificationData = "ennemies"
 	nc.post_notification("CHANGE_HUD",notificationData)
 	nc.add_observer(self, "POPUP","handleNotification")
@@ -22,10 +22,9 @@ func on_level_end() :
 	nc.post_notification("LEVEL_END",notificationData)
 	
 	notificationData = {
-		"scene" : "res://ARPG/ARPG_UI/rpgUI.tscn",
-		"mainUI" : true
+		"scene" : "res://ARPG/Level_ending.tscn",
+		"mainUI" : false
 	}
-	nc.post_notification("LOAD_LEVEL",notificationData)
 	
 func handleNotification(observer,notificationName,notificationData):
 	if (notificationName == "POPUP"):

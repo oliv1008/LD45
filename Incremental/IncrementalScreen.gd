@@ -1,6 +1,5 @@
 extends Control
 
-
 onready var CenterIntroduction = $CenterIntroduction
 
 onready var totalAntimatter = $CenterAntimatter/VerticalAntimatter/HBoxContainer/TotalAntimatter
@@ -137,6 +136,7 @@ var spriteAxe = load("res://assets/images/Armes/Cac/AxeIncrementalScreen.png")
 var spriteBigSword = load("res://assets/images/Armes/Cac/BigSwordIncrementalScreen.png")
 	
 func _ready():
+	nc.add_observer(self, "LEVEL_END","handleNotification")
 	nc.add_observer(self, "Antimatter","handleNotification")
 	PriceBuilding1.text = str(priceBuilding1)
 	NumberBuilding1.text = str("Quantity : ", quantityBuilding1)
@@ -245,10 +245,40 @@ func _format(value):
 
 func _exit_tree():
 	nc.remove_observer(self,"Antimatter")
+	nc.remove_observer(self,"LEVEL_END")
 
 func handleNotification(observer,notificationName,notificationData):
 	if (notificationName == "Antimatter"):
 		antimatter += notificationData
+	if (notificationName == "LEVEL_END"):
+		if (PersoGlobal.currentNumberOfBuilding == 0):
+			$CenterBuildings.visible = true
+			$CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding1Container.visible = true
+			PersoGlobal.currentNumberOfBuilding += 1
+		elif (PersoGlobal.currentNumberOfBuilding == 1):
+			$CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding2Container.visible = true
+			PersoGlobal.currentNumberOfBuilding += 1
+		elif (PersoGlobal.currentNumberOfBuilding == 2):
+			$CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding3Container.visible = true
+			PersoGlobal.currentNumberOfBuilding += 1
+		elif (PersoGlobal.currentNumberOfBuilding == 3):
+			$CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding4Container.visible = true
+			PersoGlobal.currentNumberOfBuilding += 1
+		elif (PersoGlobal.currentNumberOfBuilding == 4):
+			$CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding5Container.visible = true
+			PersoGlobal.currentNumberOfBuilding += 1
+		elif (PersoGlobal.currentNumberOfBuilding == 5):
+			$CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding6Container.visible = true
+			PersoGlobal.currentNumberOfBuilding += 1
+		elif (PersoGlobal.currentNumberOfBuilding == 6):
+			$CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding7Container.visible = true
+			PersoGlobal.currentNumberOfBuilding += 1
+		elif (PersoGlobal.currentNumberOfBuilding == 7):
+			$CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding8Container.visible = true
+			PersoGlobal.currentNumberOfBuilding += 1
+		elif (PersoGlobal.currentNumberOfBuilding == 8):
+			$CenterBuildings/ScrollContainer/VerticalBuildings/VBuilding9Container.visible = true
+			PersoGlobal.currentNumberOfBuilding += 1
 
 func _letsGoAntimatter():
 	totalAntimatter.text = str("You have ", _format(antimatter))
@@ -459,7 +489,7 @@ func _on_ImprovePVButton_pressed():
 			heartPrice *= 1000
 			Heart4.visible = true
 			PriceHeart.text = str(heartPrice)
-	if (PersoGlobal.pvMax == 4):
+	elif (PersoGlobal.pvMax == 4):
 		if (antimatter >= heartPrice):
 			antimatter -= heartPrice
 			PersoGlobal.pvMax += 1

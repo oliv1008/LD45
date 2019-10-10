@@ -553,7 +553,6 @@ margin_bottom = 32.0
 texture = ExtResource( 4 )
 
 [node name="CenterBuildings" type="CenterContainer" parent="."]
-editor/display_folded = true
 visible = false
 margin_left = 490.0
 margin_top = 360.0
@@ -567,7 +566,7 @@ rect_min_size = Vector2( 475, 725 )
 
 [node name="VerticalBuildings" type="VBoxContainer" parent="CenterBuildings/ScrollContainer"]
 margin_right = 345.0
-margin_bottom = 1996.0
+margin_bottom = 25.0
 custom_constants/separation = 50
 
 [node name="BuyBuildings" type="Label" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
@@ -579,6 +578,7 @@ align = 1
 
 [node name="VBuilding1Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
 editor/display_folded = true
+visible = false
 margin_top = 75.0
 margin_right = 345.0
 margin_bottom = 244.0
@@ -695,6 +695,7 @@ texture = ExtResource( 4 )
 
 [node name="VBuilding2Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
 editor/display_folded = true
+visible = false
 margin_top = 294.0
 margin_right = 345.0
 margin_bottom = 463.0
@@ -810,6 +811,7 @@ texture = ExtResource( 4 )
 
 [node name="VBuilding3Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
 editor/display_folded = true
+visible = false
 margin_top = 513.0
 margin_right = 345.0
 margin_bottom = 682.0
@@ -925,6 +927,7 @@ texture = ExtResource( 4 )
 
 [node name="VBuilding4Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
 editor/display_folded = true
+visible = false
 margin_top = 732.0
 margin_right = 345.0
 margin_bottom = 901.0
@@ -1040,6 +1043,7 @@ texture = ExtResource( 4 )
 
 [node name="VBuilding5Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
 editor/display_folded = true
+visible = false
 margin_top = 951.0
 margin_right = 345.0
 margin_bottom = 1120.0
@@ -1155,6 +1159,7 @@ texture = ExtResource( 4 )
 
 [node name="VBuilding6Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
 editor/display_folded = true
+visible = false
 margin_top = 1170.0
 margin_right = 345.0
 margin_bottom = 1339.0
@@ -1270,6 +1275,7 @@ texture = ExtResource( 4 )
 
 [node name="VBuilding7Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
 editor/display_folded = true
+visible = false
 margin_top = 1389.0
 margin_right = 345.0
 margin_bottom = 1558.0
@@ -1385,6 +1391,7 @@ texture = ExtResource( 4 )
 
 [node name="VBuilding8Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
 editor/display_folded = true
+visible = false
 margin_top = 1608.0
 margin_right = 345.0
 margin_bottom = 1777.0
@@ -1500,6 +1507,7 @@ texture = ExtResource( 4 )
 
 [node name="VBuilding9Container" type="VBoxContainer" parent="CenterBuildings/ScrollContainer/VerticalBuildings"]
 editor/display_folded = true
+visible = false
 margin_top = 1827.0
 margin_right = 345.0
 margin_bottom = 1996.0

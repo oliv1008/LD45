@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bruitage_Boss_2_attaque_souffle.wav-7548e454dedb035819c5c6410532fbdc.sample"
+
+[deps]
+
+source_file="res://music/Bruitage/Boss/Boss_2/Bruitage_Boss_2_attaque_souffle.wav"
+dest_files=[ "res://.import/Bruitage_Boss_2_attaque_souffle.wav-7548e454dedb035819c5c6410532fbdc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

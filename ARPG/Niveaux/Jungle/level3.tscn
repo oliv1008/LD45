@@ -379,7 +379,7 @@ tile_data = PoolIntArray( -1179692, 1, 0, -1179691, 1, 131077, -1179690, 1, 1310
 position = Vector2( -929.031, 329.02 )
 
 [node name="TrashForest1" parent="." instance=ExtResource( 7 )]
-position = Vector2( -135.189, -751.65 )
+position = Vector2( -135.189, -750.65 )
 
 [node name="TrashForest2" parent="." instance=ExtResource( 7 )]
 position = Vector2( -102.744, -600.238 )

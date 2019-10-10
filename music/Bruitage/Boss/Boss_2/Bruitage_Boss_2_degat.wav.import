@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bruitage_Boss_2_degat.wav-282d34bc32b5b1165e2d4f3cf7ff5e88.sample"
+
+[deps]
+
+source_file="res://music/Bruitage/Boss/Boss_2/Bruitage_Boss_2_degat.wav"
+dest_files=[ "res://.import/Bruitage_Boss_2_degat.wav-282d34bc32b5b1165e2d4f3cf7ff5e88.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

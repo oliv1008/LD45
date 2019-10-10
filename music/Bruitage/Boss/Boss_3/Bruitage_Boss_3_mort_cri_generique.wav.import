@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bruitage_Boss_3_mort_cri_generique.wav-794b1dee48cd70bcb3c830463fb0f22e.sample"
+
+[deps]
+
+source_file="res://music/Bruitage/Boss/Boss_3/Bruitage_Boss_3_mort_cri_generique.wav"
+dest_files=[ "res://.import/Bruitage_Boss_3_mort_cri_generique.wav-794b1dee48cd70bcb3c830463fb0f22e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

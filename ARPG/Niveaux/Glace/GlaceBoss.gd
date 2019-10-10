@@ -4,7 +4,7 @@ extends Node2D
 func _ready():
 	PersoGlobal.ammoLeft = PersoGlobal.numberOfAmmoMax
 	PersoGlobal.pv = PersoGlobal.pvMax
-	PersoGlobal.ennemiesLeft = 0
+	PersoGlobal.ennemiesLeft = 1
 
 func _process(delta):
 	if(PersoGlobal.ennemiesLeft == 0):
@@ -18,8 +18,9 @@ func on_level_end() :
   
 	nc.post_notification("LEVEL_END",notificationData)
 	
-	notificationData = {
+	var notificationData = {
 		"scene" : "res://ARPG/Level_ending.tscn",
 		"mainUI" : false
 	}
 	ButtonState.tab3= true
+	nc.post_notification("LOAD_LEVEL",notificationData)
