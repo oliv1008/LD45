@@ -299,6 +299,7 @@ func _on_BuyBuilding1_pressed():
 	if (antimatter >= priceBuilding1):
 		antimatter -= priceBuilding1
 		antimatterPerSec += revenueBuilding1
+		PersoGlobal.antimatterPerSec = antimatterPerSec
 		totalRevenueBuilding1 += revenueBuilding1
 		priceBuilding1 = priceBuilding1 * pow(bFactor, quantityBuilding1)
 		quantityBuilding1 += 1
@@ -312,6 +313,7 @@ func _on_BuyBuilding2_pressed():
 	if (antimatter >= priceBuilding2):
 		antimatter -= priceBuilding2
 		antimatterPerSec += revenueBuilding2
+		PersoGlobal.antimatterPerSec = antimatterPerSec
 		totalRevenueBuilding2 += revenueBuilding2
 		priceBuilding2 = priceBuilding2 * pow(bFactor, quantityBuilding2)
 		quantityBuilding2 += 1
@@ -325,6 +327,7 @@ func _on_BuyBuilding3_pressed():
 	if (antimatter >= priceBuilding3):
 		antimatter -= priceBuilding3
 		antimatterPerSec += revenueBuilding3
+		PersoGlobal.antimatterPerSec = antimatterPerSec
 		totalRevenueBuilding3 += revenueBuilding3
 		priceBuilding3 = priceBuilding3 * pow(bFactor, quantityBuilding3)
 		quantityBuilding3 += 1
@@ -338,6 +341,7 @@ func _on_BuyBuilding4_pressed():
 	if (antimatter >= priceBuilding4):
 		antimatter -= priceBuilding4
 		antimatterPerSec += revenueBuilding4
+		PersoGlobal.antimatterPerSec = antimatterPerSec
 		totalRevenueBuilding4 += revenueBuilding4
 		priceBuilding4 = priceBuilding4 * pow(bFactor, quantityBuilding4)
 		quantityBuilding4 += 1
@@ -351,6 +355,7 @@ func _on_BuyBuilding5_pressed():
 	if (antimatter >= priceBuilding5):
 		antimatter -= priceBuilding5
 		antimatterPerSec += revenueBuilding5
+		PersoGlobal.antimatterPerSec = antimatterPerSec
 		totalRevenueBuilding5 += revenueBuilding5
 		priceBuilding5 = priceBuilding5 * pow(bFactor, quantityBuilding5)
 		quantityBuilding5 += 1
@@ -364,6 +369,7 @@ func _on_BuyBuilding6_pressed():
 	if (antimatter >= priceBuilding6):
 		antimatter -= priceBuilding6
 		antimatterPerSec += revenueBuilding6
+		PersoGlobal.antimatterPerSec = antimatterPerSec
 		totalRevenueBuilding6 += revenueBuilding6
 		priceBuilding6 = priceBuilding6 * pow(bFactor, quantityBuilding6)
 		quantityBuilding6 += 1
@@ -377,6 +383,7 @@ func _on_BuyBuilding7_pressed():
 	if (antimatter >= priceBuilding7):
 		antimatter -= priceBuilding7
 		antimatterPerSec += revenueBuilding7
+		PersoGlobal.antimatterPerSec = antimatterPerSec
 		totalRevenueBuilding7 += revenueBuilding7
 		priceBuilding7 = priceBuilding7 * pow(bFactor, quantityBuilding7)
 		quantityBuilding7 += 1
@@ -390,6 +397,7 @@ func _on_BuyBuilding8_pressed():
 	if (antimatter >= priceBuilding8):
 		antimatter -= priceBuilding8
 		antimatterPerSec += revenueBuilding8
+		PersoGlobal.antimatterPerSec = antimatterPerSec
 		totalRevenueBuilding8 += revenueBuilding8
 		priceBuilding8 = priceBuilding8 * pow(bFactor, quantityBuilding8)
 		quantityBuilding8 += 1
@@ -403,6 +411,7 @@ func _on_BuyBuilding9_pressed():
 	if (antimatter >= priceBuilding9):
 		antimatter -= priceBuilding9
 		antimatterPerSec += revenueBuilding9
+		PersoGlobal.antimatterPerSec = antimatterPerSec
 		totalRevenueBuilding9 += revenueBuilding9
 		priceBuilding9 = priceBuilding9 * pow(bFactor, quantityBuilding9)
 		quantityBuilding9 += 1

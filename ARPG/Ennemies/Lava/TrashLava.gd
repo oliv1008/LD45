@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export (int) var pv = 50
 var mouvementSpeed = 300
-var valueAM = 500
+var valueAM = PersoGlobal.antimatterPerSec*2
 onready var raycast = $RayCast2D
 onready var tweenNode = $Tween
 var isAttacking = false

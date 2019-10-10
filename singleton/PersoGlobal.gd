@@ -1,5 +1,6 @@
 extends Node
 
+var antimatterPerSec = 1
 var meleeDamage = 100
 var distanceDamage = 30
 var pv = 3
