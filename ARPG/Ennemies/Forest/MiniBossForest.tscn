@@ -93,8 +93,8 @@ tracks/0/keys = {
 "values": [ 0, 1, 0 ]
 }
 
-[sub_resource type="CircleShape2D" id=7]
-radius = 705.548
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 700, 200, 700, -200 )
 
 [node name="MiniBostForest" type="KinematicBody2D"]
 collision_layer = 4

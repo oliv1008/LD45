@@ -379,84 +379,109 @@ tile_data = PoolIntArray( -2031639, 1, 0, -2031638, 1, 131077, -2031637, 1, 1, -
 
 [node name="TrashForest1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1001.44, -1247.17 )
+rotation = -4.27431
 
 [node name="TrashForest2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 834.536, -1274.98 )
+rotation = -4.27431
 
 [node name="TrashForest3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 899.444, -1140.53 )
+rotation = -4.27431
 
 [node name="TrashForest4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1052.44, -1121.99 )
+rotation = -4.27431
 
 [node name="TrashForest5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2206.88, 97.3629 )
+position = Vector2( 2385.76, 216.614 )
+rotation = -1.94255
 
 [node name="TrashForest7" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2605.6, 157.635 )
+rotation = -1.94255
 
 [node name="TrashForest6" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1418.71, 797.445 )
+position = Vector2( 1812.24, 900.796 )
+rotation = -0.776672
 
 [node name="TrashForest8" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1599.53, 917.99 )
+rotation = -0.776672
 
 [node name="TrashForest9" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1794.25, 741.81 )
+rotation = -0.776672
 
 [node name="TrashForest13" parent="." instance=ExtResource( 7 )]
 position = Vector2( 3273.23, 1386.26 )
+rotation = -3.88685
 
 [node name="TrashForest14" parent="." instance=ExtResource( 7 )]
-position = Vector2( 3500.41, 1562.44 )
-
-[node name="TrashForest21" parent="." instance=ExtResource( 7 )]
-position = Vector2( 3166.13, 2275.14 )
-
-[node name="TrashForest22" parent="." instance=ExtResource( 7 )]
-position = Vector2( 3140.91, 2540.04 )
-
-[node name="TrashForest23" parent="." instance=ExtResource( 7 )]
-position = Vector2( 3361.66, 2426.51 )
+position = Vector2( 3508.36, 1578.34 )
+rotation = -3.49764
 
 [node name="TrashForest24" parent="." instance=ExtResource( 7 )]
-position = Vector2( 4282.49, 1139.86 )
+position = Vector2( 4381.87, 921.233 )
+rotation = -2.18166
+
+[node name="TrashForest27" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3733.93, 2431.75 )
+rotation = -7.01971
 
 [node name="TrashForest15" parent="." instance=ExtResource( 7 )]
-position = Vector2( 4143.74, 938.032 )
+position = Vector2( 4187.47, 961.882 )
+rotation = -2.18166
+
+[node name="TrashForest25" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3539.53, 2472.4 )
+rotation = -7.01971
 
 [node name="TrashForest16" parent="." instance=ExtResource( 7 )]
-position = Vector2( 4440.17, 925.418 )
+position = Vector2( 4396.44, 810.142 )
+rotation = -2.18166
+
+[node name="TrashForest26" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3748.51, 2320.66 )
+rotation = -7.01971
 
 [node name="TrashForest17" parent="." instance=ExtResource( 7 )]
 position = Vector2( 3443.65, -247.706 )
+rotation = -4.66352
 
 [node name="TrashForest18" parent="." instance=ExtResource( 7 )]
-position = Vector2( 3576.1, -392.769 )
+position = Vector2( 3353.5, -285.443 )
+rotation = -4.66352
 
 [node name="TrashForest19" parent="." instance=ExtResource( 7 )]
 position = Vector2( 3285.97, -165.713 )
+rotation = -4.66352
 
 [node name="TrashForest20" parent="." instance=ExtResource( 7 )]
-position = Vector2( 4604.16, 48.7289 )
+position = Vector2( 3944.3, 140.155 )
+rotation = -3.49764
 
 [node name="TrashForest10" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1659.8, 101.999 )
+position = Vector2( 1616.07, 435.903 )
 
 [node name="TrashForest11" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1831.34, 134.453 )
+position = Vector2( 1767.74, 535.932 )
 
 [node name="TrashForest12" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1729.34, 282.815 )
+position = Vector2( 1713.44, 402.066 )
 
 [node name="MiniBostForest" parent="." instance=ExtResource( 8 )]
-position = Vector2( 2410.88, -180.816 )
+position = Vector2( 2335.35, -343.793 )
+rotation = -3.10843
 
 [node name="MiniBostForest2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 4247.19, 689.244 )
+position = Vector2( 4294.89, 864.146 )
+rotation = -2.18166
 
-[node name="MiniBostForest3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 2865.93, 2385.86 )
+[node name="MiniBostForest5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3646.96, 2374.66 )
+rotation = -7.01971
 
 [node name="MiniBostForest4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 3490.33, 1219.04 )
+rotation = -3.88685
