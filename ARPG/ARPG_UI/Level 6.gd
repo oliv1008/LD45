@@ -16,4 +16,4 @@ func _pressed():
 			"mainUI" : false
 			}
 		nc.post_notification("LOAD_LEVEL",notificationData)
-	ButtonState.level6 = false
+
